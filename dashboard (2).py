@@ -1,24 +1,41 @@
 import streamlit as st
+import os
 import pickle
 import pandas as pd
-import os
 import gdown
 
-# Google Drive file ID from your link
 file_id = "16xePMUk_UXm_Bc2HAtMFiCfIUD0i2zkD"
 pickle_path = "hybrid_recommender.pkl"
+url = f"https://drive.google.com/uc?id={file_id}"
 
-# Download pickle if it doesn't exist locally
-if not os.path.exists(pickle_path):
-    url = f"https://drive.google.com/uc?id={file_id}"
-    st.info("Downloading recommender model from Google Drive...")
+def download_pickle():
+    st.info("Downloading model from Google Drive, please wait...")
+    # Use gdown with confirm option enabled internally
     gdown.download(url, pickle_path, quiet=False)
 
-# Confirm file downloaded and print size for debugging
-if os.path.exists(pickle_path):
-    st.write("File exists")
-else:
-    st.error("File missing")
+def is_valid_pickle(path):
+    try:
+        with open(path, "rb") as f:
+            pickle.load(f)
+        return True
+    except Exception:
+        return False
+
+if not os.path.exists(pickle_path) or not is_valid_pickle(pickle_path):
+    download_pickle()
+
+if not is_valid_pickle(pickle_path):
+    st.error("Failed to download a valid model file. Please try again later.")
+    st.stop()
+
+# Load the pickle file safely now
+with open(pickle_path, "rb") as f:
+    data = pickle.load(f)
+
+recommend_for_user_func = data["recommend_for_user"]
+movie_metadata = data["movie_metadata"]
+
+# Your existing Streamlit UI code follows...
 
 
 # Load the pickle file
