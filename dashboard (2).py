@@ -1,14 +1,30 @@
-
 import streamlit as st
 import pickle
 import pandas as pd
+import os
+import gdown
+
+# ===== Download pickle from Google Drive if missing =====
+file_id = "16xePMUk_UXm_Bc2HAtMFiCfIUD0i2zkD"
+pickle_path = "hybrid_recommender.pkl"
+
+if not os.path.exists(pickle_path):
+    url = f"https://drive.google.com/uc?id={file_id}"
+    st.info("Downloading recommender model from Google Drive...")
+    gdown.download(url, pickle_path, quiet=False)
 
 # ===== Load saved recommender =====
-with open("hybrid_recommender.pkl", "rb") as f:
+with open(pickle_path, "rb") as f:
     data = pickle.load(f)
 
 recommend_for_user_func = data["recommend_for_user"]
 movie_metadata = data["movie_metadata"]
+
+# Ensure genres_clean exists
+if "genres_clean" not in movie_metadata.columns:
+    movie_metadata["genres_clean"] = movie_metadata["genres"].apply(
+        lambda g: [genre.strip() for genre in g.split("|")] if isinstance(g, str) else []
+    )
 
 # ===== Streamlit UI =====
 st.title("🎬 Movie Recommender System")
@@ -26,10 +42,9 @@ def recommend_movies_for_user(user_id, top_n=10):
     recommendations = recommend_for_user_func(user_id, movie_metadata, top_n=top_n)
     rec_df = pd.DataFrame(recommendations, columns=["movie_id", "title", "score"])
     
-    # Merge genres if missing
-    if "genres_clean" not in rec_df.columns:
-        genres_map = dict(zip(movie_metadata["movie_id"], movie_metadata["genres_clean"]))
-        rec_df["genres_clean"] = rec_df["movie_id"].map(genres_map)
+    # Merge genres info
+    genres_map = dict(zip(movie_metadata["movie_id"], movie_metadata["genres_clean"]))
+    rec_df["genres_clean"] = rec_df["movie_id"].map(genres_map)
     
     return rec_df
 
@@ -45,4 +60,3 @@ if st.button("Get Recommendations"):
         st.dataframe(rec_df, use_container_width=True)
     else:
         st.warning("No recommendations match the selected genre.")
-
