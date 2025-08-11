@@ -16,10 +16,10 @@ if not os.path.exists(pickle_path):
 
 # Confirm file downloaded and print size for debugging
 if os.path.exists(pickle_path):
-    st.write(f"Pickle file found: {pickle_path} ({os.path.getsize(pickle_path)} bytes)")
+    st.write("File exists")
 else:
-    st.error("Failed to download the recommender model file.")
-    st.stop()
+    st.error("File missing")
+
 
 # Load the pickle file
 with open(pickle_path, "rb") as f:
