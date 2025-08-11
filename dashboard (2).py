@@ -1,3 +1,7 @@
+import streamlit as st
+import pickle
+import pandas as pd
+import os         # <--- THIS IS REQUIRED
 
 
 # ===== Download pickle from Google Drive if missing =====
