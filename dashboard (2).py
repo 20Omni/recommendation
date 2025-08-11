@@ -2,6 +2,8 @@ import streamlit as st
 import pickle
 import pandas as pd
 import os         # <--- THIS IS REQUIRED
+import gdown
+
 
 
 # ===== Download pickle from Google Drive if missing =====
