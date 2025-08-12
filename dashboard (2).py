@@ -3,99 +3,107 @@ import pandas as pd
 import pickle
 import os
 
-# ------------------------
-# Load hybrid recommendations
-# ------------------------
+# -----------------
+# Load hybrid recommender (lightweight)
+# -----------------
 @st.cache_data
 def load_hybrid():
     with open("hybrid_recommender_light.pkl", "rb") as f:
-        data = pickle.load(f)
-    return data["recommendations"], data["movies_meta"]
+        return pickle.load(f)
 
-recommendations_dict, movies_meta = load_hybrid()
+model_data = load_hybrid()
+hybrid_preds = pd.DataFrame(model_data["recommendations"], columns=["user_id", "movie_id", "score"])
+movies_meta = model_data["movies_meta"]
 
-# ------------------------
-# User storage file
-# ------------------------
+# -----------------
+# User data (login / signup)
+# -----------------
 USERS_FILE = "users.csv"
-if not os.path.exists(USERS_FILE):
-    pd.DataFrame(columns=["username", "password", "preferred_genres"]).to_csv(USERS_FILE, index=False)
 
 def load_users():
-    return pd.read_csv(USERS_FILE)
+    if os.path.exists(USERS_FILE):
+        return pd.read_csv(USERS_FILE)
+    return pd.DataFrame(columns=["username", "password", "genres"])
 
 def save_users(df):
     df.to_csv(USERS_FILE, index=False)
 
-# ------------------------
-# Login / Signup
-# ------------------------
-st.sidebar.title("🎬 Movie Recommender Login")
-menu = st.sidebar.radio("Menu", ["Login", "Signup"])
+users_df = load_users()
 
-if menu == "Signup":
-    st.subheader("Create an Account")
-    username = st.text_input("Choose a Username")
-    password = st.text_input("Choose a Password", type="password")
-    genres = st.multiselect("Select Your Favorite Genres", 
-                            movies_meta["genres"].explode().unique())
+def signup(username, password):
+    if username in users_df["username"].values:
+        return False, "Username already exists!"
+    new_user = pd.DataFrame([[username, password, ""]], columns=["username", "password", "genres"])
+    updated_df = pd.concat([users_df, new_user], ignore_index=True)
+    save_users(updated_df)
+    return True, "Signup successful!"
 
+def login(username, password):
+    user = users_df[(users_df["username"] == username) & (users_df["password"] == password)]
+    if not user.empty:
+        return True
+    return False
+
+# -----------------
+# Recommend function with genre boost
+# -----------------
+def get_recommendations(username, top_n=10):
+    # Get this user's id → simulate mapping username to numeric user_id
+    # For demo purposes, we assume all users share same hybrid_preds user_ids
+    # You could later map usernames to real IDs in your ratings data
+    user_id = hybrid_preds["user_id"].iloc[0]  # dummy
+
+    # Base recommendations
+    user_recs = hybrid_preds[hybrid_preds["user_id"] == user_id].sort_values("score", ascending=False)
+    recs = pd.merge(user_recs, movies_meta, on="movie_id")
+
+    # Apply genre boost
+    preferred_genres = users_df.loc[users_df["username"] == username, "genres"].values[0]
+    if preferred_genres:
+        preferred_genres = preferred_genres.split(",")
+        recs["boost"] = recs["title"].apply(lambda x: any(g.lower() in x.lower() for g in preferred_genres))
+        recs["score"] += recs["boost"] * 0.5  # boost score if genre match
+        recs = recs.sort_values("score", ascending=False)
+
+    return recs.head(top_n)
+
+# -----------------
+# Streamlit UI
+# -----------------
+st.title("🎬 Hybrid Movie Recommender")
+
+menu = ["Login", "Signup"]
+choice = st.sidebar.selectbox("Menu", menu)
+
+if choice == "Signup":
+    st.subheader("Create New Account")
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
     if st.button("Signup"):
-        users = load_users()
-        if username in users["username"].values:
-            st.error("Username already exists. Please login.")
-        else:
-            users = pd.concat([users, pd.DataFrame({
-                "username": [username],
-                "password": [password],
-                "preferred_genres": [",".join(genres)]
-            })], ignore_index=True)
-            save_users(users)
-            st.success("Account created! Please login now.")
+        success, msg = signup(username, password)
+        st.success(msg) if success else st.error(msg)
 
-elif menu == "Login":
-    st.subheader("Login to Your Account")
+elif choice == "Login":
+    st.subheader("Login to your account")
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
     if st.button("Login"):
-        users = load_users()
-        if ((users["username"] == username) & (users["password"] == password)).any():
-            st.session_state["logged_in"] = True
-            st.session_state["username"] = username
-            user_row = users[users["username"] == username].iloc[0]
-            st.session_state["preferred_genres"] = user_row["preferred_genres"].split(",") if pd.notna(user_row["preferred_genres"]) else []
-            st.success(f"Welcome back, {username}!")
+        if login(username, password):
+            st.success(f"Welcome {username}!")
+            # Genre preferences
+            genres = st.text_input("Enter your favorite genres (comma-separated)", 
+                                   value=users_df.loc[users_df["username"] == username, "genres"].values[0] 
+                                   if username in users_df["username"].values else "")
+            if st.button("Save Preferences"):
+                users_df.loc[users_df["username"] == username, "genres"] = genres
+                save_users(users_df)
+                st.success("Preferences updated!")
+
+            # Show recommendations
+            top_n = st.slider("Number of recommendations", 5, 20, 10)
+            recs = get_recommendations(username, top_n=top_n)
+            st.write("### Your Recommendations")
+            st.table(recs[["title", "score"]])
+
         else:
-            st.error("Invalid username or password.")
-
-# ------------------------
-# Recommendations
-# ------------------------
-if st.session_state.get("logged_in", False):
-    st.title("🍿 Personalized Movie Recommendations")
-
-    # Show user's genre prefs
-    if st.session_state["preferred_genres"]:
-        st.write("Your Preferred Genres:", ", ".join(st.session_state["preferred_genres"]))
-    else:
-        st.write("You haven’t set any preferred genres yet.")
-
-    user_id = st.number_input("Enter your User ID", min_value=1, step=1)
-
-    if st.button("Get Recommendations"):
-        if user_id in recommendations_dict:
-            recs = recommendations_dict[user_id]
-            rec_df = pd.DataFrame(recs, columns=["movie_id", "score"])
-            rec_df = rec_df.merge(movies_meta, on="movie_id", how="left")
-
-            # Boost preferred genres
-            if st.session_state["preferred_genres"]:
-                rec_df["boost"] = rec_df["genres"].apply(
-                    lambda g: 1 if any(pref in g for pref in st.session_state["preferred_genres"]) else 0
-                )
-                rec_df["score"] = rec_df["score"] + rec_df["boost"] * 0.2
-
-            rec_df = rec_df.sort_values(by="score", ascending=False).head(10)
-            st.table(rec_df[["title", "genres", "score"]])
-        else:
-            st.warning("No recommendations found for this user ID.")
+            st.error("Invalid username or password")
