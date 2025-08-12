@@ -4,5 +4,5 @@ numpy
 scikit-learn
 gdown
 scipy
-scikit-surprise
+surprise
 joblib
