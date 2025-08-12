@@ -1,51 +1,82 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import os
 import gdown
 
-# ---------------------
-# Download model from Google Drive if not present
-# ---------------------
-MODEL_URL = "https://drive.google.com/uc?id=16xePMUk_UXm_Bc2HAtMFiCfIUD0i2zkD"
+# --------------------------
+# CONFIG
+# --------------------------
+GDRIVE_URL = "https://drive.google.com/uc?id=16xePMUk_UXm_Bc2HAtMFiCfIUD0i2zkD"
 MODEL_FILE = "hybrid_recommender.pkl"
+MOVIE_METADATA_FILE = "cleaned_movielens.csv"
 
-if not os.path.exists(MODEL_FILE):
-    st.info("Downloading hybrid recommender model from Google Drive...")
-    gdown.download(MODEL_URL, MODEL_FILE, quiet=False)
+# --------------------------
+# DOWNLOAD MODEL FROM GOOGLE DRIVE
+# --------------------------
+@st.cache_resource
+def load_model():
+    gdown.download(GDRIVE_URL, MODEL_FILE, quiet=False)
+    with open(MODEL_FILE, "rb") as f:
+        model = pickle.load(f)
+    return model
 
-# ---------------------
-# Load the hybrid model
-# ---------------------
-with open(MODEL_FILE, "rb") as f:
-    hybrid_model = pickle.load(f)
+# --------------------------
+# LOAD MOVIE METADATA
+# --------------------------
+@st.cache_data
+def load_metadata():
+    df = pd.read_csv(MOVIE_METADATA_FILE)
+    return df
 
-# ---------------------
-# Load your movies metadata
-# ---------------------
-movies_meta = pd.read_csv("cleaned_movielens.csv")  # Update to your actual metadata file path
+# --------------------------
+# RECOMMENDATION FUNCTION
+# --------------------------
+def recommend_movies(user_id, model, movies_df, top_n=10):
+    if user_id not in model:
+        st.warning(f"User {user_id} not found in model!")
+        return []
+    
+    recs = model[user_id]
+    recs_df = pd.DataFrame(recs, columns=["movie_id", "score"])
+    merged = recs_df.merge(movies_df, on="movie_id", how="left")
+    return merged.sort_values(by="score", ascending=False).head(top_n)
 
-# ---------------------
-# Recommendation function
-# ---------------------
-def recommend_for_user(uid, top_n=10):
-    # Assume `hybrid_model` has the same recommend_for_user method from your code
-    recs = hybrid_model.recommend_for_user(uid, top_n=top_n)
-    return recs
+# --------------------------
+# LOGIN SYSTEM
+# --------------------------
+users_db = {"user1": "pass1", "user2": "pass2", "admin": "admin123"}
 
-# ---------------------
-# Streamlit UI
-# ---------------------
-st.title("🎬 Hybrid Movie Recommendation System")
+def login():
+    st.subheader("Login")
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+    if st.button("Login"):
+        if username in users_db and users_db[username] == password:
+            st.session_state["logged_in"] = True
+            st.session_state["username"] = username
+            st.success(f"Welcome, {username}!")
+        else:
+            st.error("Invalid username or password")
 
-user_id = st.number_input("Enter User ID", min_value=1, step=1)
-top_n = st.slider("Number of Recommendations", min_value=5, max_value=20, value=10)
+# --------------------------
+# MAIN APP
+# --------------------------
+st.title("🎬 Movie Recommendation Dashboard")
 
-if st.button("Get Recommendations"):
-    try:
-        recs = recommend_for_user(user_id, top_n=top_n)
-        st.subheader(f"Top {top_n} Recommendations for User {user_id}")
-        for movie_id, title, score in recs:
-            st.write(f"**{title}** (ID: {movie_id}) — Predicted Rating: {score:.2f}")
-    except Exception as e:
-        st.error(f"Error generating recommendations: {e}")
+if "logged_in" not in st.session_state:
+    st.session_state["logged_in"] = False
+
+if not st.session_state["logged_in"]:
+    login()
+else:
+    st.sidebar.success(f"Logged in as {st.session_state['username']}")
+    model = load_model()
+    movies_df = load_metadata()
+
+    st.subheader("Get Recommendations")
+    user_id = st.number_input("Enter User ID", min_value=1, step=1)
+
+    if st.button("Recommend"):
+        recs = recommend_movies(user_id, model, movies_df, top_n=10)
+        if len(recs) > 0:
+            st.table(recs[["movie_id", "title", "score"]])
