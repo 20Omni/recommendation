@@ -1,75 +1,101 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import pickle
-import gdown
+import os
 
-# -----------------
-# CONFIG
-# -----------------
-MODEL_FILE_ID = "16xePMUk_UXm_Bc2HAtMFiCfIUD0i2zkD"  # Google Drive file ID
-DATA_FILE = "cleaned_movielens.csv"
-
-# -----------------
-# Load Dataset
-# -----------------
+# ------------------------
+# Load hybrid recommendations
+# ------------------------
 @st.cache_data
-def load_metadata():
-    return pd.read_csv(DATA_FILE)
+def load_hybrid():
+    with open("hybrid_recommender_light.pkl", "rb") as f:
+        data = pickle.load(f)
+    return data["recommendations"], data["movies_meta"]
 
-# -----------------
-# Download & Load Model
-# -----------------
-@st.cache_resource
-def download_and_load_model():
-    url = f"https://drive.google.com/uc?id={MODEL_FILE_ID}"
-    output = "hybrid_recommender.pkl"
-    gdown.download(url, output, quiet=False)
+recommendations_dict, movies_meta = load_hybrid()
 
-    with open(output, "rb") as f:
-        model_data = pickle.load(f)  # Should be list of (user_id, movie_id, score)
-    return model_data
+# ------------------------
+# User storage file
+# ------------------------
+USERS_FILE = "users.csv"
+if not os.path.exists(USERS_FILE):
+    pd.DataFrame(columns=["username", "password", "preferred_genres"]).to_csv(USERS_FILE, index=False)
 
-# -----------------
-# Recommendation Function
-# -----------------
-def recommend_for_user(user_id, model_data, movies_meta, top_n=10):
-    # Filter predictions for given user
-    user_preds = [(u, i, s) for (u, i, s) in model_data if int(u) == int(user_id)]
+def load_users():
+    return pd.read_csv(USERS_FILE)
 
-    if not user_preds:
-        return []
+def save_users(df):
+    df.to_csv(USERS_FILE, index=False)
 
-    # Sort & take top N
-    top_preds = sorted(user_preds, key=lambda x: x[2], reverse=True)[:top_n]
+# ------------------------
+# Login / Signup
+# ------------------------
+st.sidebar.title("🎬 Movie Recommender Login")
+menu = st.sidebar.radio("Menu", ["Login", "Signup"])
 
-    results = []
-    for (_, movie_id, score) in top_preds:
-        title_row = movies_meta[movies_meta["movie_id"] == movie_id]
-        if not title_row.empty:
-            title = title_row.iloc[0]["title"]
+if menu == "Signup":
+    st.subheader("Create an Account")
+    username = st.text_input("Choose a Username")
+    password = st.text_input("Choose a Password", type="password")
+    genres = st.multiselect("Select Your Favorite Genres", 
+                            movies_meta["genres"].explode().unique())
+
+    if st.button("Signup"):
+        users = load_users()
+        if username in users["username"].values:
+            st.error("Username already exists. Please login.")
         else:
-            title = f"Movie ID {movie_id}"
-        results.append((title, score))
-    return results
+            users = pd.concat([users, pd.DataFrame({
+                "username": [username],
+                "password": [password],
+                "preferred_genres": [",".join(genres)]
+            })], ignore_index=True)
+            save_users(users)
+            st.success("Account created! Please login now.")
 
-# -----------------
-# Streamlit UI
-# -----------------
-st.title("🎬 Hybrid Movie Recommender (No Surprise Needed)")
+elif menu == "Login":
+    st.subheader("Login to Your Account")
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+    if st.button("Login"):
+        users = load_users()
+        if ((users["username"] == username) & (users["password"] == password)).any():
+            st.session_state["logged_in"] = True
+            st.session_state["username"] = username
+            user_row = users[users["username"] == username].iloc[0]
+            st.session_state["preferred_genres"] = user_row["preferred_genres"].split(",") if pd.notna(user_row["preferred_genres"]) else []
+            st.success(f"Welcome back, {username}!")
+        else:
+            st.error("Invalid username or password.")
 
-movies_meta = load_metadata()
-model_data = download_and_load_model()
+# ------------------------
+# Recommendations
+# ------------------------
+if st.session_state.get("logged_in", False):
+    st.title("🍿 Personalized Movie Recommendations")
 
-# User input
-user_id = st.number_input("Enter User ID", min_value=1, step=1, value=196)
-top_n = st.slider("Number of Recommendations", 5, 20, 10)
-
-if st.button("Get Recommendations"):
-    recs = recommend_for_user(user_id, model_data, movies_meta, top_n)
-    if recs:
-        st.subheader(f"Top {top_n} recommendations for User {user_id}")
-        for title, score in recs:
-            st.write(f"**{title}** — Predicted Rating: {score:.2f}")
+    # Show user's genre prefs
+    if st.session_state["preferred_genres"]:
+        st.write("Your Preferred Genres:", ", ".join(st.session_state["preferred_genres"]))
     else:
-        st.warning("No recommendations found for this user.")
+        st.write("You haven’t set any preferred genres yet.")
+
+    user_id = st.number_input("Enter your User ID", min_value=1, step=1)
+
+    if st.button("Get Recommendations"):
+        if user_id in recommendations_dict:
+            recs = recommendations_dict[user_id]
+            rec_df = pd.DataFrame(recs, columns=["movie_id", "score"])
+            rec_df = rec_df.merge(movies_meta, on="movie_id", how="left")
+
+            # Boost preferred genres
+            if st.session_state["preferred_genres"]:
+                rec_df["boost"] = rec_df["genres"].apply(
+                    lambda g: 1 if any(pref in g for pref in st.session_state["preferred_genres"]) else 0
+                )
+                rec_df["score"] = rec_df["score"] + rec_df["boost"] * 0.2
+
+            rec_df = rec_df.sort_values(by="score", ascending=False).head(10)
+            st.table(rec_df[["title", "genres", "score"]])
+        else:
+            st.warning("No recommendations found for this user ID.")
