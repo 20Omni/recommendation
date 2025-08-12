@@ -7,7 +7,7 @@ import gdown
 # -----------------
 # CONFIG
 # -----------------
-MODEL_FILE_ID = "16xePMUk_UXm_Bc2HAtMFiCfIUD0i2zkD"  # Your Google Drive file ID
+MODEL_FILE_ID = "16xePMUk_UXm_Bc2HAtMFiCfIUD0i2zkD"  # Google Drive file ID
 DATA_FILE = "cleaned_movielens.csv"
 
 # -----------------
@@ -15,8 +15,7 @@ DATA_FILE = "cleaned_movielens.csv"
 # -----------------
 @st.cache_data
 def load_metadata():
-    df = pd.read_csv(DATA_FILE)
-    return df
+    return pd.read_csv(DATA_FILE)
 
 # -----------------
 # Download & Load Model
@@ -28,15 +27,18 @@ def download_and_load_model():
     gdown.download(url, output, quiet=False)
 
     with open(output, "rb") as f:
-        model_data = pickle.load(f)
+        model_data = pickle.load(f)  # Should be list of (user_id, movie_id, score)
     return model_data
 
 # -----------------
 # Recommendation Function
 # -----------------
 def recommend_for_user(user_id, model_data, movies_meta, top_n=10):
-    hybrid_preds = model_data  # Assuming it's a list of (user, item, score)
-    user_preds = [(u, i, s) for (u, i, s) in hybrid_preds if u == user_id]
+    # Filter predictions for given user
+    user_preds = [(u, i, s) for (u, i, s) in model_data if int(u) == int(user_id)]
+
+    if not user_preds:
+        return []
 
     # Sort & take top N
     top_preds = sorted(user_preds, key=lambda x: x[2], reverse=True)[:top_n]
@@ -54,7 +56,7 @@ def recommend_for_user(user_id, model_data, movies_meta, top_n=10):
 # -----------------
 # Streamlit UI
 # -----------------
-st.title("🎬 Hybrid Movie Recommender")
+st.title("🎬 Hybrid Movie Recommender (No Surprise Needed)")
 
 movies_meta = load_metadata()
 model_data = download_and_load_model()
@@ -65,6 +67,9 @@ top_n = st.slider("Number of Recommendations", 5, 20, 10)
 
 if st.button("Get Recommendations"):
     recs = recommend_for_user(user_id, model_data, movies_meta, top_n)
-    st.subheader(f"Top {top_n} recommendations for User {user_id}")
-    for title, score in recs:
-        st.write(f"**{title}** — Predicted Rating: {score:.2f}")
+    if recs:
+        st.subheader(f"Top {top_n} recommendations for User {user_id}")
+        for title, score in recs:
+            st.write(f"**{title}** — Predicted Rating: {score:.2f}")
+    else:
+        st.warning("No recommendations found for this user.")
