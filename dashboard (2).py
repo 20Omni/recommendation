@@ -58,9 +58,13 @@ def get_genre_recommendations(username, top_n=TOP_N):
     if not watched:
         return movies_df.sort_values(by="avg_rating", ascending=False).head(top_n)["title"].tolist()
     
+    # Get all genres from watched movies
     watched_genres = movies_df[movies_df['title'].isin(watched)]['genres_clean'].str.split('|').explode()
-    top_genres = [g for g, _ in Counter(watched_genres).most_common(3)]
     
+    # Pick top 3–4 genres instead of just one
+    top_genres = [g for g, _ in Counter(watched_genres).most_common(4)]
+    
+    # Recommend from all top genres
     recs = movies_df[~movies_df['title'].isin(watched)]
     recs = recs[recs['genres_clean'].apply(lambda g: any(genre in g for genre in top_genres))]
     recs = recs.sort_values(by="avg_rating", ascending=False).head(top_n)
@@ -103,17 +107,20 @@ else:
     with tabs[0]:
         top_movies = movies_df.sort_values(by="avg_rating", ascending=False).head(10)
         for _, row in top_movies.iterrows():
-            col1, col2 = st.columns([3, 1])
-            col1.write(f"**{row['title']}** ({row['genres_clean']}) — ⭐ {row['avg_rating']:.2f}")
-            if col2.button("Watched ✅", key=f"top_{row['title']}"):
+            st.markdown(f"""
+            **{row['title']}**  
+            _{row['genres_clean']}_  
+            ⭐ **{row['avg_rating']:.2f}**
+            """)
+            if st.button("Watched ✅", key=f"top_{row['title']}"):
                 mark_watched(st.session_state['username'], row['title'])
                 st.success(f"Marked '{row['title']}' as watched!")
+            st.markdown("---")
 
     # ---------------- Recommendations Tab ----------------
     with tabs[1]:
         username = st.session_state['username']
 
-        # Use hybrid model recommendations if available
         if username in final_recs:
             recs = final_recs[username]
         else:
@@ -123,9 +130,7 @@ else:
         watched_list = get_watched(username)
 
         for _, row in rec_df.iterrows():
-            col1, col2 = st.columns([3, 1])
-
-            # Find explanation
+            # Explanation
             explanation = "Recommended based on your viewing history."
             if watched_list:
                 rec_genres = set(str(row['genres_clean']).split("|"))
@@ -135,12 +140,16 @@ else:
                         explanation = f"Because you watched **{watched_movie}** ({', '.join(watched_genres)}), we recommend this."
                         break
 
-            col1.markdown(f"**{row['title']}** ({row['genres_clean']}) — ⭐ {row['avg_rating']:.2f}")
-            col1.caption(explanation)
-
-            if col2.button("Watched ✅", key=f"rec_{row['title']}"):
+            st.markdown(f"""
+            **{row['title']}**  
+            _{row['genres_clean']}_  
+            ⭐ **{row['avg_rating']:.2f}**  
+            _{explanation}_
+            """)
+            if st.button("Watched ✅", key=f"rec_{row['title']}"):
                 mark_watched(username, row['title'])
                 st.success(f"Marked '{row['title']}' as watched!")
+            st.markdown("---")
 
     # ---------------- Watched History Tab ----------------
     with tabs[2]:
@@ -151,6 +160,11 @@ else:
                 rating = movies_df.loc[movies_df['title'] == movie, 'avg_rating'].values
                 genres_str = genres[0] if len(genres) else "Unknown"
                 rating_val = rating[0] if len(rating) else 0
-                st.write(f"**{movie}** ({genres_str}) — ⭐ {rating_val:.2f}")
+                st.markdown(f"""
+                **{movie}**  
+                _{genres_str}_  
+                ⭐ **{rating_val:.2f}**
+                """)
+                st.markdown("---")
         else:
             st.info("You haven't watched anything yet.")
