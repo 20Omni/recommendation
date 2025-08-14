@@ -4,10 +4,9 @@ import pickle
 import sqlite3
 from collections import Counter
 
-# ---------------- Paths ----------------
-ARTIFACT_DIR = "recommender_artifacts"
-HYBRID_MODEL_PATH = f"{ARTIFACT_DIR}/hybrid_recommender.pkl"
-MOVIE_METADATA_PATH = f"{ARTIFACT_DIR}/movie_metadata.csv"
+# ---------------- File Paths ----------------
+HYBRID_MODEL_PATH = "hybrid_recommender.pkl"  # uploaded directly in repo
+MOVIE_METADATA_PATH = "movie_metadata.csv"    # uploaded directly in repo
 DB_PATH = "users.db"
 
 TOP_N = 10
