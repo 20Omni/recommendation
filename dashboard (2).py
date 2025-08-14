@@ -65,6 +65,16 @@ def get_genre_recommendations(username, top_n=TOP_N):
     recs = recs.sort_values(by="avg_rating", ascending=False).head(top_n)
     return recs["title"].tolist()
 
+def display_movie_cards(movie_titles, username, prefix):
+    rec_df = movies_df[movies_df['title'].isin(movie_titles)]
+    cols = st.columns(3)
+    for i, (_, row) in enumerate(rec_df.iterrows()):
+        with cols[i % 3]:
+            st.markdown(f"**{row['title']}**  \n_{row['genres_clean']}_  \n⭐ {row['avg_rating']:.2f}")
+            if st.button("Watched ✅", key=f"{prefix}_{row['title']}"):
+                mark_watched(username, row['title'])
+                st.success(f"Marked '{row['title']}' as watched!")
+
 # ---------------- Streamlit UI ----------------
 st.title("🎬 Movie Recommender System")
 
@@ -100,50 +110,35 @@ else:
 
     # Top Rated Tab
     with tabs[0]:
-        top_movies = movies_df.sort_values(by="avg_rating", ascending=False).head(10)
-        for _, row in top_movies.iterrows():
-            col1, col2 = st.columns([3, 1])
-            col1.write(f"**{row['title']}** ({row['genres_clean']}) — ⭐ {row['avg_rating']:.2f}")
-            if col2.button("Watched ✅", key=f"top_{row['title']}"):
-                mark_watched(st.session_state['username'], row['title'])
-                st.success(f"Marked '{row['title']}' as watched!")
+        top_movies = movies_df.sort_values(by="avg_rating", ascending=False).head(TOP_N)
+        display_movie_cards(top_movies["title"].tolist(), st.session_state['username'], "top")
 
     # Recommendations Tab
     with tabs[1]:
         username = st.session_state['username']
-
-        # Try to get ML-based recommendations
         try:
             user_id = int(username)  # Assuming username is user_id for trained users
         except ValueError:
             user_id = None
 
         if user_id in final_recs:
-            st.subheader("🤖 ML-based Recommendations")
-            st.caption("These are based on your past ratings & similarity to other users.")
-            recs = final_recs[user_id]
+            recs = final_recs[user_id]  # ML-based
         else:
-            st.subheader("🎭 Genre-based Suggestions")
-            st.caption("We couldn't find you in our ML model, so these are based on your most-watched genres.")
-            recs = get_genre_recommendations(username)
+            recs = get_genre_recommendations(username)  # Silent fallback
 
-        rec_df = movies_df[movies_df['title'].isin(recs)]
-        for _, row in rec_df.iterrows():
-            col1, col2 = st.columns([3, 1])
-            col1.write(f"**{row['title']}** ({row['genres_clean']}) — ⭐ {row['avg_rating']:.2f}")
-            if col2.button("Watched ✅", key=f"rec_{row['title']}"):
-                mark_watched(st.session_state['username'], row['title'])
-                st.success(f"Marked '{row['title']}' as watched!")
+        display_movie_cards(recs, username, "rec")
 
     # Watched History Tab
     with tabs[2]:
         watched_list = get_watched(st.session_state['username'])
         if watched_list:
-            for movie in watched_list:
+            cols = st.columns(3)
+            for i, movie in enumerate(watched_list):
                 genres = movies_df.loc[movies_df['title'] == movie, 'genres_clean'].values
                 rating = movies_df.loc[movies_df['title'] == movie, 'avg_rating'].values
                 genres_str = genres[0] if len(genres) else "Unknown"
                 rating_val = rating[0] if len(rating) else 0
-                st.write(f"**{movie}** ({genres_str}) — ⭐ {rating_val:.2f}")
+                with cols[i % 3]:
+                    st.markdown(f"**{movie}**  \n_{genres_str}_  \n⭐ {rating_val:.2f}")
         else:
             st.info("You haven't watched anything yet.")
