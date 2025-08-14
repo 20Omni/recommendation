@@ -1,0 +1,1682 @@
+movie_id,title,genres_clean,avg_rating
+1,Toy Story (1995),"['Animation', ""Children's"", 'Comedy']",3.8783185840707963
+2,GoldenEye (1995),"['Action', 'Adventure', 'Thriller']",3.2061068702290076
+3,Four Rooms (1995),['Thriller'],3.033333333333333
+4,Get Shorty (1995),"['Action', 'Comedy', 'Drama']",3.550239234449761
+5,Copycat (1995),"['Crime', 'Drama', 'Thriller']",3.302325581395349
+6,Shanghai Triad (Yao a yao yao dao waipo qiao) (1995),['Drama'],3.576923076923077
+7,Twelve Monkeys (1995),"['Drama', 'Sci-Fi']",3.798469387755102
+8,Babe (1995),"[""Children's"", 'Comedy', 'Drama']",3.9954337899543377
+9,Dead Man Walking (1995),['Drama'],3.8963210702341136
+10,Richard III (1995),"['Drama', 'War']",3.831460674157303
+11,Seven (Se7en) (1995),"['Crime', 'Thriller']",3.847457627118644
+12,"Usual Suspects, The (1995)","['Crime', 'Thriller']",4.385767790262173
+13,Mighty Aphrodite (1995),['Comedy'],3.4184782608695654
+14,"Postino, Il (1994)","['Drama', 'Romance']",3.9672131147540983
+15,Mr. Holland's Opus (1995),['Drama'],3.7781569965870307
+16,French Twist (Gazon maudit) (1995),"['Comedy', 'Romance']",3.2051282051282053
+17,From Dusk Till Dawn (1996),"['Action', 'Comedy', 'Crime', 'Horror', 'Thriller']",3.119565217391304
+18,"White Balloon, The (1995)",['Drama'],2.8
+19,Antonia's Line (1995),['Drama'],3.9565217391304346
+20,Angels and Insects (1995),"['Drama', 'Romance']",3.4166666666666665
+21,Muppet Treasure Island (1996),"['Action', 'Adventure', 'Comedy', 'Musical', 'Thriller']",2.761904761904762
+22,Braveheart (1995),"['Action', 'Drama', 'War']",4.151515151515151
+23,Taxi Driver (1976),"['Drama', 'Thriller']",4.1208791208791204
+24,Rumble in the Bronx (1995),"['Action', 'Adventure', 'Crime']",3.4482758620689653
+25,"Birdcage, The (1996)",['Comedy'],3.4436860068259385
+26,"Brothers McMullen, The (1995)",['Comedy'],3.452054794520548
+27,Bad Boys (1995),['Action'],3.1052631578947367
+28,Apollo 13 (1995),"['Action', 'Drama', 'Thriller']",3.931159420289855
+29,Batman Forever (1995),"['Action', 'Adventure', 'Comedy', 'Crime']",2.6666666666666665
+30,Belle de jour (1967),['Drama'],3.945945945945946
+31,Crimson Tide (1995),"['Drama', 'Thriller', 'War']",3.6298701298701297
+32,Crumb (1994),['Documentary'],3.7901234567901234
+33,Desperado (1995),"['Action', 'Romance', 'Thriller']",3.4536082474226806
+34,"Doom Generation, The (1995)","['Comedy', 'Drama']",2.7142857142857144
+35,Free Willy 2: The Adventure Home (1995),"['Adventure', ""Children's"", 'Drama']",2.1818181818181817
+36,Mad Love (1995),"['Drama', 'Romance']",2.1538461538461537
+37,Nadja (1994),['Drama'],2.25
+38,"Net, The (1995)","['Sci-Fi', 'Thriller']",3.0083333333333333
+39,Strange Days (1995),"['Action', 'Crime', 'Sci-Fi']",3.264367816091954
+40,"To Wong Foo, Thanks for Everything! Julie Newmar (1995)",['Comedy'],2.8947368421052633
+41,Billy Madison (1995),['Comedy'],3.081081081081081
+42,Clerks (1994),['Comedy'],3.804054054054054
+43,Disclosure (1994),"['Drama', 'Thriller']",3.0
+44,Dolores Claiborne (1994),"['Drama', 'Thriller']",3.3417721518987342
+45,Eat Drink Man Woman (1994),"['Comedy', 'Drama']",4.05
+46,Exotica (1994),['Drama'],3.5555555555555554
+47,Ed Wood (1994),"['Comedy', 'Drama']",3.601503759398496
+48,Hoop Dreams (1994),['Documentary'],4.094017094017094
+49,I.Q. (1994),"['Comedy', 'Romance']",3.3209876543209877
+50,Star Wars (1977),"['Action', 'Adventure', 'Romance', 'Sci-Fi', 'War']",4.3584905660377355
+51,Legends of the Fall (1994),"['Drama', 'Romance', 'War', 'Western']",3.45679012345679
+52,"Madness of King George, The (1994)",['Drama'],3.769230769230769
+53,Natural Born Killers (1994),"['Action', 'Thriller']",2.953125
+54,Outbreak (1995),"['Action', 'Drama', 'Thriller']",3.2403846153846154
+55,"Professional, The (1994)","['Crime', 'Drama', 'Romance', 'Thriller']",3.704697986577181
+56,Pulp Fiction (1994),"['Crime', 'Drama']",4.060913705583756
+57,Priest (1994),['Drama'],4.0
+58,Quiz Show (1994),['Drama'],3.645714285714286
+59,Three Colors: Red (1994),['Drama'],4.0602409638554215
+60,Three Colors: Blue (1993),['Drama'],4.015625
+61,Three Colors: White (1994),['Drama'],3.864406779661017
+62,Stargate (1994),"['Action', 'Adventure', 'Sci-Fi']",3.141732283464567
+63,"Santa Clause, The (1994)","[""Children's"", 'Comedy']",3.097560975609756
+64,"Shawshank Redemption, The (1994)",['Drama'],4.445229681978798
+65,What's Eating Gilbert Grape (1993),"['Comedy', 'Drama']",3.5391304347826087
+66,While You Were Sleeping (1995),"['Comedy', 'Romance']",3.549382716049383
+67,Ace Ventura: Pet Detective (1994),['Comedy'],3.0485436893203883
+68,"Crow, The (1994)","['Action', 'Romance', 'Thriller']",3.417910447761194
+69,Forrest Gump (1994),"['Comedy', 'Romance', 'War']",3.853582554517134
+70,Four Weddings and a Funeral (1994),"['Comedy', 'Romance']",3.6613545816733066
+71,"Lion King, The (1994)","['Animation', ""Children's"", 'Musical']",3.7818181818181817
+72,"Mask, The (1994)","['Comedy', 'Crime', 'Fantasy']",3.193798449612403
+73,Maverick (1994),"['Action', 'Comedy', 'Western']",3.46875
+74,Faster Pussycat! Kill! Kill! (1965),"['Action', 'Comedy', 'Drama']",3.0
+75,Brother Minister: The Assassination of Malcolm X (1994),['Documentary'],3.0
+76,Carlito's Way (1993),"['Crime', 'Drama']",3.4074074074074074
+77,"Firm, The (1993)","['Drama', 'Thriller']",3.2781456953642385
+78,Free Willy (1993),"['Adventure', ""Children's"", 'Drama']",2.4545454545454546
+79,"Fugitive, The (1993)","['Action', 'Thriller']",4.044642857142857
+80,Hot Shots! Part Deux (1993),"['Action', 'Comedy', 'War']",2.764705882352941
+81,"Hudsucker Proxy, The (1994)","['Comedy', 'Romance']",3.5545454545454547
+82,Jurassic Park (1993),"['Action', 'Adventure', 'Sci-Fi']",3.7203065134099615
+83,Much Ado About Nothing (1993),"['Comedy', 'Romance']",4.0625
+84,Robert A. Heinlein's The Puppet Masters (1994),"['Horror', 'Sci-Fi']",3.0
+85,"Ref, The (1994)",['Comedy'],3.0344827586206895
+86,"Remains of the Day, The (1993)",['Drama'],3.94
+87,Searching for Bobby Fischer (1993),['Drama'],3.9057971014492754
+88,Sleepless in Seattle (1993),"['Comedy', 'Romance']",3.539906103286385
+89,Blade Runner (1982),"['Film-Noir', 'Sci-Fi']",4.138181818181818
+90,So I Married an Axe Murderer (1993),"['Comedy', 'Romance', 'Thriller']",3.0526315789473686
+91,"Nightmare Before Christmas, The (1993)","[""Children's"", 'Comedy', 'Musical']",3.5874125874125875
+92,True Romance (1993),"['Action', 'Crime', 'Romance']",3.6153846153846154
+93,Welcome to the Dollhouse (1995),"['Comedy', 'Drama']",3.7232142857142856
+94,Home Alone (1990),"[""Children's"", 'Comedy']",3.0875912408759123
+95,Aladdin (1992),"['Animation', ""Children's"", 'Comedy', 'Musical']",3.8127853881278537
+96,Terminator 2: Judgment Day (1991),"['Action', 'Sci-Fi', 'Thriller']",4.0067796610169495
+97,Dances with Wolves (1990),"['Adventure', 'Drama', 'Western']",3.79296875
+98,"Silence of the Lambs, The (1991)","['Drama', 'Thriller']",4.28974358974359
+99,Snow White and the Seven Dwarfs (1937),"['Animation', ""Children's"", 'Musical']",3.7093023255813953
+100,Fargo (1996),"['Crime', 'Drama', 'Thriller']",4.155511811023622
+101,Heavy Metal (1981),"['Action', 'Adventure', 'Animation', 'Horror', 'Sci-Fi']",3.26027397260274
+102,"Aristocats, The (1970)","['Animation', ""Children's""]",3.1296296296296298
+103,All Dogs Go to Heaven 2 (1996),"['Animation', ""Children's"", 'Musical']",1.8666666666666667
+104,Theodore Rex (1995),['Comedy'],1.4
+105,Sgt. Bilko (1996),['Comedy'],2.5675675675675675
+106,Diabolique (1996),"['Drama', 'Thriller']",2.887323943661972
+107,Moll Flanders (1996),['Drama'],3.5
+108,Kids in the Hall: Brain Candy (1996),['Comedy'],3.076923076923077
+109,Mystery Science Theater 3000: The Movie (1996),"['Comedy', 'Sci-Fi']",3.4307692307692306
+110,Operation Dumbo Drop (1995),"['Action', 'Adventure', 'Comedy', 'War']",2.5161290322580645
+111,"Truth About Cats & Dogs, The (1996)","['Comedy', 'Romance']",3.485294117647059
+112,Flipper (1996),"['Adventure', ""Children's""]",2.45
+113,"Horseman on the Roof, The (Hussard sur le toit, Le) (1995)",['Drama'],4.111111111111111
+114,Wallace & Gromit: The Best of Aardman Animation (1996),['Animation'],4.447761194029851
+115,"Haunted World of Edward D. Wood Jr., The (1995)",['Documentary'],3.7333333333333334
+116,Cold Comfort Farm (1995),['Comedy'],3.824
+117,"Rock, The (1996)","['Action', 'Adventure', 'Thriller']",3.693121693121693
+118,Twister (1996),"['Action', 'Adventure', 'Thriller']",3.2150170648464163
+119,Maya Lin: A Strong Clear Vision (1994),['Documentary'],4.5
+120,Striptease (1996),"['Comedy', 'Crime']",2.2388059701492535
+121,Independence Day (ID4) (1996),"['Action', 'Sci-Fi', 'War']",3.438228438228438
+122,"Cable Guy, The (1996)",['Comedy'],2.339622641509434
+123,"Frighteners, The (1996)","['Comedy', 'Horror']",3.234782608695652
+124,Lone Star (1996),"['Drama', 'Mystery']",4.053475935828877
+125,Phenomenon (1996),"['Drama', 'Romance']",3.557377049180328
+126,"Spitfire Grill, The (1996)",['Drama'],3.804123711340206
+127,"Godfather, The (1972)","['Action', 'Crime', 'Drama']",4.283292978208232
+128,Supercop (1992),"['Action', 'Thriller']",3.5384615384615383
+129,Bound (1996),"['Crime', 'Drama', 'Romance', 'Thriller']",3.8217054263565893
+130,Kansas City (1996),['Crime'],2.260869565217391
+131,Breakfast at Tiffany's (1961),"['Drama', 'Romance']",3.7263157894736842
+132,"Wizard of Oz, The (1939)","['Adventure', ""Children's"", 'Drama', 'Musical']",4.0772357723577235
+133,Gone with the Wind (1939),"['Drama', 'Romance', 'War']",3.871345029239766
+134,Citizen Kane (1941),['Drama'],4.292929292929293
+135,2001: A Space Odyssey (1968),"['Drama', 'Mystery', 'Sci-Fi', 'Thriller']",3.969111969111969
+136,Mr. Smith Goes to Washington (1939),['Drama'],4.123809523809523
+137,Big Night (1996),['Drama'],3.9005847953216373
+138,D3: The Mighty Ducks (1996),"[""Children's"", 'Comedy']",2.5789473684210527
+139,"Love Bug, The (1969)","[""Children's"", 'Comedy']",2.78
+140,Homeward Bound: The Incredible Journey (1993),"['Adventure', ""Children's""]",3.2131147540983607
+141,"20,000 Leagues Under the Sea (1954)","['Adventure', ""Children's"", 'Fantasy', 'Sci-Fi']",3.5
+142,Bedknobs and Broomsticks (1971),"['Adventure', ""Children's"", 'Musical']",3.0701754385964914
+143,"Sound of Music, The (1965)",['Musical'],3.765765765765766
+144,Die Hard (1988),"['Action', 'Thriller']",3.8724279835390947
+145,"Lawnmower Man, The (1992)","['Action', 'Sci-Fi', 'Thriller']",2.4461538461538463
+146,Unhook the Stars (1996),['Drama'],2.5
+147,"Long Kiss Goodnight, The (1996)","['Action', 'Thriller']",3.4702702702702704
+148,"Ghost and the Darkness, The (1996)","['Action', 'Adventure']",3.203125
+149,Jude (1996),['Drama'],3.0
+150,Swingers (1996),"['Comedy', 'Drama']",3.828025477707006
+151,Willy Wonka and the Chocolate Factory (1971),"['Adventure', ""Children's"", 'Comedy']",3.6319018404907975
+152,Sleeper (1973),"['Comedy', 'Sci-Fi']",3.6341463414634148
+153,"Fish Called Wanda, A (1988)",['Comedy'],3.785425101214575
+154,Monty Python's Life of Brian (1979),['Comedy'],3.7471264367816093
+155,Dirty Dancing (1987),"['Musical', 'Romance']",3.1020408163265305
+156,Reservoir Dogs (1992),"['Crime', 'Thriller']",3.9864864864864864
+157,Platoon (1986),"['Drama', 'War']",3.6929133858267718
+158,Weekend at Bernie's (1989),['Comedy'],2.6166666666666667
+159,Basic Instinct (1992),"['Mystery', 'Thriller']",3.227722772277228
+160,Glengarry Glen Ross (1992),['Drama'],3.463768115942029
+161,Top Gun (1986),"['Action', 'Romance']",3.481818181818182
+162,On Golden Pond (1981),['Drama'],3.556603773584906
+163,"Return of the Pink Panther, The (1974)",['Comedy'],3.5543478260869565
+164,"Abyss, The (1989)","['Action', 'Adventure', 'Sci-Fi', 'Thriller']",3.589403973509934
+165,Jean de Florette (1986),['Drama'],4.109375
+166,Manon of the Spring (Manon des sources) (1986),['Drama'],4.120689655172414
+167,Private Benjamin (1980),['Comedy'],2.955223880597015
+168,Monty Python and the Holy Grail (1974),['Comedy'],4.0664556962025316
+169,"Wrong Trousers, The (1993)","['Animation', 'Comedy']",4.466101694915254
+170,Cinema Paradiso (1988),"['Comedy', 'Drama', 'Romance']",4.1735537190082646
+171,Delicatessen (1991),"['Comedy', 'Sci-Fi']",3.876923076923077
+172,"Empire Strikes Back, The (1980)","['Action', 'Adventure', 'Drama', 'Romance', 'Sci-Fi', 'War']",4.204359673024523
+173,"Princess Bride, The (1987)","['Action', 'Adventure', 'Comedy', 'Romance']",4.172839506172839
+174,Raiders of the Lost Ark (1981),"['Action', 'Adventure']",4.252380952380952
+175,Brazil (1985),['Sci-Fi'],3.8173076923076925
+176,Aliens (1986),"['Action', 'Sci-Fi', 'Thriller', 'War']",3.9471830985915495
+177,"Good, The Bad and The Ugly, The (1966)","['Action', 'Western']",3.8613138686131387
+178,12 Angry Men (1957),['Drama'],4.344
+179,"Clockwork Orange, A (1971)",['Sci-Fi'],3.909502262443439
+180,Apocalypse Now (1979),"['Drama', 'War']",4.04524886877828
+181,Return of the Jedi (1983),"['Action', 'Adventure', 'Romance', 'Sci-Fi', 'War']",4.007889546351085
+182,GoodFellas (1990),"['Crime', 'Drama']",3.9513274336283186
+183,Alien (1979),"['Action', 'Horror', 'Sci-Fi', 'Thriller']",4.034364261168385
+184,Army of Darkness (1993),"['Action', 'Adventure', 'Comedy', 'Horror', 'Sci-Fi']",3.4310344827586206
+185,Psycho (1960),"['Horror', 'Romance', 'Thriller']",4.100418410041841
+186,"Blues Brothers, The (1980)","['Action', 'Comedy', 'Musical']",3.8366533864541834
+187,"Godfather: Part II, The (1974)","['Action', 'Crime', 'Drama']",4.186602870813397
+188,Full Metal Jacket (1987),"['Action', 'Drama', 'War']",3.6823529411764704
+189,"Grand Day Out, A (1992)","['Animation', 'Comedy']",4.106060606060606
+190,Henry V (1989),"['Drama', 'War']",4.137096774193548
+191,Amadeus (1984),"['Drama', 'Mystery']",4.163043478260869
+192,Raging Bull (1980),['Drama'],4.120689655172414
+193,"Right Stuff, The (1983)",['Drama'],3.917197452229299
+194,"Sting, The (1973)","['Comedy', 'Crime']",4.058091286307054
+195,"Terminator, The (1984)","['Action', 'Sci-Fi', 'Thriller']",3.9335548172757475
+196,Dead Poets Society (1989),['Drama'],3.9163346613545817
+197,"Graduate, The (1967)","['Drama', 'Romance']",4.104602510460251
+198,Nikita (La Femme Nikita) (1990),['Thriller'],4.0078740157480315
+199,"Bridge on the River Kwai, The (1957)","['Drama', 'War']",4.175757575757576
+200,"Shining, The (1980)",['Horror'],3.825242718446602
+201,Evil Dead II (1987),"['Action', 'Adventure', 'Comedy', 'Horror']",3.5168539325842696
+202,Groundhog Day (1993),"['Comedy', 'Romance']",3.7642857142857142
+203,Unforgiven (1992),['Western'],3.868131868131868
+204,Back to the Future (1985),"['Comedy', 'Sci-Fi']",3.834285714285714
+205,Patton (1970),"['Drama', 'War']",3.9926470588235294
+206,Akira (1988),"['Adventure', 'Animation', 'Sci-Fi', 'Thriller']",3.38
+207,Cyrano de Bergerac (1990),"['Action', 'Drama', 'Romance']",3.8181818181818183
+208,Young Frankenstein (1974),"['Comedy', 'Horror']",3.945
+209,This Is Spinal Tap (1984),"['Comedy', 'Drama', 'Musical']",3.905759162303665
+210,Indiana Jones and the Last Crusade (1989),"['Action', 'Adventure']",3.930513595166163
+211,M*A*S*H (1970),"['Comedy', 'War']",3.912621359223301
+212,"Unbearable Lightness of Being, The (1988)",['Drama'],3.4565217391304346
+213,"Room with a View, A (1986)","['Drama', 'Romance']",3.985074626865672
+214,Pink Floyd - The Wall (1982),"['Drama', 'Musical', 'War']",3.3508771929824563
+215,Field of Dreams (1989),['Drama'],3.69811320754717
+216,When Harry Met Sally... (1989),"['Comedy', 'Romance']",3.910344827586207
+217,Bram Stoker's Dracula (1992),"['Horror', 'Romance']",3.158333333333333
+218,Cape Fear (1991),['Thriller'],3.456140350877193
+219,"Nightmare on Elm Street, A (1984)",['Horror'],3.171171171171171
+220,"Mirror Has Two Faces, The (1996)","['Comedy', 'Romance']",3.3636363636363638
+221,Breaking the Waves (1996),['Drama'],3.72972972972973
+222,Star Trek: First Contact (1996),"['Action', 'Adventure', 'Sci-Fi']",3.66027397260274
+223,Sling Blade (1996),"['Drama', 'Thriller']",4.198529411764706
+224,Ridicule (1996),['Drama'],3.7045454545454546
+225,101 Dalmatians (1996),"[""Children's"", 'Comedy']",2.908256880733945
+226,Die Hard 2 (1990),"['Action', 'Thriller']",3.355421686746988
+227,Star Trek VI: The Undiscovered Country (1991),"['Action', 'Adventure', 'Sci-Fi']",3.279503105590062
+228,Star Trek: The Wrath of Khan (1982),"['Action', 'Adventure', 'Sci-Fi']",3.8155737704918034
+229,Star Trek III: The Search for Spock (1984),"['Action', 'Adventure', 'Sci-Fi']",3.111111111111111
+230,Star Trek IV: The Voyage Home (1986),"['Action', 'Adventure', 'Sci-Fi']",3.4472361809045227
+231,Batman Returns (1992),"['Action', 'Adventure', 'Comedy', 'Crime']",2.683098591549296
+232,Young Guns (1988),"['Action', 'Comedy', 'Western']",3.207920792079208
+233,Under Siege (1992),['Action'],3.2903225806451615
+234,Jaws (1975),"['Action', 'Horror']",3.775
+235,Mars Attacks! (1996),"['Action', 'Comedy', 'Sci-Fi', 'War']",2.847926267281106
+236,Citizen Ruth (1996),"['Comedy', 'Drama']",3.6222222222222222
+237,Jerry Maguire (1996),"['Drama', 'Romance']",3.7109375
+238,Raising Arizona (1987),['Comedy'],3.875
+239,Sneakers (1992),"['Crime', 'Drama', 'Sci-Fi']",3.513333333333333
+240,Beavis and Butt-head Do America (1996),"['Animation', 'Comedy']",2.7884615384615383
+241,"Last of the Mohicans, The (1992)","['Action', 'Romance', 'War']",3.546875
+242,Kolya (1996),['Comedy'],3.9914529914529915
+243,Jungle2Jungle (1997),"[""Children's"", 'Comedy']",2.4393939393939394
+244,Smilla's Sense of Snow (1997),"['Action', 'Drama', 'Thriller']",3.1666666666666665
+245,"Devil's Own, The (1997)","['Action', 'Drama', 'Thriller', 'War']",3.1083333333333334
+246,Chasing Amy (1997),"['Drama', 'Romance']",3.935483870967742
+247,Turbo: A Power Rangers Movie (1997),"['Action', 'Adventure', ""Children's""]",1.8
+248,Grosse Pointe Blank (1997),"['Comedy', 'Crime']",3.675
+249,Austin Powers: International Man of Mystery (1997),['Comedy'],3.246153846153846
+250,"Fifth Element, The (1997)","['Action', 'Sci-Fi']",3.4771573604060912
+251,Shall We Dance? (1996),['Comedy'],4.260869565217392
+252,"Lost World: Jurassic Park, The (1997)","['Action', 'Adventure', 'Sci-Fi', 'Thriller']",2.9430379746835444
+253,"Pillow Book, The (1995)","['Drama', 'Romance']",3.6923076923076925
+254,Batman & Robin (1997),"['Action', 'Adventure', 'Crime']",2.4516129032258065
+255,My Best Friend's Wedding (1997),"['Comedy', 'Romance']",3.36046511627907
+256,When the Cats Away (Chacun cherche son chat) (1996),"['Comedy', 'Romance']",3.5625
+257,Men in Black (1997),"['Action', 'Adventure', 'Comedy', 'Sci-Fi']",3.745874587458746
+258,Contact (1997),"['Drama', 'Sci-Fi']",3.8035363457760316
+259,George of the Jungle (1997),"[""Children's"", 'Comedy']",2.685185185185185
+260,Event Horizon (1997),"['Action', 'Mystery', 'Sci-Fi', 'Thriller']",2.574803149606299
+261,Air Bud (1997),"[""Children's"", 'Comedy']",2.558139534883721
+262,In the Company of Men (1997),['Drama'],3.712121212121212
+263,Steel (1997),['Action'],2.1578947368421053
+264,Mimic (1997),"['Sci-Fi', 'Thriller']",2.742574257425743
+265,"Hunt for Red October, The (1990)","['Action', 'Thriller']",3.8634361233480177
+266,Kull the Conqueror (1997),"['Action', 'Adventure']",2.7142857142857144
+268,Chasing Amy (1997),"['Drama', 'Romance']",3.792156862745098
+269,"Full Monty, The (1997)",['Comedy'],3.926984126984127
+270,Gattaca (1997),"['Drama', 'Sci-Fi', 'Thriller']",3.5955882352941178
+271,Starship Troopers (1997),"['Action', 'Adventure', 'Sci-Fi', 'War']",3.2322274881516586
+272,Good Will Hunting (1997),['Drama'],4.262626262626263
+273,Heat (1995),"['Action', 'Crime', 'Thriller']",3.569506726457399
+274,Sabrina (1995),"['Comedy', 'Romance']",3.5
+275,Sense and Sensibility (1995),"['Drama', 'Romance']",4.0111940298507465
+276,Leaving Las Vegas (1995),"['Drama', 'Romance']",3.697986577181208
+277,Restoration (1995),['Drama'],3.464788732394366
+278,Bed of Roses (1996),"['Drama', 'Romance']",3.2333333333333334
+279,Once Upon a Time... When We Were Colored (1995),['Drama'],3.2857142857142856
+280,Up Close and Personal (1996),"['Drama', 'Romance']",3.1882352941176473
+281,"River Wild, The (1994)","['Action', 'Thriller']",3.143835616438356
+282,"Time to Kill, A (1996)",['Drama'],3.685344827586207
+283,Emma (1996),"['Drama', 'Romance']",3.7175141242937855
+284,Tin Cup (1996),"['Comedy', 'Romance']",3.160621761658031
+285,Secrets & Lies (1996),['Drama'],4.265432098765432
+286,"English Patient, The (1996)","['Drama', 'Romance', 'War']",3.656964656964657
+287,Marvin's Room (1996),['Drama'],3.58974358974359
+288,Scream (1996),"['Horror', 'Thriller']",3.4414225941422596
+289,Evita (1996),"['Drama', 'Musical']",2.9806949806949805
+290,Fierce Creatures (1997),['Comedy'],3.1145833333333335
+291,Absolute Power (1997),"['Mystery', 'Thriller']",3.37007874015748
+292,Rosewood (1997),['Drama'],3.6666666666666665
+293,Donnie Brasco (1997),"['Crime', 'Drama']",3.802721088435374
+294,Liar Liar (1997),['Comedy'],3.156701030927835
+295,Breakdown (1997),"['Action', 'Thriller']",3.4025974025974026
+296,"Promesse, La (1996)",['Drama'],3.3333333333333335
+297,Ulee's Gold (1997),['Drama'],3.96
+298,Face/Off (1997),"['Action', 'Sci-Fi', 'Thriller']",3.768041237113402
+299,Hoodlum (1997),"['Crime', 'Drama', 'Film-Noir']",2.9315068493150687
+300,Air Force One (1997),"['Action', 'Thriller']",3.6310904872389793
+301,In & Out (1997),['Comedy'],3.3043478260869565
+302,L.A. Confidential (1997),"['Crime', 'Film-Noir', 'Mystery', 'Thriller']",4.161616161616162
+303,Ulee's Gold (1997),['Drama'],3.6865671641791047
+304,Fly Away Home (1996),"['Adventure', ""Children's""]",3.5369127516778525
+305,"Ice Storm, The (1997)",['Drama'],3.6436781609195403
+306,"Mrs. Brown (Her Majesty, Mrs. Brown) (1997)","['Drama', 'Romance']",3.9479166666666665
+307,"Devil's Advocate, The (1997)","['Crime', 'Horror', 'Mystery', 'Thriller']",3.515957446808511
+308,FairyTale: A True Story (1997),"[""Children's"", 'Drama', 'Fantasy']",2.966666666666667
+309,Deceiver (1997),['Crime'],2.857142857142857
+310,"Rainmaker, The (1997)",['Drama'],3.6
+311,"Wings of the Dove, The (1997)","['Drama', 'Romance', 'Thriller']",3.68
+312,Midnight in the Garden of Good and Evil (1997),"['Comedy', 'Crime', 'Drama', 'Mystery']",3.1625
+313,Titanic (1997),"['Action', 'Drama', 'Romance']",4.2457142857142856
+314,3 Ninjas: High Noon At Mega Mountain (1998),"['Action', ""Children's""]",1.0
+315,Apt Pupil (1998),"['Drama', 'Thriller']",4.1
+316,As Good As It Gets (1997),"['Comedy', 'Drama']",4.196428571428571
+317,In the Name of the Father (1993),['Drama'],3.911764705882353
+318,Schindler's List (1993),"['Drama', 'War']",4.466442953020135
+319,Everyone Says I Love You (1996),"['Comedy', 'Musical', 'Romance']",3.2738095238095237
+320,Paradise Lost: The Child Murders at Robin Hood Hills (1996),['Documentary'],4.05
+321,Mother (1996),['Comedy'],3.1301775147928996
+322,Murder at 1600 (1997),"['Mystery', 'Thriller']",3.0871559633027523
+323,Dante's Peak (1997),"['Action', 'Thriller']",2.933333333333333
+324,Lost Highway (1997),['Mystery'],3.136
+325,Crash (1996),"['Drama', 'Thriller']",2.546875
+326,G.I. Jane (1997),"['Action', 'Drama', 'War']",3.36
+327,Cop Land (1997),"['Crime', 'Drama', 'Mystery']",3.3771428571428572
+328,Conspiracy Theory (1997),"['Action', 'Mystery', 'Romance', 'Thriller']",3.4237288135593222
+329,Desperate Measures (1998),"['Crime', 'Drama', 'Thriller']",3.3333333333333335
+330,187 (1997),['Drama'],3.024390243902439
+331,"Edge, The (1997)","['Adventure', 'Thriller']",3.5398230088495577
+332,Kiss the Girls (1997),"['Crime', 'Drama', 'Thriller']",3.4615384615384617
+333,"Game, The (1997)","['Mystery', 'Thriller']",3.593625498007968
+334,U Turn (1997),"['Action', 'Crime', 'Mystery']",3.359375
+335,How to Be a Player (1997),['Comedy'],2.761904761904762
+336,Playing God (1997),"['Crime', 'Thriller']",2.627906976744186
+337,"House of Yes, The (1997)","['Comedy', 'Drama', 'Thriller']",3.0
+338,Bean (1997),['Comedy'],2.659340659340659
+339,Mad City (1997),"['Action', 'Drama']",3.25531914893617
+340,Boogie Nights (1997),['Drama'],3.5873015873015874
+341,Critical Care (1997),['Comedy'],3.090909090909091
+342,"Man Who Knew Too Little, The (1997)","['Comedy', 'Mystery']",2.923076923076923
+343,Alien: Resurrection (1997),"['Action', 'Horror', 'Sci-Fi']",3.096774193548387
+344,"Apostle, The (1997)",['Drama'],3.6545454545454548
+345,Deconstructing Harry (1997),"['Comedy', 'Drama']",3.4
+346,Jackie Brown (1997),"['Crime', 'Drama']",3.642857142857143
+347,Wag the Dog (1997),"['Comedy', 'Drama']",3.510948905109489
+348,Desperate Measures (1998),"['Crime', 'Drama', 'Thriller']",3.2962962962962963
+349,Hard Rain (1998),"['Action', 'Thriller']",2.903225806451613
+350,Fallen (1998),"['Action', 'Mystery', 'Thriller']",3.1463414634146343
+351,"Prophecy II, The (1998)",['Horror'],2.7
+352,Spice World (1997),"['Comedy', 'Musical']",2.1153846153846154
+353,Deep Rising (1998),"['Action', 'Horror', 'Sci-Fi']",2.4285714285714284
+354,"Wedding Singer, The (1998)","['Comedy', 'Romance']",3.486111111111111
+355,Sphere (1998),"['Adventure', 'Sci-Fi', 'Thriller']",2.926829268292683
+356,"Client, The (1994)","['Drama', 'Mystery', 'Thriller']",3.381443298969072
+357,One Flew Over the Cuckoo's Nest (1975),['Drama'],4.291666666666667
+358,Spawn (1997),"['Action', 'Adventure', 'Sci-Fi', 'Thriller']",2.6153846153846154
+359,"Assignment, The (1997)",['Thriller'],3.5
+360,Wonderland (1997),['Documentary'],3.2
+361,Incognito (1997),"['Crime', 'Thriller']",3.5
+362,Blues Brothers 2000 (1998),"['Action', 'Comedy', 'Musical']",2.8214285714285716
+363,Sudden Death (1995),['Action'],2.723404255319149
+364,Ace Ventura: When Nature Calls (1995),['Comedy'],2.675675675675676
+365,Powder (1995),['Drama'],3.2083333333333335
+366,Dangerous Minds (1995),['Drama'],3.3404255319148937
+367,Clueless (1995),['Comedy'],3.458823529411765
+368,Bio-Dome (1996),['Comedy'],1.903225806451613
+369,Black Sheep (1996),['Comedy'],2.6363636363636362
+370,Mary Reilly (1996),"['Drama', 'Thriller']",2.8205128205128207
+371,"Bridges of Madison County, The (1995)","['Drama', 'Romance']",3.1641791044776117
+372,Jeffrey (1995),['Comedy'],3.5294117647058822
+373,Judge Dredd (1995),"['Action', 'Adventure', 'Sci-Fi']",2.8974358974358974
+374,Mighty Morphin Power Rangers: The Movie (1995),"['Action', ""Children's""]",2.272727272727273
+375,Showgirls (1995),['Drama'],1.9565217391304348
+376,Houseguest (1994),['Comedy'],2.8333333333333335
+377,Heavyweights (1994),"[""Children's"", 'Comedy']",2.1538461538461537
+378,Miracle on 34th Street (1994),['Drama'],3.722772277227723
+379,Tales From the Crypt Presents: Demon Knight (1995),['Horror'],2.9767441860465116
+380,Star Trek: Generations (1994),"['Action', 'Adventure', 'Sci-Fi']",3.336206896551724
+381,Muriel's Wedding (1994),"['Comedy', 'Romance']",3.55
+382,"Adventures of Priscilla, Queen of the Desert, The (1994)","['Comedy', 'Drama']",3.5945945945945947
+383,"Flintstones, The (1994)","[""Children's"", 'Comedy']",2.064516129032258
+384,Naked Gun 33 1/3: The Final Insult (1994),['Comedy'],2.782608695652174
+385,True Lies (1994),"['Action', 'Adventure', 'Comedy', 'Romance']",3.5625
+386,Addams Family Values (1993),['Comedy'],2.8160919540229883
+387,"Age of Innocence, The (1993)",['Drama'],3.3846153846153846
+388,Beverly Hills Cop III (1994),"['Action', 'Comedy']",2.392857142857143
+389,Black Beauty (1994),"['Adventure', ""Children's""]",3.4444444444444446
+390,Fear of a Black Hat (1993),['Comedy'],3.2
+391,Last Action Hero (1993),"['Action', 'Comedy']",2.7457627118644066
+392,"Man Without a Face, The (1993)",['Drama'],3.5441176470588234
+393,Mrs. Doubtfire (1993),['Comedy'],3.4114583333333335
+394,Radioland Murders (1994),"['Comedy', 'Mystery', 'Romance']",3.3333333333333335
+395,Robin Hood: Men in Tights (1993),['Comedy'],2.5892857142857144
+396,Serial Mom (1994),"['Comedy', 'Crime', 'Horror']",2.814814814814815
+397,Striking Distance (1993),['Action'],2.5833333333333335
+398,Super Mario Bros. (1993),"['Action', 'Adventure', ""Children's"", 'Sci-Fi']",2.076923076923077
+399,"Three Musketeers, The (1993)","['Action', 'Adventure', 'Comedy']",3.303370786516854
+400,"Little Rascals, The (1994)","[""Children's"", 'Comedy']",2.7222222222222223
+401,"Brady Bunch Movie, The (1995)",['Comedy'],2.8026315789473686
+402,Ghost (1990),"['Comedy', 'Romance', 'Thriller']",3.4647058823529413
+403,Batman (1989),"['Action', 'Adventure', 'Crime', 'Drama']",3.427860696517413
+404,Pinocchio (1940),"['Animation', ""Children's""]",3.6732673267326734
+405,Mission: Impossible (1996),"['Action', 'Adventure', 'Mystery']",3.313953488372093
+406,Thinner (1996),"['Horror', 'Thriller']",2.4489795918367347
+407,Spy Hard (1996),['Comedy'],2.511627906976744
+408,"Close Shave, A (1995)","['Animation', 'Comedy', 'Thriller']",4.491071428571429
+409,Jack (1996),"['Comedy', 'Drama']",3.142857142857143
+410,Kingpin (1996),['Comedy'],3.1296296296296298
+411,"Nutty Professor, The (1996)","['Comedy', 'Fantasy', 'Romance', 'Sci-Fi']",2.914110429447853
+412,"Very Brady Sequel, A (1996)",['Comedy'],2.3978494623655915
+413,Tales from the Crypt Presents: Bordello of Blood (1996),['Horror'],2.6363636363636362
+414,My Favorite Year (1982),['Comedy'],3.532258064516129
+415,"Apple Dumpling Gang, The (1975)","[""Children's"", 'Comedy', 'Western']",2.84
+416,Old Yeller (1957),"[""Children's"", 'Drama']",3.484375
+417,"Parent Trap, The (1961)","[""Children's"", 'Drama']",3.095890410958904
+418,Cinderella (1950),"['Animation', ""Children's"", 'Musical']",3.5813953488372094
+419,Mary Poppins (1964),"[""Children's"", 'Comedy', 'Musical']",3.7247191011235956
+420,Alice in Wonderland (1951),"['Animation', ""Children's"", 'Musical']",3.6666666666666665
+421,William Shakespeare's Romeo and Juliet (1996),"['Drama', 'Romance']",3.5943396226415096
+422,Aladdin and the King of Thieves (1996),"['Animation', ""Children's"", 'Comedy']",2.8461538461538463
+423,E.T. the Extra-Terrestrial (1982),"[""Children's"", 'Drama', 'Fantasy', 'Sci-Fi']",3.8333333333333335
+424,Children of the Corn: The Gathering (1996),['Horror'],1.3157894736842106
+425,Bob Roberts (1992),['Comedy'],3.7411764705882353
+426,"Transformers: The Movie, The (1986)","['Action', 'Animation', ""Children's"", 'Sci-Fi', 'Thriller', 'War']",2.84375
+427,To Kill a Mockingbird (1962),['Drama'],4.292237442922374
+428,Harold and Maude (1971),['Comedy'],3.8181818181818183
+429,"Day the Earth Stood Still, The (1951)","['Drama', 'Sci-Fi']",3.9381443298969074
+430,Duck Soup (1933),"['Comedy', 'War']",4.0
+431,Highlander (1986),"['Action', 'Adventure']",3.5359477124183005
+432,Fantasia (1940),"['Animation', ""Children's"", 'Musical']",3.7701149425287355
+433,Heathers (1989),['Comedy'],3.690058479532164
+434,Forbidden Planet (1956),['Sci-Fi'],3.8358208955223883
+435,Butch Cassidy and the Sundance Kid (1969),"['Action', 'Comedy', 'Western']",3.949074074074074
+436,"American Werewolf in London, An (1981)",['Horror'],3.5353535353535355
+437,Amityville 1992: It's About Time (1992),['Horror'],1.0
+438,Amityville 3-D (1983),['Horror'],1.1666666666666667
+439,Amityville: A New Generation (1993),['Horror'],1.0
+440,Amityville II: The Possession (1982),['Horror'],1.6428571428571428
+441,"Amityville Horror, The (1979)",['Horror'],2.5660377358490565
+442,"Amityville Curse, The (1990)",['Horror'],1.25
+443,"Birds, The (1963)",['Horror'],3.808641975308642
+444,"Blob, The (1958)","['Horror', 'Sci-Fi']",2.717391304347826
+445,"Body Snatcher, The (1945)",['Horror'],3.5
+446,Burnt Offerings (1976),['Horror'],2.4444444444444446
+447,Carrie (1976),['Horror'],3.5041322314049586
+448,"Omen, The (1976)",['Horror'],3.388235294117647
+449,Star Trek: The Motion Picture (1979),"['Action', 'Adventure', 'Sci-Fi']",3.034188034188034
+450,Star Trek V: The Final Frontier (1989),"['Action', 'Adventure', 'Sci-Fi']",2.3968253968253967
+451,Grease (1978),"['Comedy', 'Musical', 'Romance']",3.347058823529412
+452,Jaws 2 (1978),"['Action', 'Horror']",2.6666666666666665
+453,Jaws 3-D (1983),"['Action', 'Horror']",1.9375
+454,Bastard Out of Carolina (1996),['Drama'],2.875
+455,Jackie Chan's First Strike (1996),['Action'],3.2551724137931033
+456,Beverly Hills Ninja (1997),"['Action', 'Comedy']",2.3125
+457,Free Willy 3: The Rescue (1997),"['Adventure', ""Children's"", 'Drama']",1.7407407407407407
+458,Nixon (1995),['Drama'],3.1222222222222222
+459,"Cry, the Beloved Country (1995)",['Drama'],3.75
+460,"Crossing Guard, The (1995)",['Drama'],3.0
+461,Smoke (1995),['Drama'],3.6216216216216215
+462,Like Water For Chocolate (Como agua para chocolate) (1992),"['Drama', 'Romance']",3.804054054054054
+463,"Secret of Roan Inish, The (1994)",['Adventure'],3.859154929577465
+464,Vanya on 42nd Street (1994),['Drama'],3.5925925925925926
+465,"Jungle Book, The (1994)","['Adventure', ""Children's"", 'Romance']",3.5647058823529414
+466,Red Rock West (1992),['Thriller'],3.5961538461538463
+467,"Bronx Tale, A (1993)",['Drama'],3.7916666666666665
+468,Rudy (1993),['Drama'],3.3125
+469,Short Cuts (1993),['Drama'],3.7761194029850746
+470,Tombstone (1993),['Western'],3.6666666666666665
+471,Courage Under Fire (1996),"['Drama', 'War']",3.6108597285067874
+472,Dragonheart (1996),"['Action', 'Adventure', 'Fantasy']",3.0822784810126582
+473,James and the Giant Peach (1996),"['Animation', ""Children's"", 'Musical']",3.126984126984127
+474,Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963),"['Sci-Fi', 'War']",4.252577319587629
+475,Trainspotting (1996),['Drama'],3.884
+476,"First Wives Club, The (1996)",['Comedy'],3.01875
+477,Matilda (1996),"[""Children's"", 'Comedy']",3.210526315789474
+478,"Philadelphia Story, The (1940)","['Comedy', 'Romance']",4.115384615384615
+479,Vertigo (1958),"['Mystery', 'Thriller']",4.251396648044692
+480,North by Northwest (1959),"['Comedy', 'Thriller']",4.284916201117318
+481,"Apartment, The (1960)","['Comedy', 'Drama']",3.9365079365079363
+482,Some Like It Hot (1959),"['Comedy', 'Crime']",3.984375
+483,Casablanca (1942),"['Drama', 'Romance', 'War']",4.45679012345679
+484,"Maltese Falcon, The (1941)","['Film-Noir', 'Mystery']",4.2101449275362315
+485,My Fair Lady (1964),"['Musical', 'Romance']",3.816
+486,Sabrina (1954),"['Comedy', 'Romance']",3.796875
+487,Roman Holiday (1953),"['Comedy', 'Romance']",4.102941176470588
+488,Sunset Blvd. (1950),['Film-Noir'],4.2
+489,Notorious (1946),"['Film-Noir', 'Romance', 'Thriller']",4.115384615384615
+490,To Catch a Thief (1955),"['Comedy', 'Romance', 'Thriller']",4.02
+491,"Adventures of Robin Hood, The (1938)","['Action', 'Adventure']",3.791044776119403
+492,East of Eden (1955),['Drama'],3.864406779661017
+493,"Thin Man, The (1934)",['Mystery'],4.15
+494,His Girl Friday (1940),['Comedy'],4.0
+495,Around the World in 80 Days (1956),"['Adventure', 'Comedy']",3.6610169491525424
+496,It's a Wonderful Life (1946),['Drama'],4.121212121212121
+497,Bringing Up Baby (1938),['Comedy'],3.838235294117647
+498,"African Queen, The (1951)","['Action', 'Adventure', 'Romance', 'War']",4.184210526315789
+499,Cat on a Hot Tin Roof (1958),['Drama'],3.9516129032258065
+500,Fly Away Home (1996),"['Adventure', ""Children's""]",3.903225806451613
+501,Dumbo (1941),"['Animation', ""Children's"", 'Musical']",3.4959349593495936
+502,Bananas (1971),"['Comedy', 'War']",3.7017543859649122
+503,"Candidate, The (1972)",['Drama'],3.641025641025641
+504,Bonnie and Clyde (1967),"['Crime', 'Drama']",3.819672131147541
+505,Dial M for Murder (1954),"['Mystery', 'Thriller']",4.0
+506,Rebel Without a Cause (1955),['Drama'],3.8555555555555556
+507,"Streetcar Named Desire, A (1951)",['Drama'],3.816326530612245
+508,"People vs. Larry Flynt, The (1996)",['Drama'],3.5953488372093023
+509,My Left Foot (1989),['Drama'],3.8512396694214877
+510,"Magnificent Seven, The (1954)","['Action', 'Drama', 'Western']",3.9421487603305785
+511,Lawrence of Arabia (1962),"['Adventure', 'War']",4.23121387283237
+512,Wings of Desire (1987),"['Comedy', 'Drama', 'Romance']",4.0
+513,"Third Man, The (1949)","['Mystery', 'Thriller']",4.333333333333333
+514,Annie Hall (1977),"['Comedy', 'Romance']",3.911111111111111
+515,"Boot, Das (1981)","['Action', 'Drama', 'War']",4.203980099502488
+516,Local Hero (1983),['Comedy'],3.9682539682539684
+517,Manhattan (1979),"['Comedy', 'Drama', 'Romance']",3.769230769230769
+518,Miller's Crossing (1990),['Drama'],3.651685393258427
+519,"Treasure of the Sierra Madre, The (1948)",['Adventure'],4.1
+520,"Great Escape, The (1963)","['Adventure', 'War']",4.104838709677419
+521,"Deer Hunter, The (1978)","['Drama', 'War']",3.8333333333333335
+522,Down by Law (1986),"['Comedy', 'Drama']",3.7714285714285714
+523,Cool Hand Luke (1967),"['Comedy', 'Drama']",3.9939024390243905
+524,"Great Dictator, The (1940)",['Comedy'],4.021739130434782
+525,"Big Sleep, The (1946)","['Film-Noir', 'Mystery']",4.027397260273973
+526,Ben-Hur (1959),"['Action', 'Adventure', 'Drama']",3.8306451612903225
+527,Gandhi (1982),['Drama'],4.02051282051282
+528,"Killing Fields, The (1984)","['Drama', 'War']",4.132231404958677
+529,My Life as a Dog (Mitt liv som hund) (1985),['Drama'],3.978494623655914
+530,"Man Who Would Be King, The (1975)",['Adventure'],4.025
+531,Shine (1996),"['Drama', 'Romance']",3.9224806201550386
+532,Kama Sutra: A Tale of Love (1996),['Romance'],3.3181818181818183
+533,"Daytrippers, The (1996)",['Mystery'],3.6666666666666665
+534,Traveller (1997),['Drama'],3.3076923076923075
+535,Addicted to Love (1997),"['Comedy', 'Romance']",3.1666666666666665
+536,Ponette (1996),['Drama'],3.3
+537,My Own Private Idaho (1991),['Drama'],3.6333333333333333
+538,Anastasia (1997),"['Animation', ""Children's"", 'Musical']",3.4242424242424243
+539,Mouse Hunt (1997),"[""Children's"", 'Comedy']",2.477272727272727
+540,Money Train (1995),['Action'],2.511627906976744
+541,Mortal Kombat (1995),"['Action', 'Adventure']",2.877551020408163
+542,Pocahontas (1995),"['Animation', ""Children's"", 'Musical', 'Romance']",2.5294117647058822
+543,"Misérables, Les (1995)","['Drama', 'Musical']",3.619047619047619
+544,Things to Do in Denver when You're Dead (1995),"['Crime', 'Drama', 'Romance']",3.1549295774647885
+545,Vampire in Brooklyn (1995),"['Comedy', 'Romance']",1.8333333333333333
+546,Broken Arrow (1996),"['Action', 'Thriller']",3.031496062992126
+547,"Young Poisoner's Handbook, The (1995)",['Crime'],3.341463414634146
+548,"NeverEnding Story III, The (1994)","[""Children's"", 'Fantasy']",2.1666666666666665
+549,Rob Roy (1995),"['Drama', 'Romance', 'War']",3.5652173913043477
+550,Die Hard: With a Vengeance (1995),"['Action', 'Thriller']",3.2847682119205297
+551,Lord of Illusions (1995),['Horror'],2.4166666666666665
+552,Species (1995),['Sci-Fi'],2.8666666666666667
+553,"Walk in the Clouds, A (1995)","['Drama', 'Romance']",3.2857142857142856
+554,Waterworld (1995),"['Action', 'Adventure']",2.803921568627451
+555,White Man's Burden (1995),['Drama'],2.0
+556,Wild Bill (1995),['Western'],2.5
+557,Farinelli: il castrato (1994),"['Drama', 'Musical']",3.1176470588235294
+558,Heavenly Creatures (1994),"['Drama', 'Fantasy', 'Thriller']",3.6714285714285713
+559,Interview with the Vampire (1994),"['Drama', 'Horror']",3.1824817518248176
+560,"Kid in King Arthur's Court, A (1995)","['Adventure', ""Children's"", 'Comedy', 'Fantasy', 'Romance', 'Sci-Fi']",2.727272727272727
+561,Mary Shelley's Frankenstein (1994),"['Drama', 'Horror']",3.0677966101694913
+562,"Quick and the Dead, The (1995)","['Action', 'Adventure', 'Western']",3.2083333333333335
+563,Stephen King's The Langoliers (1995),['Horror'],2.413793103448276
+564,Tales from the Hood (1995),"['Comedy', 'Horror']",2.037037037037037
+565,Village of the Damned (1995),"['Horror', 'Thriller']",2.6818181818181817
+566,Clear and Present Danger (1994),"['Action', 'Adventure', 'Thriller']",3.569832402234637
+567,Wes Craven's New Nightmare (1994),['Horror'],2.8
+568,Speed (1994),"['Action', 'Romance', 'Thriller']",3.6478260869565218
+569,Wolf (1994),"['Drama', 'Horror']",2.701492537313433
+570,Wyatt Earp (1994),['Western'],3.1
+571,Another Stakeout (1993),"['Comedy', 'Thriller']",2.5
+572,Blown Away (1994),"['Action', 'Thriller']",2.7586206896551726
+573,Body Snatchers (1993),"['Horror', 'Sci-Fi', 'Thriller']",2.9393939393939394
+574,Boxing Helena (1993),"['Mystery', 'Romance', 'Thriller']",2.2
+575,City Slickers II: The Legend of Curly's Gold (1994),"['Comedy', 'Western']",2.5454545454545454
+576,Cliffhanger (1993),"['Action', 'Adventure', 'Crime']",3.021505376344086
+577,Coneheads (1993),"['Comedy', 'Sci-Fi']",2.2195121951219514
+578,Demolition Man (1993),"['Action', 'Sci-Fi']",3.152173913043478
+579,Fatal Instinct (1993),['Comedy'],2.6315789473684212
+580,"Englishman Who Went Up a Hill, But Came Down a Mountain, The (1995)","['Comedy', 'Romance']",3.375
+581,Kalifornia (1993),"['Drama', 'Thriller']",3.2203389830508473
+582,"Piano, The (1993)","['Drama', 'Romance']",3.6011904761904763
+583,Romeo Is Bleeding (1993),"['Crime', 'Thriller']",3.0
+584,"Secret Garden, The (1993)","[""Children's"", 'Drama']",3.5443037974683542
+585,Son in Law (1993),['Comedy'],2.4871794871794872
+586,Terminal Velocity (1994),['Action'],2.676470588235294
+587,"Hour of the Pig, The (1993)","['Drama', 'Mystery']",3.5714285714285716
+588,Beauty and the Beast (1991),"['Animation', ""Children's"", 'Musical']",3.792079207920792
+589,"Wild Bunch, The (1969)",['Western'],4.023255813953488
+590,Hellraiser: Bloodline (1996),"['Action', 'Horror', 'Sci-Fi']",2.0
+591,Primal Fear (1996),"['Drama', 'Thriller']",3.601123595505618
+592,True Crime (1995),"['Mystery', 'Thriller']",3.3333333333333335
+593,Stalingrad (1993),['War'],3.1666666666666665
+594,Heavy (1995),"['Drama', 'Romance']",2.4
+595,"Fan, The (1996)",['Thriller'],3.09375
+596,"Hunchback of Notre Dame, The (1996)","['Animation', ""Children's"", 'Musical']",3.377952755905512
+597,Eraser (1996),"['Action', 'Thriller']",3.150485436893204
+598,"Big Squeeze, The (1996)","['Comedy', 'Drama']",2.25
+599,Police Story 4: Project S (Chao ji ji hua) (1993),['Action'],1.0
+600,Daniel Defoe's Robinson Crusoe (1996),"[""Children's""]",3.0
+601,For Whom the Bell Tolls (1943),"['Adventure', 'War']",4.0
+602,"American in Paris, An (1951)","['Musical', 'Romance']",3.7
+603,Rear Window (1954),"['Mystery', 'Thriller']",4.3875598086124405
+604,It Happened One Night (1934),['Comedy'],4.012345679012346
+605,Meet Me in St. Louis (1944),['Musical'],3.3548387096774195
+606,All About Eve (1950),['Drama'],4.045454545454546
+607,Rebecca (1940),"['Romance', 'Thriller']",3.9696969696969697
+608,Spellbound (1945),"['Mystery', 'Romance', 'Thriller']",3.933333333333333
+609,Father of the Bride (1950),['Comedy'],3.5833333333333335
+610,Gigi (1958),['Musical'],3.658536585365854
+611,Laura (1944),"['Crime', 'Film-Noir', 'Mystery']",4.1
+612,Lost Horizon (1937),['Drama'],3.9411764705882355
+613,My Man Godfrey (1936),['Comedy'],4.037037037037037
+614,Giant (1956),['Drama'],3.7450980392156863
+615,"39 Steps, The (1935)",['Thriller'],4.0508474576271185
+616,Night of the Living Dead (1968),"['Horror', 'Sci-Fi']",3.421875
+617,"Blue Angel, The (Blaue Engel, Der) (1930)",['Drama'],3.7777777777777777
+618,Picnic (1955),['Drama'],3.611111111111111
+619,Extreme Measures (1996),"['Drama', 'Thriller']",3.171875
+620,"Chamber, The (1996)",['Drama'],3.0930232558139537
+621,"Davy Crockett, King of the Wild Frontier (1955)",['Western'],2.909090909090909
+622,Swiss Family Robinson (1960),"['Adventure', ""Children's""]",3.358974358974359
+623,Angels in the Outfield (1994),"[""Children's"", 'Comedy']",2.923076923076923
+624,"Three Caballeros, The (1945)","['Animation', ""Children's"", 'Musical']",3.272727272727273
+625,"Sword in the Stone, The (1963)","['Animation', ""Children's""]",3.3292682926829267
+626,So Dear to My Heart (1949),"[""Children's"", 'Drama']",3.25
+627,Robin Hood: Prince of Thieves (1991),['Drama'],3.2266666666666666
+628,Sleepers (1996),"['Crime', 'Drama']",3.514792899408284
+629,Victor/Victoria (1982),"['Comedy', 'Musical']",3.3376623376623376
+630,"Great Race, The (1965)","['Comedy', 'Musical']",3.2903225806451615
+631,"Crying Game, The (1992)","['Action', 'Drama', 'Romance', 'War']",3.6218487394957983
+632,Sophie's Choice (1982),['Drama'],3.896551724137931
+633,"Christmas Carol, A (1938)",['Drama'],4.057971014492754
+634,Microcosmos: Le peuple de l'herbe (1996),['Documentary'],3.75
+635,"Fog, The (1980)",['Horror'],2.739130434782609
+636,Escape from New York (1981),"['Action', 'Adventure', 'Sci-Fi', 'Thriller']",3.241758241758242
+637,"Howling, The (1981)","['Comedy', 'Horror']",3.026315789473684
+638,"Return of Martin Guerre, The (Retour de Martin Guerre, Le) (1982)",['Drama'],3.772727272727273
+639,"Tin Drum, The (Blechtrommel, Die) (1979)",['Drama'],3.7
+640,"Cook the Thief His Wife & Her Lover, The (1989)",['Drama'],3.024390243902439
+641,Paths of Glory (1957),"['Drama', 'War']",4.212121212121212
+642,"Grifters, The (1990)","['Crime', 'Drama', 'Film-Noir']",3.4831460674157304
+643,The Innocent (1994),"['Drama', 'Romance']",3.0
+644,"Thin Blue Line, The (1988)",['Documentary'],3.7714285714285714
+645,Paris Is Burning (1990),['Documentary'],3.814814814814815
+646,Once Upon a Time in the West (1969),['Western'],3.8684210526315788
+647,Ran (1985),"['Drama', 'War']",4.1
+648,"Quiet Man, The (1952)","['Comedy', 'Romance']",4.029850746268656
+649,Once Upon a Time in America (1984),"['Crime', 'Drama', 'Thriller']",3.4
+650,"Seventh Seal, The (Sjunde inseglet, Det) (1957)",['Drama'],3.5416666666666665
+651,Glory (1989),"['Action', 'Drama', 'War']",4.076023391812866
+652,Rosencrantz and Guildenstern Are Dead (1990),"['Comedy', 'Drama']",3.888888888888889
+653,Touch of Evil (1958),"['Crime', 'Film-Noir', 'Thriller']",3.911764705882353
+654,Chinatown (1974),"['Film-Noir', 'Mystery', 'Thriller']",4.136054421768708
+655,Stand by Me (1986),"['Adventure', 'Comedy', 'Drama']",3.881057268722467
+656,M (1931),"['Crime', 'Film-Noir', 'Thriller']",4.0
+657,"Manchurian Candidate, The (1962)","['Film-Noir', 'Thriller']",4.259541984732825
+658,Pump Up the Volume (1990),['Drama'],3.4177215189873418
+659,Arsenic and Old Lace (1944),"['Comedy', 'Mystery', 'Thriller']",4.078260869565217
+660,Fried Green Tomatoes (1991),['Drama'],3.764705882352941
+661,High Noon (1952),['Western'],4.1022727272727275
+662,Somewhere in Time (1980),"['Drama', 'Romance']",3.426829268292683
+663,Being There (1979),['Comedy'],3.9051724137931036
+664,"Paris, Texas (1984)",['Drama'],3.5434782608695654
+665,Alien 3 (1992),"['Action', 'Horror', 'Sci-Fi', 'Thriller']",2.83
+666,Blood For Dracula (Andy Warhol's Dracula) (1974),['Horror'],2.4
+667,Audrey Rose (1977),['Horror'],2.1666666666666665
+668,Blood Beach (1981),"['Action', 'Horror']",2.1666666666666665
+669,Body Parts (1991),['Horror'],1.6153846153846154
+670,Body Snatchers (1993),"['Horror', 'Sci-Fi', 'Thriller']",3.0
+671,Bride of Frankenstein (1935),['Horror'],3.608695652173913
+672,Candyman (1992),['Horror'],2.723076923076923
+673,Cape Fear (1962),"['Film-Noir', 'Thriller']",3.5232558139534884
+674,Cat People (1982),['Horror'],2.8958333333333335
+675,"Nosferatu (Nosferatu, eine Symphonie des Grauens) (1922)",['Horror'],3.5555555555555554
+676,"Crucible, The (1996)",['Drama'],3.3376623376623376
+677,Fire on the Mountain (1996),['Documentary'],3.0
+678,Volcano (1997),"['Drama', 'Thriller']",2.808219178082192
+679,Conan the Barbarian (1981),"['Action', 'Adventure']",3.046728971962617
+680,Kull the Conqueror (1997),"['Action', 'Adventure']",2.5588235294117645
+681,Wishmaster (1997),['Horror'],2.4444444444444446
+682,I Know What You Did Last Summer (1997),"['Horror', 'Mystery', 'Thriller']",3.06
+683,Rocket Man (1997),['Comedy'],2.4081632653061225
+684,In the Line of Fire (1993),"['Action', 'Thriller']",3.7928994082840237
+685,Executive Decision (1996),"['Action', 'Thriller']",3.356687898089172
+686,"Perfect World, A (1993)","['Action', 'Drama']",3.68
+687,McHale's Navy (1997),"['Comedy', 'War']",2.1884057971014492
+688,Leave It to Beaver (1997),['Comedy'],1.8409090909090908
+689,"Jackal, The (1997)","['Action', 'Thriller']",3.1494252873563218
+690,Seven Years in Tibet (1997),"['Drama', 'War']",3.458064516129032
+691,Dark City (1998),"['Film-Noir', 'Sci-Fi', 'Thriller']",3.5
+692,"American President, The (1995)","['Comedy', 'Drama', 'Romance']",3.6280487804878048
+693,Casino (1995),['Drama'],3.6483516483516483
+694,Persuasion (1995),['Romance'],4.045454545454546
+695,Kicking and Screaming (1995),"['Comedy', 'Drama']",2.923076923076923
+696,City Hall (1996),"['Drama', 'Thriller']",3.1392405063291138
+697,"Basketball Diaries, The (1995)",['Drama'],3.425
+698,"Browning Version, The (1994)",['Drama'],3.0
+699,Little Women (1994),['Drama'],3.676470588235294
+700,Miami Rhapsody (1995),['Comedy'],2.6
+701,"Wonderful, Horrible Life of Leni Riefenstahl, The (1993)",['Documentary'],4.0
+702,Barcelona (1994),"['Comedy', 'Romance']",3.018867924528302
+703,Widows' Peak (1994),['Drama'],3.5789473684210527
+704,"House of the Spirits, The (1993)","['Drama', 'Romance']",3.0416666666666665
+705,Singin' in the Rain (1952),"['Musical', 'Romance']",3.9927007299270074
+706,Bad Moon (1996),['Horror'],2.6666666666666665
+707,Enchanted April (1991),['Drama'],3.9285714285714284
+708,"Sex, Lies, and Videotape (1989)",['Drama'],3.4752475247524752
+709,Strictly Ballroom (1992),"['Comedy', 'Romance']",4.028846153846154
+710,Better Off Dead... (1985),['Comedy'],3.569620253164557
+711,"Substance of Fire, The (1996)",['Drama'],4.0
+712,Tin Men (1987),"['Comedy', 'Drama']",3.0784313725490198
+713,Othello (1995),['Drama'],3.611111111111111
+714,Carrington (1995),"['Drama', 'Romance']",3.230769230769231
+715,To Die For (1995),"['Comedy', 'Drama']",3.2758620689655173
+716,Home for the Holidays (1995),"['Drama', 'Romance']",3.1551724137931036
+717,"Juror, The (1996)","['Drama', 'Thriller']",2.817073170731707
+718,In the Bleak Midwinter (1995),['Comedy'],3.6875
+719,Canadian Bacon (1994),"['Comedy', 'War']",2.413793103448276
+720,First Knight (1995),"['Action', 'Adventure', 'Drama', 'Romance']",3.0232558139534884
+721,Mallrats (1995),['Comedy'],3.4444444444444446
+722,Nine Months (1995),['Comedy'],2.9310344827586206
+723,Boys on the Side (1995),"['Comedy', 'Drama']",3.1470588235294117
+724,Circle of Friends (1995),"['Drama', 'Romance']",3.486842105263158
+725,Exit to Eden (1994),['Comedy'],2.75
+726,Fluke (1995),"[""Children's"", 'Drama']",2.4285714285714284
+727,Immortal Beloved (1994),"['Drama', 'Romance']",3.4603174603174605
+728,Junior (1994),"['Comedy', 'Sci-Fi']",3.022222222222222
+729,Nell (1994),['Drama'],3.4814814814814814
+730,"Queen Margot (Reine Margot, La) (1994)","['Drama', 'Romance']",3.5
+731,"Corrina, Corrina (1994)","['Comedy', 'Drama', 'Romance']",3.1538461538461537
+732,Dave (1993),"['Comedy', 'Romance']",3.65
+733,Go Fish (1994),"['Drama', 'Romance']",3.2
+734,Made in America (1993),['Comedy'],2.5185185185185186
+735,Philadelphia (1993),['Drama'],3.854014598540146
+736,Shadowlands (1993),"['Drama', 'Romance']",3.9358974358974357
+737,Sirens (1994),"['Comedy', 'Drama']",2.983050847457627
+738,Threesome (1994),"['Comedy', 'Romance']",2.838709677419355
+739,Pretty Woman (1990),"['Comedy', 'Romance']",3.323170731707317
+740,Jane Eyre (1996),"['Drama', 'Romance']",3.4761904761904763
+741,"Last Supper, The (1995)","['Drama', 'Thriller']",3.4482758620689653
+742,Ransom (1996),"['Drama', 'Thriller']",3.644194756554307
+743,"Crow: City of Angels, The (1996)","['Action', 'Thriller']",1.9487179487179487
+744,Michael Collins (1996),"['Drama', 'War']",3.4565217391304346
+745,"Ruling Class, The (1972)",['Comedy'],3.875
+746,Real Genius (1985),['Comedy'],3.6638655462184873
+747,Benny & Joon (1993),"['Comedy', 'Romance']",3.4607843137254903
+748,"Saint, The (1997)","['Action', 'Romance', 'Thriller']",3.1234177215189876
+749,"MatchMaker, The (1997)","['Comedy', 'Romance']",3.176470588235294
+750,Amistad (1997),['Drama'],3.8548387096774195
+751,Tomorrow Never Dies (1997),"['Action', 'Romance', 'Thriller']",3.4277777777777776
+752,"Replacement Killers, The (1998)","['Action', 'Thriller']",3.3076923076923075
+753,Burnt By the Sun (1994),['Drama'],3.7083333333333335
+754,Red Corner (1997),"['Crime', 'Thriller']",3.3859649122807016
+755,Jumanji (1995),"['Action', 'Adventure', ""Children's"", 'Fantasy', 'Sci-Fi']",3.3125
+756,Father of the Bride Part II (1995),['Comedy'],2.8984375
+757,Across the Sea of Time (1995),['Documentary'],2.75
+758,Lawnmower Man 2: Beyond Cyberspace (1996),"['Sci-Fi', 'Thriller']",1.7142857142857142
+759,Fair Game (1995),['Action'],2.1818181818181817
+760,Screamers (1995),['Sci-Fi'],2.652173913043478
+761,Nick of Time (1995),"['Action', 'Thriller']",3.0454545454545454
+762,Beautiful Girls (1996),['Drama'],3.391304347826087
+763,Happy Gilmore (1996),['Comedy'],3.389261744966443
+764,If Lucy Fell (1996),"['Comedy', 'Romance']",2.7586206896551726
+765,Boomerang (1992),"['Comedy', 'Romance']",2.8125
+766,Man of the Year (1995),['Documentary'],3.111111111111111
+767,"Addiction, The (1995)",['Horror'],2.1818181818181817
+768,Casper (1995),"['Adventure', ""Children's""]",3.076923076923077
+769,Congo (1995),"['Action', 'Adventure', 'Mystery', 'Sci-Fi']",2.4523809523809526
+770,Devil in a Blue Dress (1995),"['Crime', 'Film-Noir', 'Mystery', 'Thriller']",3.3859649122807016
+771,Johnny Mnemonic (1995),"['Action', 'Sci-Fi', 'Thriller']",2.6341463414634148
+772,Kids (1995),['Drama'],3.061224489795918
+773,Mute Witness (1994),['Thriller'],2.9411764705882355
+774,"Prophecy, The (1995)",['Horror'],2.9375
+775,Something to Talk About (1995),"['Comedy', 'Drama', 'Romance']",2.769230769230769
+776,Three Wishes (1995),['Drama'],3.2222222222222223
+777,Castle Freak (1995),['Horror'],1.25
+778,Don Juan DeMarco (1995),"['Comedy', 'Drama', 'Romance']",3.5526315789473686
+779,Drop Zone (1994),['Action'],2.5483870967741935
+780,Dumb & Dumber (1994),['Comedy'],3.0
+781,French Kiss (1995),"['Comedy', 'Romance']",3.3333333333333335
+782,Little Odessa (1994),['Drama'],2.6
+783,Milk Money (1994),"['Comedy', 'Romance']",2.72972972972973
+784,Beyond Bedlam (1993),"['Drama', 'Horror']",1.0
+785,Only You (1994),"['Comedy', 'Romance']",3.1538461538461537
+786,"Perez Family, The (1995)","['Comedy', 'Romance']",2.642857142857143
+787,Roommates (1995),"['Comedy', 'Drama']",3.230769230769231
+788,Relative Fear (1994),"['Horror', 'Thriller']",1.6666666666666667
+789,Swimming with Sharks (1995),"['Comedy', 'Drama']",3.574468085106383
+790,Tommy Boy (1995),['Comedy'],2.909090909090909
+791,"Baby-Sitters Club, The (1995)","[""Children's""]",2.5
+792,Bullets Over Broadway (1994),['Comedy'],3.7209302325581395
+793,Crooklyn (1994),['Comedy'],3.5
+794,It Could Happen to You (1994),"['Drama', 'Romance']",3.652173913043478
+795,Richie Rich (1994),"[""Children's"", 'Comedy']",2.4285714285714284
+796,Speechless (1994),"['Comedy', 'Romance']",3.0833333333333335
+797,Timecop (1994),"['Action', 'Sci-Fi']",3.096774193548387
+798,Bad Company (1995),['Action'],2.2222222222222223
+799,Boys Life (1995),['Drama'],3.2
+800,In the Mouth of Madness (1995),"['Horror', 'Thriller']",2.8846153846153846
+801,"Air Up There, The (1994)",['Comedy'],2.8125
+802,Hard Target (1993),"['Action', 'Adventure', 'Crime', 'Thriller']",2.7
+803,Heaven & Earth (1993),"['Action', 'Drama', 'War']",2.5555555555555554
+804,Jimmy Hollywood (1994),['Comedy'],2.875
+805,Manhattan Murder Mystery (1993),"['Comedy', 'Mystery']",3.6296296296296298
+806,Menace II Society (1993),"['Action', 'Crime', 'Drama']",3.46
+807,Poetic Justice (1993),['Drama'],2.7777777777777777
+808,"Program, The (1993)","['Action', 'Drama']",2.838709677419355
+809,Rising Sun (1993),"['Action', 'Drama', 'Mystery']",2.9069767441860463
+810,"Shadow, The (1994)",['Action'],2.888888888888889
+811,Thirty-Two Short Films About Glenn Gould (1993),['Documentary'],3.9444444444444446
+812,Andre (1994),"['Adventure', ""Children's""]",3.111111111111111
+813,"Celluloid Closet, The (1995)",['Documentary'],3.892857142857143
+814,"Great Day in Harlem, A (1994)",['Documentary'],5.0
+815,One Fine Day (1996),"['Drama', 'Romance']",3.232142857142857
+816,Candyman: Farewell to the Flesh (1995),['Horror'],2.4285714285714284
+817,Frisk (1995),['Drama'],2.6666666666666665
+818,Girl 6 (1996),['Comedy'],2.76
+819,Eddie (1996),['Comedy'],2.7
+820,Space Jam (1996),"['Adventure', 'Animation', ""Children's"", 'Comedy', 'Fantasy']",2.774193548387097
+821,Mrs. Winterbourne (1996),"['Comedy', 'Romance']",3.0454545454545454
+822,Faces (1968),['Drama'],3.0
+823,Mulholland Falls (1996),"['Crime', 'Film-Noir', 'Thriller']",2.8780487804878048
+824,"Great White Hype, The (1996)",['Comedy'],2.7551020408163267
+825,"Arrival, The (1996)","['Action', 'Sci-Fi', 'Thriller']",3.036144578313253
+826,"Phantom, The (1996)",['Adventure'],2.575
+827,Daylight (1996),"['Action', 'Adventure', 'Thriller']",2.7719298245614037
+828,Alaska (1996),"['Adventure', ""Children's""]",2.6923076923076925
+829,Fled (1996),"['Action', 'Adventure']",2.6470588235294117
+830,Power 98 (1995),"['Action', 'Mystery', 'Thriller']",1.0
+831,Escape from L.A. (1996),"['Action', 'Adventure', 'Sci-Fi', 'Thriller']",2.4615384615384617
+832,Bogus (1996),"[""Children's"", 'Drama', 'Fantasy']",2.5454545454545454
+833,Bulletproof (1996),['Action'],3.204081632653061
+834,Halloween: The Curse of Michael Myers (1995),"['Horror', 'Thriller']",2.2
+835,"Gay Divorcee, The (1934)","['Comedy', 'Musical', 'Romance']",3.8666666666666667
+836,Ninotchka (1939),"['Comedy', 'Romance']",3.769230769230769
+837,Meet John Doe (1941),['Drama'],3.92
+838,In the Line of Duty 2 (1987),['Action'],2.75
+839,Loch Ness (1995),"['Horror', 'Thriller']",2.5
+840,Last Man Standing (1996),"['Action', 'Drama', 'Western']",2.660377358490566
+841,"Glimmer Man, The (1996)","['Action', 'Thriller']",2.75
+842,Pollyanna (1960),"[""Children's"", 'Comedy', 'Drama']",3.1481481481481484
+843,"Shaggy Dog, The (1959)","[""Children's"", 'Comedy']",3.0
+844,Freeway (1996),['Crime'],3.357142857142857
+845,That Thing You Do! (1996),['Comedy'],3.465909090909091
+846,To Gillian on Her 37th Birthday (1996),"['Drama', 'Romance']",3.0681818181818183
+847,Looking for Richard (1996),"['Documentary', 'Drama']",3.727272727272727
+848,"Murder, My Sweet (1944)","['Film-Noir', 'Thriller']",3.5555555555555554
+849,Days of Thunder (1990),"['Action', 'Romance']",2.7169811320754715
+850,"Perfect Candidate, A (1996)",['Documentary'],4.0
+851,Two or Three Things I Know About Her (1966),['Drama'],3.75
+852,"Bloody Child, The (1996)","['Drama', 'Thriller']",1.0
+853,Braindead (1992),"['Comedy', 'Horror']",3.857142857142857
+854,Bad Taste (1987),"['Comedy', 'Horror']",3.375
+855,Diva (1981),"['Action', 'Drama', 'Mystery', 'Romance', 'Thriller']",3.727272727272727
+856,Night on Earth (1991),"['Comedy', 'Drama']",3.8333333333333335
+857,Paris Was a Woman (1995),['Documentary'],3.0
+858,Amityville: Dollhouse (1996),['Horror'],1.0
+859,April Fool's Day (1986),"['Comedy', 'Horror']",2.6666666666666665
+860,"Believers, The (1987)","['Horror', 'Thriller']",2.25
+861,Nosferatu a Venezia (1986),['Horror'],2.3333333333333335
+862,Jingle All the Way (1996),"['Adventure', ""Children's"", 'Comedy']",2.111111111111111
+863,"Garden of Finzi-Contini, The (Giardino dei Finzi-Contini, Il) (1970)",['Drama'],3.9166666666666665
+864,My Fellow Americans (1996),['Comedy'],3.1627906976744184
+865,"Ice Storm, The (1997)",['Drama'],3.4761904761904763
+866,Michael (1996),"['Comedy', 'Romance']",3.319327731092437
+867,"Whole Wide World, The (1996)",['Drama'],4.0
+868,Hearts and Minds (1996),['Drama'],3.8
+869,Fools Rush In (1997),"['Comedy', 'Romance']",3.0
+870,Touch (1997),['Romance'],2.7777777777777777
+871,Vegas Vacation (1997),['Comedy'],2.4
+872,Love Jones (1997),['Romance'],3.0952380952380953
+873,Picture Perfect (1997),"['Comedy', 'Romance']",2.962962962962963
+874,Career Girls (1997),['Drama'],3.2564102564102564
+875,She's So Lovely (1997),"['Drama', 'Romance']",2.7358490566037736
+876,Money Talks (1997),"['Action', 'Comedy']",2.702127659574468
+877,Excess Baggage (1997),"['Adventure', 'Romance']",2.5384615384615383
+878,That Darn Cat! (1997),"[""Children's"", 'Comedy', 'Mystery']",2.515151515151515
+879,"Peacemaker, The (1997)","['Action', 'Thriller', 'War']",3.2720588235294117
+880,Soul Food (1997),['Drama'],3.169491525423729
+881,Money Talks (1997),"['Action', 'Comedy']",2.933333333333333
+882,Washington Square (1997),['Drama'],3.2941176470588234
+883,Telling Lies in America (1997),['Drama'],3.230769230769231
+884,Year of the Horse (1997),['Documentary'],3.2857142857142856
+885,Phantoms (1998),['Horror'],2.230769230769231
+886,"Life Less Ordinary, A (1997)","['Romance', 'Thriller']",3.0754716981132075
+887,Eve's Bayou (1997),['Drama'],3.609375
+888,One Night Stand (1997),['Drama'],3.466666666666667
+889,"Tango Lesson, The (1997)",['Romance'],3.3846153846153846
+890,Mortal Kombat: Annihilation (1997),"['Action', 'Adventure']",1.9534883720930232
+891,Bent (1997),"['Drama', 'War']",2.6666666666666665
+892,Flubber (1997),"[""Children's"", 'Comedy', 'Fantasy']",2.7547169811320753
+893,For Richer or Poorer (1997),['Comedy'],2.4285714285714284
+894,Home Alone 3 (1997),"[""Children's"", 'Comedy']",1.894736842105263
+895,Scream 2 (1997),"['Horror', 'Thriller']",3.2169811320754715
+896,"Sweet Hereafter, The (1997)",['Drama'],3.772727272727273
+897,Time Tracers (1995),"['Action', 'Adventure', 'Sci-Fi']",1.5
+898,"Postman, The (1997)",['Drama'],3.2241379310344827
+899,"Winter Guest, The (1997)",['Drama'],3.4444444444444446
+900,Kundun (1997),['Drama'],3.6904761904761907
+901,Mr. Magoo (1997),['Comedy'],1.9166666666666667
+902,"Big Lebowski, The (1998)","['Comedy', 'Crime', 'Mystery', 'Thriller']",3.8333333333333335
+903,Afterglow (1997),"['Drama', 'Romance']",3.111111111111111
+904,Ma vie en rose (My Life in Pink) (1997),"['Comedy', 'Drama']",3.45
+905,Great Expectations (1998),"['Drama', 'Romance']",3.2222222222222223
+906,Oscar & Lucinda (1997),"['Drama', 'Romance']",3.1904761904761907
+907,Vermin (1998),['Comedy'],2.0
+908,Half Baked (1998),['Comedy'],2.5
+909,Dangerous Beauty (1998),['Drama'],3.769230769230769
+910,Nil By Mouth (1997),['Drama'],2.0
+911,Twilight (1998),"['Crime', 'Drama']",2.5
+912,U.S. Marshalls (1998),"['Action', 'Thriller']",3.0
+913,Love and Death on Long Island (1997),['Comedy'],2.5
+914,Wild Things (1998),"['Crime', 'Drama', 'Mystery', 'Thriller']",2.727272727272727
+915,Primary Colors (1998),['Drama'],3.923076923076923
+916,Lost in Space (1998),"['Action', 'Sci-Fi', 'Thriller']",3.1666666666666665
+917,Mercury Rising (1998),"['Action', 'Drama', 'Thriller']",3.4285714285714284
+918,City of Angels (1998),['Romance'],3.0
+919,"City of Lost Children, The (1995)","['Adventure', 'Sci-Fi']",3.7916666666666665
+920,Two Bits (1995),['Drama'],2.2
+921,Farewell My Concubine (1993),"['Drama', 'Romance']",3.9782608695652173
+922,Dead Man (1995),['Western'],3.823529411764706
+923,Raise the Red Lantern (1991),['Drama'],4.155172413793103
+924,White Squall (1996),"['Adventure', 'Drama']",3.4
+925,Unforgettable (1996),"['Sci-Fi', 'Thriller']",3.323529411764706
+926,Down Periscope (1996),['Comedy'],2.702970297029703
+927,"Flower of My Secret, The (Flor de mi secreto, La) (1995)",['Drama'],3.1666666666666665
+928,"Craft, The (1996)","['Drama', 'Horror']",3.1153846153846154
+929,Harriet the Spy (1996),"[""Children's"", 'Comedy']",2.7
+930,Chain Reaction (1996),"['Action', 'Adventure', 'Thriller']",2.7
+931,"Island of Dr. Moreau, The (1996)","['Sci-Fi', 'Thriller']",2.1578947368421053
+932,First Kid (1996),"[""Children's"", 'Comedy']",2.925
+933,"Funeral, The (1996)",['Drama'],2.4285714285714284
+934,"Preacher's Wife, The (1996)",['Drama'],2.926470588235294
+935,Paradise Road (1997),"['Drama', 'War']",3.2857142857142856
+936,Brassed Off (1996),"['Comedy', 'Drama', 'Romance']",3.9375
+937,"Thousand Acres, A (1997)",['Drama'],3.4054054054054053
+938,"Smile Like Yours, A (1997)","['Comedy', 'Romance']",2.88
+939,Murder in the First (1995),"['Drama', 'Thriller']",3.6
+940,Airheads (1994),['Comedy'],2.34375
+941,With Honors (1994),"['Comedy', 'Drama']",3.0652173913043477
+942,What's Love Got to Do with It (1993),['Drama'],3.488888888888889
+943,Killing Zoe (1994),['Thriller'],3.475
+944,Renaissance Man (1994),"['Comedy', 'Drama', 'War']",3.0
+945,Charade (1963),"['Comedy', 'Mystery', 'Romance', 'Thriller']",3.925
+946,"Fox and the Hound, The (1981)","['Animation', ""Children's""]",3.1475409836065573
+947,"Big Blue, The (Grand bleu, Le) (1988)","['Adventure', 'Romance']",3.235294117647059
+948,Booty Call (1997),"['Comedy', 'Romance']",2.1666666666666665
+949,How to Make an American Quilt (1995),"['Drama', 'Romance']",3.3380281690140845
+950,Georgia (1995),['Drama'],2.9
+951,"Indian in the Cupboard, The (1995)","['Adventure', ""Children's"", 'Fantasy']",2.8205128205128207
+952,Blue in the Face (1995),['Comedy'],3.1777777777777776
+953,Unstrung Heroes (1995),"['Comedy', 'Drama']",3.3181818181818183
+954,Unzipped (1995),['Documentary'],3.5454545454545454
+955,Before Sunrise (1995),"['Drama', 'Romance']",3.4081632653061225
+956,Nobody's Fool (1994),['Drama'],3.608695652173913
+957,Pushing Hands (1992),['Comedy'],2.0
+958,To Live (Huozhe) (1994),['Drama'],3.7857142857142856
+959,Dazed and Confused (1993),['Comedy'],3.46875
+960,Naked (1993),['Drama'],3.24
+961,Orlando (1993),['Drama'],3.6176470588235294
+962,Ruby in Paradise (1993),['Drama'],3.130434782608696
+963,Some Folks Call It a Sling Blade (1993),"['Drama', 'Thriller']",4.2926829268292686
+964,"Month by the Lake, A (1995)","['Comedy', 'Drama']",3.3333333333333335
+965,Funny Face (1957),"['Comedy', 'Musical']",3.6666666666666665
+966,"Affair to Remember, An (1957)",['Romance'],4.1923076923076925
+967,Little Lord Fauntleroy (1936),['Drama'],3.1666666666666665
+968,"Inspector General, The (1949)",['Musical'],3.7222222222222223
+969,Winnie the Pooh and the Blustery Day (1968),"['Animation', ""Children's""]",3.8
+970,Hear My Song (1991),['Comedy'],3.25
+971,Mediterraneo (1991),"['Comedy', 'War']",3.676470588235294
+972,Passion Fish (1992),['Drama'],3.1785714285714284
+973,Grateful Dead (1995),['Documentary'],3.5
+974,Eye for an Eye (1996),"['Drama', 'Thriller']",3.03125
+975,Fear (1996),['Thriller'],3.159090909090909
+976,Solo (1996),"['Action', 'Sci-Fi', 'Thriller']",1.8333333333333333
+977,"Substitute, The (1996)",['Action'],2.693877551020408
+978,Heaven's Prisoners (1996),"['Mystery', 'Thriller']",2.5185185185185186
+979,"Trigger Effect, The (1996)","['Drama', 'Thriller']",3.2
+980,Mother Night (1996),['Drama'],3.1818181818181817
+981,Dangerous Ground (1997),['Drama'],1.75
+982,Maximum Risk (1996),"['Action', 'Adventure', 'Thriller']",2.8
+983,"Rich Man's Wife, The (1996)",['Thriller'],2.4
+984,Shadow Conspiracy (1997),['Thriller'],2.8636363636363638
+985,Blood & Wine (1997),['Drama'],2.8636363636363638
+986,Turbulence (1997),['Thriller'],2.5652173913043477
+987,Underworld (1997),['Thriller'],2.5
+988,"Beautician and the Beast, The (1997)","['Comedy', 'Romance']",2.313953488372093
+989,Cats Don't Dance (1997),"['Animation', ""Children's"", 'Musical']",2.84375
+990,Anna Karenina (1997),"['Drama', 'Romance']",3.090909090909091
+991,Keys to Tulsa (1997),['Crime'],2.24
+992,Head Above Water (1996),"['Comedy', 'Thriller']",3.0
+993,Hercules (1997),"['Adventure', 'Animation', ""Children's"", 'Comedy', 'Musical']",3.515151515151515
+994,"Last Time I Committed Suicide, The (1997)",['Drama'],2.2857142857142856
+995,"Kiss Me, Guido (1997)",['Comedy'],3.161290322580645
+996,"Big Green, The (1995)","[""Children's"", 'Comedy']",2.5
+997,Stuart Saves His Family (1995),['Comedy'],2.125
+998,Cabin Boy (1994),['Comedy'],2.5625
+999,Clean Slate (1994),['Comedy'],2.8
+1000,Lightning Jack (1994),"['Comedy', 'Western']",3.0
+1001,"Stupids, The (1996)",['Comedy'],2.0
+1002,"Pest, The (1997)",['Comedy'],1.875
+1003,That Darn Cat! (1997),"[""Children's"", 'Comedy', 'Mystery']",2.25
+1004,Geronimo: An American Legend (1993),"['Drama', 'Western']",3.111111111111111
+1005,"Double vie de Véronique, La (Double Life of Veronique, The) (1991)",['Drama'],3.6818181818181817
+1006,Until the End of the World (Bis ans Ende der Welt) (1991),"['Drama', 'Sci-Fi']",2.8260869565217392
+1007,Waiting for Guffman (1996),['Comedy'],4.127659574468085
+1008,I Shot Andy Warhol (1996),['Drama'],3.3783783783783785
+1009,Stealing Beauty (1996),['Drama'],3.375
+1010,Basquiat (1996),['Drama'],3.25
+1011,2 Days in the Valley (1996),['Crime'],3.225806451612903
+1012,Private Parts (1997),"['Comedy', 'Drama']",3.53
+1013,Anaconda (1997),"['Action', 'Adventure', 'Thriller']",2.289473684210526
+1014,Romy and Michele's High School Reunion (1997),['Comedy'],3.061224489795918
+1015,Shiloh (1997),"[""Children's"", 'Drama']",2.8333333333333335
+1016,Con Air (1997),"['Action', 'Adventure', 'Thriller']",3.45985401459854
+1017,Trees Lounge (1996),['Drama'],3.24
+1018,Tie Me Up! Tie Me Down! (1990),['Drama'],3.1875
+1019,"Die xue shuang xiong (Killer, The) (1989)","['Action', 'Thriller']",3.967741935483871
+1020,Gaslight (1944),"['Mystery', 'Thriller']",3.8857142857142857
+1021,8 1/2 (1963),['Drama'],3.8157894736842106
+1022,"Fast, Cheap & Out of Control (1997)",['Documentary'],3.4375
+1023,Fathers' Day (1997),['Comedy'],2.5806451612903225
+1024,Mrs. Dalloway (1997),['Romance'],3.6
+1025,Fire Down Below (1997),"['Action', 'Drama', 'Thriller']",2.9318181818181817
+1026,"Lay of the Land, The (1997)","['Comedy', 'Drama']",2.5
+1027,"Shooter, The (1995)",['Action'],2.6666666666666665
+1028,Grumpier Old Men (1995),"['Comedy', 'Romance']",3.0405405405405403
+1029,Jury Duty (1995),['Comedy'],2.0
+1030,"Beverly Hillbillies, The (1993)",['Comedy'],2.25
+1031,Lassie (1994),"['Adventure', ""Children's""]",2.2857142857142856
+1032,Little Big League (1994),"[""Children's"", 'Comedy']",2.875
+1033,Homeward Bound II: Lost in San Francisco (1996),"['Adventure', ""Children's""]",2.78125
+1034,"Quest, The (1996)","['Action', 'Adventure']",2.5185185185185186
+1035,Cool Runnings (1993),['Comedy'],3.161764705882353
+1036,Drop Dead Fred (1991),"['Comedy', 'Fantasy']",2.75
+1037,Grease 2 (1982),"['Comedy', 'Musical', 'Romance']",2.0
+1038,Switchback (1997),['Thriller'],2.823529411764706
+1039,Hamlet (1996),['Drama'],4.011111111111111
+1040,Two if by Sea (1996),"['Comedy', 'Romance']",2.6
+1041,Forget Paris (1995),"['Comedy', 'Romance']",3.193548387096774
+1042,Just Cause (1995),"['Mystery', 'Thriller']",3.142857142857143
+1043,Rent-a-Kid (1995),['Comedy'],3.0
+1044,"Paper, The (1994)","['Comedy', 'Drama']",3.225
+1045,Fearless (1993),['Drama'],3.24
+1046,Malice (1993),['Thriller'],3.1739130434782608
+1047,Multiplicity (1996),['Comedy'],2.8358208955223883
+1048,She's the One (1996),"['Comedy', 'Romance']",3.0136986301369864
+1049,House Arrest (1996),['Comedy'],2.52
+1050,"Ghost and Mrs. Muir, The (1947)","['Drama', 'Romance']",3.6511627906976742
+1051,"Associate, The (1996)",['Comedy'],3.2439024390243905
+1052,Dracula: Dead and Loving It (1995),"['Comedy', 'Horror']",2.28
+1053,Now and Then (1995),['Drama'],3.4583333333333335
+1054,Mr. Wrong (1996),['Comedy'],2.3043478260869565
+1055,"Simple Twist of Fate, A (1994)",['Drama'],3.2
+1056,Cronos (1992),['Horror'],3.2
+1057,"Pallbearer, The (1996)",['Comedy'],2.3181818181818183
+1058,"War, The (1994)","['Adventure', 'Drama']",3.2666666666666666
+1059,Don't Be a Menace to South Central While Drinking Your Juice in the Hood (1996),['Comedy'],2.7714285714285714
+1060,"Adventures of Pinocchio, The (1996)","['Adventure', ""Children's""]",3.051282051282051
+1061,"Evening Star, The (1996)","['Comedy', 'Drama']",2.9310344827586206
+1062,Four Days in September (1997),['Drama'],3.75
+1063,"Little Princess, A (1995)","[""Children's"", 'Drama']",3.658536585365854
+1064,Crossfire (1947),"['Crime', 'Film-Noir']",4.25
+1065,Koyaanisqatsi (1983),"['Documentary', 'War']",3.490566037735849
+1066,Balto (1995),"['Animation', ""Children's""]",3.0
+1067,Bottle Rocket (1996),['Comedy'],3.4545454545454546
+1068,"Star Maker, The (Uomo delle stelle, L') (1995)",['Drama'],3.1666666666666665
+1069,Amateur (1994),"['Crime', 'Drama', 'Thriller']",3.1666666666666665
+1070,Living in Oblivion (1995),['Comedy'],3.740740740740741
+1071,Party Girl (1995),['Comedy'],2.875
+1072,"Pyromaniac's Love Story, A (1995)","['Comedy', 'Romance']",2.4285714285714284
+1073,Shallow Grave (1994),['Thriller'],3.8181818181818183
+1074,Reality Bites (1994),"['Comedy', 'Drama']",2.961038961038961
+1075,"Man of No Importance, A (1994)",['Drama'],3.4285714285714284
+1076,"Pagemaster, The (1994)","['Action', 'Adventure', 'Animation', ""Children's"", 'Fantasy']",2.25
+1077,Love and a .45 (1994),['Thriller'],3.125
+1078,Oliver & Company (1988),"['Animation', ""Children's""]",2.772727272727273
+1079,Joe's Apartment (1996),"['Comedy', 'Musical']",2.2444444444444445
+1080,Celestial Clockwork (1994),['Comedy'],4.0
+1081,Curdled (1996),['Crime'],2.75
+1082,Female Perversions (1996),['Drama'],2.625
+1083,Albino Alligator (1996),"['Crime', 'Thriller']",2.5
+1084,Anne Frank Remembered (1995),['Documentary'],3.857142857142857
+1085,Carried Away (1996),"['Drama', 'Romance']",3.0
+1086,It's My Party (1995),['Drama'],3.2857142857142856
+1087,Bloodsport 2 (1995),['Action'],1.7
+1088,Double Team (1997),['Action'],2.230769230769231
+1089,Speed 2: Cruise Control (1997),"['Action', 'Romance', 'Thriller']",2.1315789473684212
+1090,Sliver (1993),['Thriller'],2.4054054054054053
+1091,Pete's Dragon (1977),"['Adventure', 'Animation', ""Children's"", 'Musical']",2.7209302325581395
+1092,Dear God (1996),['Comedy'],2.5
+1093,Live Nude Girls (1995),['Comedy'],3.0869565217391304
+1094,"Thin Line Between Love and Hate, A (1996)",['Comedy'],2.4166666666666665
+1095,High School High (1996),['Comedy'],2.6206896551724137
+1096,Commandments (1997),['Romance'],2.6666666666666665
+1097,"Hate (Haine, La) (1995)",['Drama'],3.5
+1098,Flirting With Disaster (1996),['Comedy'],3.6904761904761907
+1099,"Red Firecracker, Green Firecracker (1994)",['Drama'],3.4615384615384617
+1100,What Happened Was... (1994),"['Comedy', 'Drama', 'Romance']",2.625
+1101,Six Degrees of Separation (1993),"['Drama', 'Mystery']",3.77027027027027
+1102,Two Much (1996),"['Comedy', 'Romance']",2.4285714285714284
+1103,Trust (1990),"['Comedy', 'Drama']",3.789473684210526
+1104,C'est arrivé près de chez vous (1992),"['Comedy', 'Crime', 'Drama']",3.0
+1105,Firestorm (1998),"['Action', 'Adventure', 'Thriller']",2.8333333333333335
+1106,"Newton Boys, The (1998)","['Crime', 'Drama']",3.0
+1107,Beyond Rangoon (1995),['Drama'],3.0555555555555554
+1108,Feast of July (1995),['Drama'],2.4
+1109,Death and the Maiden (1994),"['Drama', 'Thriller']",3.4285714285714284
+1110,Tank Girl (1995),"['Action', 'Comedy', 'Musical', 'Sci-Fi']",2.8536585365853657
+1111,Double Happiness (1994),['Drama'],3.4285714285714284
+1112,Cobb (1994),['Drama'],2.8
+1113,Mrs. Parker and the Vicious Circle (1994),['Drama'],3.272727272727273
+1114,Faithful (1996),['Comedy'],3.3
+1115,Twelfth Night (1996),"['Comedy', 'Drama', 'Romance']",3.413793103448276
+1116,"Mark of Zorro, The (1940)",['Adventure'],3.6153846153846154
+1117,Surviving Picasso (1996),['Drama'],3.1052631578947367
+1118,Up in Smoke (1978),['Comedy'],3.25531914893617
+1119,Some Kind of Wonderful (1987),"['Drama', 'Romance']",3.6610169491525424
+1120,I'm Not Rappaport (1996),['Comedy'],3.0
+1121,"Umbrellas of Cherbourg, The (Parapluies de Cherbourg, Les) (1964)","['Drama', 'Musical']",3.761904761904762
+1122,They Made Me a Criminal (1939),"['Crime', 'Drama']",5.0
+1123,"Last Time I Saw Paris, The (1954)",['Drama'],3.6666666666666665
+1124,"Farewell to Arms, A (1932)","['Romance', 'War']",3.8333333333333335
+1125,"Innocents, The (1961)",['Thriller'],4.25
+1126,"Old Man and the Sea, The (1958)","['Adventure', 'Drama']",3.34375
+1127,"Truman Show, The (1998)",['Drama'],2.909090909090909
+1128,Heidi Fleiss: Hollywood Madam (1995),['Documentary'],2.6923076923076925
+1129,Chungking Express (1994),"['Drama', 'Mystery', 'Romance']",3.5714285714285716
+1130,Jupiter's Wife (1994),['Documentary'],4.0
+1131,Safe (1995),['Thriller'],4.0
+1132,Feeling Minnesota (1996),"['Drama', 'Romance']",2.625
+1133,Escape to Witch Mountain (1975),"['Adventure', ""Children's"", 'Fantasy']",2.966666666666667
+1134,Get on the Bus (1996),['Drama'],3.3157894736842106
+1135,"Doors, The (1991)","['Drama', 'Musical']",2.9782608695652173
+1136,Ghosts of Mississippi (1996),['Drama'],3.4827586206896552
+1137,Beautiful Thing (1996),"['Drama', 'Romance']",3.9655172413793105
+1138,Best Men (1997),"['Action', 'Comedy', 'Crime', 'Drama']",3.4
+1139,Hackers (1995),"['Action', 'Crime', 'Thriller']",2.606060606060606
+1140,"Road to Wellville, The (1994)",['Comedy'],2.2941176470588234
+1141,"War Room, The (1993)",['Documentary'],3.3333333333333335
+1142,When We Were Kings (1996),['Documentary'],4.045454545454546
+1143,Hard Eight (1996),"['Crime', 'Thriller']",4.0
+1144,"Quiet Room, The (1996)",['Drama'],3.6666666666666665
+1145,Blue Chips (1994),['Drama'],2.6666666666666665
+1146,Calendar Girl (1993),['Drama'],2.0
+1147,My Family (1995),['Drama'],3.6666666666666665
+1148,Tom & Viv (1994),['Drama'],3.3333333333333335
+1149,Walkabout (1971),['Drama'],3.8461538461538463
+1150,Last Dance (1996),['Drama'],3.111111111111111
+1151,Original Gangstas (1996),['Crime'],2.142857142857143
+1152,In Love and War (1996),"['Romance', 'War']",3.4285714285714284
+1153,Backbeat (1993),"['Drama', 'Musical']",3.473684210526316
+1154,Alphaville (1965),['Sci-Fi'],3.3333333333333335
+1155,"Rendezvous in Paris (Rendez-vous de Paris, Les) (1995)","['Comedy', 'Romance']",3.3333333333333335
+1156,Cyclo (1995),"['Crime', 'Drama']",3.0
+1157,"Relic, The (1997)",['Horror'],2.88
+1158,"Fille seule, La (A Single Girl) (1995)",['Drama'],4.0
+1159,Stalker (1979),"['Mystery', 'Sci-Fi']",3.5454545454545454
+1160,Love! Valour! Compassion! (1997),"['Drama', 'Romance']",3.6153846153846154
+1161,Palookaville (1996),"['Action', 'Drama']",2.923076923076923
+1162,Phat Beach (1996),['Comedy'],1.6
+1163,"Portrait of a Lady, The (1996)",['Drama'],2.68
+1164,Zeus and Roxanne (1997),"[""Children's""]",2.1666666666666665
+1165,Big Bully (1996),"['Comedy', 'Drama']",1.8571428571428572
+1166,Love & Human Remains (1993),['Comedy'],3.1666666666666665
+1167,"Sum of Us, The (1994)",['Comedy'],3.5454545454545454
+1168,Little Buddha (1993),['Drama'],3.3181818181818183
+1169,Fresh (1994),['Drama'],4.1
+1170,Spanking the Monkey (1994),"['Comedy', 'Drama']",3.074074074074074
+1171,Wild Reeds (1994),['Drama'],3.142857142857143
+1172,"Women, The (1939)",['Comedy'],3.6666666666666665
+1173,Bliss (1997),"['Drama', 'Romance']",2.5714285714285716
+1174,Caught (1996),"['Drama', 'Thriller']",3.25
+1175,Hugo Pool (1997),['Romance'],3.4
+1176,Welcome To Sarajevo (1997),"['Drama', 'War']",3.3636363636363638
+1177,Dunston Checks In (1996),['Comedy'],1.8571428571428572
+1178,Major Payne (1994),['Comedy'],2.473684210526316
+1179,Man of the House (1995),['Comedy'],2.111111111111111
+1180,I Love Trouble (1994),"['Action', 'Comedy']",2.5
+1181,"Low Down Dirty Shame, A (1994)","['Action', 'Comedy']",2.5
+1182,Cops and Robbersons (1994),['Comedy'],2.3076923076923075
+1183,"Cowboy Way, The (1994)","['Action', 'Comedy']",2.210526315789474
+1184,"Endless Summer 2, The (1994)",['Documentary'],2.5
+1185,In the Army Now (1994),"['Comedy', 'War']",2.2777777777777777
+1186,"Inkwell, The (1994)","['Comedy', 'Drama']",3.3333333333333335
+1187,Switchblade Sisters (1975),['Crime'],3.230769230769231
+1188,Young Guns II (1990),"['Action', 'Comedy', 'Western']",2.772727272727273
+1189,Prefontaine (1997),['Drama'],5.0
+1190,That Old Feeling (1997),"['Comedy', 'Romance']",3.3636363636363638
+1191,"Letter From Death Row, A (1998)","['Crime', 'Drama']",4.333333333333333
+1192,"Boys of St. Vincent, The (1993)",['Drama'],3.3846153846153846
+1193,Before the Rain (Pred dozhdot) (1994),['Drama'],3.8
+1194,Once Were Warriors (1994),"['Crime', 'Drama']",4.064516129032258
+1195,Strawberry and Chocolate (Fresa y chocolate) (1993),['Drama'],3.272727272727273
+1196,"Savage Nights (Nuits fauves, Les) (1992)",['Drama'],3.0
+1197,"Family Thing, A (1996)","['Comedy', 'Drama']",3.5555555555555554
+1198,Purple Noon (1960),"['Crime', 'Thriller']",3.142857142857143
+1199,Cemetery Man (Dellamorte Dellamore) (1994),"['Comedy', 'Horror']",2.869565217391304
+1200,Kim (1950),"[""Children's"", 'Drama']",3.2857142857142856
+1201,Marlene Dietrich: Shadow and Light (1996),['Documentary'],5.0
+1202,"Maybe, Maybe Not (Bewegte Mann, Der) (1994)",['Comedy'],3.5
+1203,Top Hat (1935),"['Comedy', 'Musical', 'Romance']",4.0476190476190474
+1204,To Be or Not to Be (1942),"['Comedy', 'Drama', 'War']",3.611111111111111
+1205,"Secret Agent, The (1996)",['Drama'],3.0
+1206,Amos & Andrew (1993),['Comedy'],2.6842105263157894
+1207,Jade (1995),['Thriller'],2.2941176470588234
+1208,Kiss of Death (1995),"['Crime', 'Drama', 'Thriller']",2.85
+1209,Mixed Nuts (1994),['Comedy'],2.533333333333333
+1210,Virtuosity (1995),"['Sci-Fi', 'Thriller']",2.736842105263158
+1211,Blue Sky (1994),"['Drama', 'Romance']",3.4166666666666665
+1212,Flesh and Bone (1993),"['Drama', 'Mystery', 'Romance']",2.8333333333333335
+1213,Guilty as Sin (1993),"['Crime', 'Drama', 'Thriller']",2.1666666666666665
+1214,In the Realm of the Senses (Ai no corrida) (1976),['Drama'],2.0
+1215,Barb Wire (1996),"['Action', 'Sci-Fi']",1.9333333333333333
+1216,Kissed (1996),['Romance'],3.0
+1217,Assassins (1995),['Thriller'],2.871794871794872
+1218,Friday (1995),['Comedy'],3.4615384615384617
+1219,"Goofy Movie, A (1995)","['Animation', ""Children's"", 'Comedy', 'Romance']",2.9
+1220,Higher Learning (1995),['Drama'],3.3333333333333335
+1221,When a Man Loves a Woman (1994),['Drama'],3.4871794871794872
+1222,Judgment Night (1993),['Action'],2.68
+1223,King of the Hill (1993),['Drama'],3.5
+1224,"Scout, The (1994)",['Drama'],2.6666666666666665
+1225,Angus (1995),['Comedy'],2.642857142857143
+1226,Night Falls on Manhattan (1997),"['Crime', 'Drama']",3.375
+1227,"Awfully Big Adventure, An (1995)",['Drama'],2.375
+1228,Under Siege 2: Dark Territory (1995),['Action'],2.4583333333333335
+1229,Poison Ivy II (1995),"['Drama', 'Thriller']",2.1538461538461537
+1230,Ready to Wear (Pret-A-Porter) (1994),['Comedy'],1.8333333333333333
+1231,Marked for Death (1990),"['Action', 'Drama']",2.5
+1232,Madonna: Truth or Dare (1991),['Documentary'],2.4705882352941178
+1233,Nénette et Boni (1996),['Drama'],3.5
+1234,Chairman of the Board (1998),['Comedy'],2.375
+1235,"Big Bang Theory, The (1994)",['Crime'],4.0
+1236,"Other Voices, Other Rooms (1997)",['Drama'],3.0
+1237,Twisted (1996),"['Comedy', 'Drama']",3.5
+1238,Full Speed (1996),['Drama'],3.125
+1239,Cutthroat Island (1995),"['Action', 'Adventure', 'Romance']",2.4444444444444446
+1240,Ghost in the Shell (Kokaku kidotai) (1995),"['Animation', 'Sci-Fi']",3.6538461538461537
+1241,"Van, The (1996)","['Comedy', 'Drama']",2.6666666666666665
+1242,"Old Lady Who Walked in the Sea, The (Vieille qui marchait dans la mer, La) (1991)",['Comedy'],2.6
+1243,Night Flier (1997),['Horror'],3.7142857142857144
+1244,Metro (1997),['Action'],2.9166666666666665
+1245,Gridlock'd (1997),['Crime'],3.210526315789474
+1246,Bushwhacked (1995),['Comedy'],1.5714285714285714
+1247,Bad Girls (1994),['Western'],1.8333333333333333
+1248,Blink (1994),['Thriller'],3.0
+1249,For Love or Money (1993),['Comedy'],2.8333333333333335
+1250,Best of the Best 3: No Turning Back (1995),['Action'],1.5
+1251,A Chef in Love (1996),['Comedy'],4.125
+1252,"Contempt (Mépris, Le) (1963)",['Drama'],3.0
+1253,"Tie That Binds, The (1995)",['Thriller'],2.4285714285714284
+1254,Gone Fishin' (1997),['Comedy'],1.8181818181818181
+1255,Broken English (1996),['Drama'],2.25
+1256,"Designated Mourner, The (1997)",['Drama'],2.0
+1257,"Designated Mourner, The (1997)",['Drama'],1.75
+1258,Trial and Error (1997),"['Comedy', 'Romance']",2.5217391304347827
+1259,Pie in the Sky (1995),"['Comedy', 'Romance']",2.0
+1260,Total Eclipse (1995),['Drama'],2.75
+1261,"Run of the Country, The (1995)",['Drama'],3.25
+1262,Walking and Talking (1996),['Romance'],3.625
+1263,Foxfire (1996),['Drama'],2.933333333333333
+1264,Nothing to Lose (1994),['Drama'],3.2857142857142856
+1265,Star Maps (1997),['Drama'],3.0526315789473686
+1266,Bread and Chocolate (Pane e cioccolata) (1973),['Drama'],3.1666666666666665
+1267,Clockers (1995),['Drama'],3.0
+1268,Bitter Moon (1992),['Drama'],3.3
+1269,Love in the Afternoon (1957),"['Comedy', 'Romance']",3.9
+1270,Life with Mikey (1993),['Comedy'],2.2857142857142856
+1271,North (1994),['Comedy'],2.7142857142857144
+1272,Talking About Sex (1994),"['Comedy', 'Drama']",1.8
+1273,Color of Night (1994),"['Drama', 'Thriller']",2.7333333333333334
+1274,Robocop 3 (1993),"['Sci-Fi', 'Thriller']",1.7272727272727273
+1275,Killer (Bulletproof Heart) (1994),['Thriller'],2.5
+1276,Sunset Park (1996),['Drama'],2.5
+1277,Set It Off (1996),"['Action', 'Crime']",3.4210526315789473
+1278,Selena (1997),"['Drama', 'Musical']",3.625
+1279,Wild America (1997),"['Adventure', ""Children's""]",2.888888888888889
+1280,Gang Related (1997),['Crime'],2.6875
+1281,Manny & Lo (1996),['Drama'],3.1538461538461537
+1282,"Grass Harp, The (1995)",['Drama'],3.2222222222222223
+1283,Out to Sea (1997),['Comedy'],2.6842105263157894
+1284,Before and After (1996),"['Drama', 'Mystery']",2.8461538461538463
+1285,Princess Caraboo (1994),['Drama'],3.1333333333333333
+1286,Shall We Dance? (1937),"['Comedy', 'Musical', 'Romance']",3.7058823529411766
+1287,Ed (1996),['Comedy'],1.3333333333333333
+1288,Denise Calls Up (1995),['Comedy'],3.0
+1289,Jack and Sarah (1995),['Romance'],2.142857142857143
+1290,Country Life (1994),"['Drama', 'Romance']",1.5
+1291,Celtic Pride (1996),['Comedy'],2.2
+1292,"Simple Wish, A (1997)","[""Children's"", 'Fantasy']",1.6666666666666667
+1293,Star Kid (1997),"['Adventure', ""Children's"", 'Fantasy', 'Sci-Fi']",5.0
+1294,Ayn Rand: A Sense of Life (1997),['Documentary'],3.142857142857143
+1295,Kicked in the Head (1997),"['Comedy', 'Drama']",2.5714285714285716
+1296,Indian Summer (1996),"['Comedy', 'Drama']",3.25
+1297,Love Affair (1994),"['Drama', 'Romance']",2.8333333333333335
+1298,"Band Wagon, The (1953)","['Comedy', 'Musical']",3.6666666666666665
+1299,Penny Serenade (1941),"['Drama', 'Romance']",3.0
+1300,'Til There Was You (1997),"['Drama', 'Romance']",2.3333333333333335
+1301,Stripes (1981),['Comedy'],3.8
+1302,Late Bloomers (1996),['Comedy'],3.4
+1303,"Getaway, The (1994)",['Action'],2.3333333333333335
+1304,New York Cop (1996),"['Action', 'Crime']",2.5
+1305,National Lampoon's Senior Trip (1995),['Comedy'],2.4285714285714284
+1306,Delta of Venus (1994),['Drama'],3.0
+1307,Carmen Miranda: Bananas Is My Business (1994),['Documentary'],1.5
+1308,Babyfever (1994),"['Comedy', 'Drama']",1.0
+1309,"Very Natural Thing, A (1974)",['Drama'],1.0
+1310,"Walk in the Sun, A (1945)",['Drama'],3.0
+1311,Waiting to Exhale (1995),"['Comedy', 'Drama']",2.5
+1312,"Pompatus of Love, The (1996)","['Comedy', 'Drama']",3.0
+1313,Palmetto (1998),"['Film-Noir', 'Mystery', 'Thriller']",3.142857142857143
+1314,Surviving the Game (1994),"['Action', 'Adventure', 'Thriller']",2.4545454545454546
+1315,Inventing the Abbotts (1997),"['Drama', 'Romance']",3.130434782608696
+1316,"Horse Whisperer, The (1998)",['Drama'],2.7142857142857144
+1317,"Journey of August King, The (1995)",['Drama'],2.0
+1318,Catwalk (1995),['Documentary'],1.3333333333333333
+1319,"Neon Bible, The (1995)",['Drama'],1.75
+1320,Homage (1995),['Drama'],1.0
+1321,Open Season (1996),['Comedy'],2.5
+1322,Metisse (Café au Lait) (1993),['Comedy'],2.3333333333333335
+1323,"Wooden Man's Bride, The (Wu Kui) (1994)",['Drama'],2.6666666666666665
+1324,Loaded (1994),"['Drama', 'Thriller']",2.4
+1325,August (1996),['Drama'],1.0
+1326,Boys (1996),['Drama'],3.3333333333333335
+1327,Captives (1994),['Drama'],2.3333333333333335
+1328,Of Love and Shadows (1994),['Drama'],3.1666666666666665
+1329,"Low Life, The (1994)",['Drama'],1.0
+1330,An Unforgettable Summer (1994),['Drama'],2.5
+1331,"Last Klezmer: Leopold Kozlowski, His Life and Music, The (1995)",['Documentary'],3.0
+1332,My Life and Times With Antonin Artaud (En compagnie d'Antonin Artaud) (1993),['Drama'],2.0
+1333,Midnight Dancers (Sibak) (1994),"['Comedy', 'Drama']",2.8
+1334,Somebody to Love (1994),['Drama'],1.0
+1335,American Buffalo (1996),['Drama'],2.6363636363636362
+1336,Kazaam (1996),"[""Children's"", 'Comedy', 'Fantasy']",1.8
+1337,Larger Than Life (1996),['Comedy'],2.3333333333333335
+1338,Two Deaths (1995),['Drama'],2.25
+1339,Stefano Quantestorie (1993),"['Comedy', 'Drama']",1.0
+1340,"Crude Oasis, The (1995)",['Romance'],1.0
+1341,Hedd Wyn (1992),['Drama'],1.0
+1342,"Convent, The (Convento, O) (1995)",['Drama'],2.5
+1343,Lotto Land (1995),['Drama'],1.0
+1344,"Story of Xinghua, The (1993)",['Drama'],3.2
+1345,"Day the Sun Turned Cold, The (Tianguo niezi) (1994)",['Drama'],2.0
+1346,Dingo (1992),['Drama'],2.4
+1347,"Ballad of Narayama, The (Narayama Bushiko) (1958)",['Drama'],2.75
+1348,Every Other Weekend (1990),['Drama'],1.0
+1349,Mille bolle blu (1993),['Comedy'],1.0
+1350,Crows and Sparrows (1949),['Drama'],1.5
+1351,Lover's Knot (1996),['Comedy'],2.0
+1352,Shadow of Angels (Schatten der Engel) (1976),['Drama'],1.0
+1353,1-900 (1994),['Romance'],2.6
+1354,Venice/Venice (1992),['Drama'],1.0
+1355,Infinity (1996),['Drama'],2.6666666666666665
+1356,Ed's Next Move (1996),['Comedy'],2.6666666666666665
+1357,For the Moment (1994),"['Romance', 'War']",2.6666666666666665
+1358,The Deadly Cure (1996),['Action'],3.0
+1359,Boys in Venice (1996),['Drama'],1.0
+1360,"Sexual Life of the Belgians, The (1994)",['Comedy'],1.5
+1361,"Search for One-eye Jimmy, The (1996)",['Comedy'],2.6666666666666665
+1362,American Strays (1996),['Action'],2.0
+1363,"Leopard Son, The (1996)",['Documentary'],1.0
+1364,Bird of Prey (1996),['Action'],1.0
+1365,Johnny 100 Pesos (1993),"['Action', 'Drama']",1.5
+1366,JLG/JLG - autoportrait de décembre (1994),"['Documentary', 'Drama']",1.0
+1367,Faust (1994),['Animation'],4.2
+1368,Mina Tannenbaum (1994),['Drama'],3.6666666666666665
+1369,"Forbidden Christ, The (Cristo proibito, Il) (1950)",['Drama'],2.75
+1370,I Can't Sleep (J'ai pas sommeil) (1994),"['Drama', 'Thriller']",2.6666666666666665
+1371,"Machine, The (1994)","['Comedy', 'Horror']",1.5
+1372,"Stranger, The (1994)",['Action'],3.0
+1373,Good Morning (1971),['unknown'],1.0
+1374,Falling in Love Again (1980),['Comedy'],1.0
+1375,"Cement Garden, The (1993)",['Drama'],3.6
+1376,Meet Wally Sparks (1997),['Comedy'],2.142857142857143
+1377,Hotel de Love (1996),"['Comedy', 'Romance']",3.25
+1378,Rhyme & Reason (1997),['Documentary'],2.2
+1379,Love and Other Catastrophes (1996),['Romance'],2.857142857142857
+1380,Hollow Reed (1996),['Drama'],2.3333333333333335
+1381,Losing Chase (1996),['Drama'],3.25
+1382,"Bonheur, Le (1965)",['Drama'],2.0
+1383,"Second Jungle Book: Mowgli & Baloo, The (1997)","['Adventure', ""Children's""]",2.0
+1384,Squeeze (1996),['Drama'],1.6666666666666667
+1385,Roseanna's Grave (For Roseanna) (1997),"['Comedy', 'Romance']",2.8
+1386,Tetsuo II: Body Hammer (1992),['Sci-Fi'],2.6666666666666665
+1387,Fall (1997),['Romance'],2.0
+1388,Gabbeh (1996),['Drama'],3.3333333333333335
+1389,Mondo (1996),['Drama'],3.0
+1390,"Innocent Sleep, The (1995)",['Crime'],2.0
+1391,For Ever Mozart (1996),['Drama'],2.0
+1392,"Locusts, The (1997)",['Drama'],2.0
+1393,Stag (1997),"['Action', 'Thriller']",2.111111111111111
+1394,Swept from the Sea (1997),['Romance'],2.4285714285714284
+1395,Hurricane Streets (1998),['Drama'],2.3333333333333335
+1396,Stonewall (1995),['Drama'],4.2
+1397,Of Human Bondage (1934),['Drama'],3.2
+1398,Anna (1996),['Drama'],4.5
+1399,Stranger in the House (1997),['Thriller'],2.4285714285714284
+1400,Picture Bride (1995),"['Drama', 'Romance']",3.1
+1401,M. Butterfly (1993),['Drama'],3.2222222222222223
+1402,"Ciao, Professore! (1993)",['Drama'],2.75
+1403,Caro Diario (Dear Diary) (1994),"['Comedy', 'Drama']",2.75
+1404,Withnail and I (1987),['Comedy'],3.230769230769231
+1405,Boy's Life 2 (1997),['Drama'],3.3333333333333335
+1406,When Night Is Falling (1995),"['Drama', 'Romance']",3.4
+1407,"Specialist, The (1994)",['Action'],2.25
+1408,Gordy (1995),['Comedy'],1.0
+1409,"Swan Princess, The (1994)","['Animation', ""Children's""]",2.857142857142857
+1410,Harlem (1993),['Drama'],2.75
+1411,Barbarella (1968),"['Adventure', 'Sci-Fi']",2.5714285714285716
+1412,Land Before Time III: The Time of the Great Giving (1995) (V),"['Animation', ""Children's""]",1.6666666666666667
+1413,Street Fighter (1994),['Action'],2.75
+1414,Coldblooded (1995),['Action'],2.0
+1415,"Next Karate Kid, The (1994)","['Action', ""Children's""]",2.4444444444444446
+1416,No Escape (1994),"['Action', 'Sci-Fi']",2.4
+1417,"Turning, The (1992)",['Drama'],2.5
+1418,"Joy Luck Club, The (1993)",['Drama'],3.6666666666666665
+1419,Highlander III: The Sorcerer (1994),"['Action', 'Sci-Fi']",2.125
+1420,Gilligan's Island: The Movie (1998),['Comedy'],1.3333333333333333
+1421,My Crazy Life (Mi vida loca) (1993),['Drama'],3.1818181818181817
+1422,Suture (1993),"['Film-Noir', 'Thriller']",2.25
+1423,"Walking Dead, The (1995)","['Drama', 'War']",2.25
+1424,I Like It Like That (1994),"['Comedy', 'Drama', 'Romance']",2.3333333333333335
+1425,I'll Do Anything (1994),"['Comedy', 'Drama']",2.6
+1426,Grace of My Heart (1996),"['Comedy', 'Drama']",3.25
+1427,Drunks (1995),['Drama'],2.8
+1428,SubUrbia (1997),['Comedy'],3.6666666666666665
+1429,Sliding Doors (1998),"['Drama', 'Romance']",2.75
+1430,Ill Gotten Gains (1997),['Drama'],2.3333333333333335
+1431,Legal Deceit (1997),['Thriller'],3.4
+1432,"Mighty, The (1998)",['Drama'],1.0
+1433,Men of Means (1998),"['Action', 'Drama']",2.0
+1434,Shooting Fish (1997),['Romance'],2.5
+1435,"Steal Big, Steal Little (1995)",['Comedy'],2.5714285714285716
+1436,Mr. Jones (1993),"['Drama', 'Romance']",2.5
+1437,House Party 3 (1994),['Comedy'],2.0
+1438,Panther (1995),['Drama'],2.4
+1439,Jason's Lyric (1994),"['Crime', 'Drama']",3.0
+1440,Above the Rim (1994),['Drama'],3.0
+1441,Moonlight and Valentino (1995),"['Drama', 'Romance']",2.5714285714285716
+1442,"Scarlet Letter, The (1995)",['Drama'],2.4
+1443,8 Seconds (1994),['Drama'],3.75
+1444,That Darn Cat! (1965),"[""Children's"", 'Comedy', 'Mystery']",2.473684210526316
+1445,Ladybird Ladybird (1994),['Drama'],2.75
+1446,"Bye Bye, Love (1995)",['Comedy'],3.1333333333333333
+1447,Century (1993),['Drama'],3.0
+1448,My Favorite Season (1993),['Drama'],3.6666666666666665
+1449,Pather Panchali (1955),['Drama'],4.625
+1450,Golden Earrings (1947),"['Adventure', 'Romance']",4.0
+1451,Foreign Correspondent (1940),['Thriller'],3.8666666666666667
+1452,Lady of Burlesque (1943),"['Comedy', 'Mystery']",4.0
+1453,Angel on My Shoulder (1946),"['Crime', 'Drama']",2.0
+1454,Angel and the Badman (1947),['Western'],3.0
+1455,"Outlaw, The (1943)",['Western'],2.5
+1456,Beat the Devil (1954),"['Comedy', 'Drama']",3.7142857142857144
+1457,Love Is All There Is (1996),"['Comedy', 'Drama']",3.0
+1458,"Damsel in Distress, A (1937)","['Comedy', 'Musical', 'Romance']",4.0
+1459,Madame Butterfly (1995),['Musical'],3.5714285714285716
+1460,Sleepover (1995),"['Comedy', 'Drama']",3.0
+1461,Here Comes Cookie (1935),['Comedy'],2.0
+1462,"Thieves (Voleurs, Les) (1996)","['Crime', 'Drama', 'Romance']",3.7142857142857144
+1463,"Boys, Les (1997)",['Comedy'],3.3333333333333335
+1464,"Stars Fell on Henrietta, The (1995)",['Drama'],2.3333333333333335
+1465,Last Summer in the Hamptons (1995),"['Comedy', 'Drama']",2.3333333333333335
+1466,Margaret's Museum (1995),['Drama'],4.0
+1467,"Saint of Fort Washington, The (1993)",['Drama'],5.0
+1468,"Cure, The (1995)",['Drama'],3.3333333333333335
+1469,Tom and Huck (1995),"['Adventure', ""Children's""]",3.1666666666666665
+1470,Gumby: The Movie (1995),"['Animation', ""Children's""]",2.6
+1471,Hideaway (1995),['Thriller'],2.4444444444444446
+1472,"Visitors, The (Visiteurs, Les) (1993)","['Comedy', 'Sci-Fi']",3.5
+1473,"Little Princess, The (1939)","[""Children's"", 'Drama']",3.5555555555555554
+1474,Nina Takes a Lover (1994),"['Comedy', 'Romance']",2.8333333333333335
+1475,Bhaji on the Beach (1993),"['Comedy', 'Drama']",2.875
+1476,Raw Deal (1948),['Film-Noir'],2.0
+1477,Nightwatch (1997),"['Horror', 'Thriller']",2.5
+1478,Dead Presidents (1995),"['Action', 'Crime', 'Drama']",2.7222222222222223
+1479,Reckless (1995),['Comedy'],2.75
+1480,Herbie Rides Again (1974),"['Adventure', ""Children's"", 'Comedy']",2.272727272727273
+1481,S.F.W. (1994),['Drama'],3.0
+1482,"Gate of Heavenly Peace, The (1995)",['Documentary'],4.0
+1483,"Man in the Iron Mask, The (1998)","['Action', 'Drama', 'Romance']",3.4166666666666665
+1484,"Jerky Boys, The (1994)","['Action', 'Comedy']",2.6666666666666665
+1485,"Colonel Chabert, Le (1994)","['Drama', 'Romance', 'War']",3.5
+1486,Girl in the Cadillac (1995),['Drama'],1.0
+1487,Even Cowgirls Get the Blues (1993),"['Comedy', 'Romance']",2.0
+1488,Germinal (1993),['Drama'],3.0
+1489,Chasers (1994),['Comedy'],2.2
+1490,Fausto (1993),['Comedy'],3.0
+1491,Tough and Deadly (1995),"['Action', 'Drama', 'Thriller']",3.0
+1492,Window to Paris (1994),['Comedy'],4.0
+1493,"Modern Affair, A (1995)",['Romance'],1.0
+1494,"Mostro, Il (1994)",['Comedy'],1.0
+1495,Flirt (1995),['Drama'],3.6
+1496,Carpool (1996),"['Comedy', 'Crime']",2.8
+1497,"Line King: Al Hirschfeld, The (1996)",['Documentary'],3.0
+1498,Farmer & Chase (1995),['Comedy'],4.0
+1499,Grosse Fatigue (1994),['Comedy'],3.25
+1500,Santa with Muscles (1996),['Comedy'],5.0
+1501,Prisoner of the Mountains (Kavkazsky Plennik) (1996),['War'],3.0
+1502,Naked in New York (1994),"['Comedy', 'Romance']",1.5
+1503,Gold Diggers: The Secret of Bear Mountain (1995),"['Adventure', ""Children's""]",3.1
+1504,"Bewegte Mann, Der (1994)",['Comedy'],3.6666666666666665
+1505,Killer: A Journal of Murder (1995),"['Crime', 'Drama']",4.0
+1506,Nelly & Monsieur Arnaud (1995),['Drama'],3.6666666666666665
+1507,Three Lives and Only One Death (1996),['Comedy'],3.0
+1508,"Babysitter, The (1995)","['Drama', 'Thriller']",2.3333333333333335
+1509,Getting Even with Dad (1994),['Comedy'],1.6
+1510,Mad Dog Time (1996),['Crime'],3.0
+1511,Children of the Revolution (1996),['Comedy'],3.2
+1512,"World of Apu, The (Apur Sansar) (1959)",['Drama'],4.0
+1513,Sprung (1997),['Comedy'],2.0
+1514,Dream With the Fishes (1997),['Drama'],3.142857142857143
+1515,Wings of Courage (1995),"['Adventure', 'Romance']",4.0
+1516,"Wedding Gift, The (1994)",['Drama'],4.0
+1517,Race the Sun (1996),['Drama'],2.8
+1518,Losing Isaiah (1995),['Drama'],3.0
+1519,New Jersey Drive (1995),"['Crime', 'Drama']",3.0
+1520,"Fear, The (1995)",['Horror'],3.0
+1521,Mr. Wonderful (1993),"['Comedy', 'Romance']",3.0
+1522,Trial by Jury (1994),['Thriller'],2.4285714285714284
+1523,"Good Man in Africa, A (1994)","['Action', 'Adventure']",3.0
+1524,Kaspar Hauser (1993),['Drama'],4.25
+1525,"Object of My Affection, The (1998)","['Comedy', 'Romance']",4.0
+1526,Witness (1985),"['Drama', 'Romance', 'Thriller']",4.0
+1527,Senseless (1998),['Comedy'],2.4285714285714284
+1528,Nowhere (1997),['Drama'],2.3333333333333335
+1529,Underground (1995),['War'],2.8
+1530,Jefferson in Paris (1995),['Drama'],2.0
+1531,Far From Home: The Adventures of Yellow Dog (1995),"['Adventure', ""Children's""]",3.2857142857142856
+1532,Foreign Student (1994),['Drama'],2.0
+1533,I Don't Want to Talk About It (De eso no se habla) (1993),['Drama'],4.0
+1534,Twin Town (1997),"['Comedy', 'Crime']",2.1666666666666665
+1535,"Enfer, L' (1994)",['Drama'],3.0
+1536,Aiqing wansui (1994),['Drama'],5.0
+1537,Cosi (1996),['Comedy'],4.0
+1538,All Over Me (1997),['Drama'],3.0
+1539,Being Human (1993),['Drama'],1.75
+1540,"Amazing Panda Adventure, The (1995)","['Adventure', ""Children's""]",2.8
+1541,"Beans of Egypt, Maine, The (1994)",['Drama'],3.5
+1542,"Scarlet Letter, The (1926)",['Drama'],3.0
+1543,Johns (1996),['Drama'],3.0
+1544,It Takes Two (1995),['Comedy'],2.6666666666666665
+1545,Frankie Starlight (1995),"['Drama', 'Romance']",2.5
+1546,Shadows (Cienie) (1988),['Drama'],1.0
+1547,"Show, The (1995)",['Documentary'],3.0
+1548,The Courtyard (1995),"['Action', 'Thriller']",1.0
+1549,Dream Man (1995),['Thriller'],1.5
+1550,Destiny Turns on the Radio (1995),['Comedy'],3.0
+1551,"Glass Shield, The (1994)",['Drama'],2.0
+1552,"Hunted, The (1995)",['Action'],2.0
+1553,"Underneath, The (1995)","['Mystery', 'Thriller']",2.75
+1554,Safe Passage (1994),['Drama'],3.0
+1555,"Secret Adventures of Tom Thumb, The (1993)","['Adventure', ""Children's""]",2.6
+1556,Condition Red (1995),"['Action', 'Drama', 'Thriller']",2.0
+1557,Yankee Zulu (1994),"['Comedy', 'Drama']",1.0
+1558,Aparajito (1956),['Drama'],3.5714285714285716
+1559,Hostile Intentions (1994),"['Action', 'Drama', 'Thriller']",1.0
+1560,Clean Slate (Coup de Torchon) (1981),['Crime'],2.75
+1561,Tigrero: A Film That Was Never Made (1994),"['Documentary', 'Drama']",1.0
+1562,"Eye of Vichy, The (Oeil de Vichy, L') (1993)",['Documentary'],1.0
+1563,"Promise, The (Versprechen, Das) (1994)",['Romance'],1.0
+1564,To Cross the Rubicon (1991),['Drama'],1.0
+1565,Daens (1992),['Drama'],1.0
+1566,"Man from Down Under, The (1943)",['Drama'],1.0
+1567,Careful (1992),['Comedy'],1.0
+1568,Vermont Is For Lovers (1992),"['Comedy', 'Romance']",1.0
+1569,"Vie est belle, La (Life is Rosey) (1987)","['Comedy', 'Drama']",1.0
+1570,Quartier Mozart (1992),['Comedy'],1.0
+1571,Touki Bouki (Journey of the Hyena) (1973),['Drama'],1.0
+1572,Wend Kuuni (God's Gift) (1982),['Drama'],1.0
+1573,Spirits of the Dead (Tre passi nel delirio) (1968),['Horror'],2.5
+1574,Pharaoh's Army (1995),['War'],1.0
+1575,"I, Worst of All (Yo, la peor de todas) (1990)",['Drama'],1.0
+1576,"Hungarian Fairy Tale, A (1987)",['Fantasy'],1.0
+1577,"Death in the Garden (Mort en ce jardin, La) (1956)",['Drama'],1.0
+1578,"Collectionneuse, La (1967)",['Drama'],2.0
+1579,Baton Rouge (1988),['Thriller'],1.0
+1580,Liebelei (1933),['Romance'],1.0
+1581,"Woman in Question, The (1950)",['Mystery'],1.0
+1582,T-Men (1947),['Film-Noir'],1.0
+1583,"Invitation, The (Zaproszenie) (1986)",['Drama'],1.0
+1584,"Symphonie pastorale, La (1946)",['Drama'],1.0
+1585,American Dream (1990),['Documentary'],2.5
+1586,Lashou shentan (1992),"['Action', 'Crime', 'Drama']",1.0
+1587,Terror in a Texas Town (1958),['Western'],1.0
+1588,Salut cousin! (1996),"['Comedy', 'Drama']",2.0
+1589,Schizopolis (1996),['Comedy'],3.0
+1590,"To Have, or Not (1995)",['Drama'],2.0
+1591,Duoluo tianshi (1995),['Drama'],3.1666666666666665
+1592,"Magic Hour, The (1998)",['Drama'],3.6
+1593,Death in Brunswick (1991),['Comedy'],4.0
+1594,Everest (1998),['Documentary'],4.5
+1595,Shopping (1994),"['Action', 'Thriller']",2.0
+1596,Nemesis 2: Nebula (1995),"['Action', 'Sci-Fi', 'Thriller']",2.0
+1597,Romper Stomper (1992),"['Action', 'Drama']",3.0
+1598,City of Industry (1997),"['Crime', 'Thriller']",2.5
+1599,Someone Else's America (1995),['Drama'],5.0
+1600,Guantanamera (1994),['Comedy'],3.75
+1601,Office Killer (1997),['Thriller'],1.0
+1602,"Price Above Rubies, A (1998)",['Drama'],3.3333333333333335
+1603,Angela (1995),['Drama'],3.0
+1604,He Walked by Night (1948),"['Crime', 'Film-Noir', 'Thriller']",4.0
+1605,Love Serenade (1996),['Comedy'],3.0
+1606,Deceiver (1997),['Crime'],2.0
+1607,Hurricane Streets (1998),['Drama'],3.3333333333333335
+1608,Buddy (1997),"['Adventure', ""Children's"", 'Drama']",2.25
+1609,B*A*P*S (1997),['Comedy'],1.6666666666666667
+1610,"Truth or Consequences, N.M. (1997)","['Action', 'Crime', 'Romance']",2.0
+1611,Intimate Relations (1996),['Comedy'],3.0
+1612,"Leading Man, The (1996)",['Romance'],3.75
+1613,Tokyo Fist (1995),"['Action', 'Drama']",4.0
+1614,"Reluctant Debutante, The (1958)","['Comedy', 'Drama']",3.0
+1615,Warriors of Virtue (1997),"['Action', 'Adventure', ""Children's"", 'Fantasy']",3.0
+1616,Desert Winds (1995),['Drama'],4.0
+1617,Hugo Pool (1997),['Romance'],3.0
+1618,King of New York (1990),"['Action', 'Crime']",1.0
+1619,All Things Fair (1996),['Drama'],3.0
+1620,"Sixth Man, The (1997)",['Comedy'],3.2222222222222223
+1621,Butterfly Kiss (1995),['Thriller'],1.0
+1622,"Paris, France (1993)",['Comedy'],2.3333333333333335
+1623,"Cérémonie, La (1995)",['Drama'],4.0
+1624,Hush (1998),['Thriller'],2.0
+1625,Nightwatch (1997),"['Horror', 'Thriller']",4.0
+1626,Nobody Loves Me (Keiner liebt mich) (1994),"['Comedy', 'Drama']",1.0
+1627,"Wife, The (1995)","['Comedy', 'Drama']",3.0
+1628,Lamerica (1994),['Drama'],3.75
+1629,Nico Icon (1995),['Documentary'],4.0
+1630,"Silence of the Palace, The (Saimt el Qusur) (1994)",['Drama'],3.0
+1631,"Slingshot, The (1993)","['Comedy', 'Drama']",3.5
+1632,Land and Freedom (Tierra y libertad) (1995),['War'],3.0
+1633,Á köldum klaka (Cold Fever) (1994),"['Comedy', 'Drama']",3.0
+1634,Etz Hadomim Tafus (Under the Domin Tree) (1994),['Drama'],2.0
+1635,Two Friends (1986),['Drama'],3.0
+1636,Brothers in Trouble (1995),['Drama'],4.0
+1637,Girls Town (1996),['Drama'],3.0
+1638,Normal Life (1996),"['Crime', 'Drama']",3.0
+1639,Bitter Sugar (Azucar Amargo) (1996),['Drama'],4.333333333333333
+1640,"Eighth Day, The (1996)",['Drama'],3.0
+1641,Dadetown (1995),['Documentary'],3.0
+1642,Some Mother's Son (1996),['Drama'],4.5
+1643,Angel Baby (1995),['Drama'],3.75
+1644,Sudden Manhattan (1996),['Comedy'],1.5
+1645,"Butcher Boy, The (1998)",['Drama'],4.0
+1646,Men With Guns (1997),"['Action', 'Drama']",3.5
+1647,Hana-bi (1997),"['Comedy', 'Crime', 'Drama']",3.0
+1648,"Niagara, Niagara (1997)",['Drama'],2.0
+1649,"Big One, The (1997)","['Comedy', 'Documentary']",3.0
+1650,"Butcher Boy, The (1998)",['Drama'],4.0
+1651,"Spanish Prisoner, The (1997)","['Drama', 'Thriller']",4.0
+1652,Temptress Moon (Feng Yue) (1996),['Romance'],1.6666666666666667
+1653,Entertaining Angels: The Dorothy Day Story (1996),['Drama'],5.0
+1654,Chairman of the Board (1998),['Comedy'],1.0
+1655,"Favor, The (1994)","['Comedy', 'Romance']",2.0
+1656,Little City (1998),"['Comedy', 'Romance']",3.5
+1657,Target (1995),"['Action', 'Drama']",3.0
+1658,"Substance of Fire, The (1996)",['Drama'],3.0
+1659,Getting Away With Murder (1996),['Comedy'],1.0
+1660,Small Faces (1995),['Drama'],2.0
+1661,"New Age, The (1994)",['Drama'],1.0
+1662,Rough Magic (1995),"['Drama', 'Romance']",2.5
+1663,Nothing Personal (1995),"['Drama', 'War']",2.0
+1664,8 Heads in a Duffel Bag (1997),['Comedy'],3.25
+1665,"Brother's Kiss, A (1997)",['Drama'],2.0
+1666,Ripe (1996),['Drama'],2.0
+1667,"Next Step, The (1995)",['Drama'],3.0
+1668,Wedding Bell Blues (1996),['Comedy'],3.0
+1669,MURDER and murder (1996),"['Crime', 'Drama', 'Mystery']",2.0
+1670,Tainted (1998),"['Comedy', 'Thriller']",3.0
+1671,"Further Gesture, A (1996)",['Drama'],1.0
+1672,Kika (1993),['Drama'],2.0
+1673,Mirage (1995),"['Action', 'Thriller']",3.0
+1674,Mamma Roma (1962),['Drama'],4.0
+1675,"Sunchaser, The (1996)",['Drama'],3.0
+1676,"War at Home, The (1996)",['Drama'],2.0
+1677,Sweet Nothing (1995),['Drama'],3.0
+1678,Mat' i syn (1997),['Drama'],1.0
+1679,B. Monkey (1998),"['Romance', 'Thriller']",3.0
+1680,Sliding Doors (1998),"['Drama', 'Romance']",2.0
+1681,You So Crazy (1994),['Comedy'],3.0
+1682,Scream of Stone (Schrei aus Stein) (1991),['Drama'],3.0
