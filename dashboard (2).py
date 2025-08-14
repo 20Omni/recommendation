@@ -18,6 +18,7 @@ with open(HYBRID_MODEL_PATH, "rb") as f:
 final_recs = hybrid_data["final_recs"]
 weights = hybrid_data["weights"]
 
+# movie_metadata.csv now has title, genres_clean, avg_rating
 movies_df = pd.read_csv(MOVIE_METADATA_PATH)
 
 # ---------------- Database Setup ----------------
@@ -62,16 +63,16 @@ def get_watched(username):
 def get_genre_recommendations(username, top_n=TOP_N):
     watched = get_watched(username)
     if not watched:
-        return final_recs.get(username, [])[:top_n]
+        return movies_df.sort_values('avg_rating', ascending=False).head(top_n)['title'].tolist()
     
-    watched_genres = movies_df[movies_df['title'].isin(watched)]['genres'].str.split('|').explode()
-    top_genres = [g for g, _ in Counter(watched_genres).most_common(3)]
+    watched_genres = movies_df[movies_df['title'].isin(watched)]['genres_clean'].str.split(',').explode()
+    top_genres = [g.strip() for g, _ in Counter(watched_genres).most_common(3)]
     
     recs = []
-    for _, row in movies_df.iterrows():
+    for _, row in movies_df.sort_values('avg_rating', ascending=False).iterrows():
         if row['title'] in watched:
             continue
-        if any(g in row['genres'].split('|') for g in top_genres):
+        if any(g in row['genres_clean'] for g in top_genres):
             recs.append(row['title'])
         if len(recs) >= top_n:
             break
@@ -80,7 +81,6 @@ def get_genre_recommendations(username, top_n=TOP_N):
 # ---------------- Streamlit UI ----------------
 st.title("🎬 Movie Recommender System")
 
-# Session state
 if 'logged_in' not in st.session_state:
     st.session_state['logged_in'] = False
 if 'username' not in st.session_state:
@@ -89,7 +89,6 @@ if 'username' not in st.session_state:
 menu = ["Login", "Signup"]
 choice = st.sidebar.selectbox("Menu", menu)
 
-# Login / Signup Logic
 if not st.session_state['logged_in']:
     if choice == "Signup":
         st.subheader("Create New Account")
@@ -110,21 +109,19 @@ if not st.session_state['logged_in']:
             else:
                 st.error("Invalid username or password")
 
-# ---------------- Main Dashboard ----------------
 if st.session_state['logged_in']:
     st.subheader(f"Hello, {st.session_state['username']}!")
 
-    # Create Tabs
     tab1, tab2, tab3 = st.tabs(["🌟 Top Rated Movies", "🎯 Your Recommendations", "📖 Watched History"])
 
     # Tab 1: Top Rated Movies
     with tab1:
-        top_movies = movies_df.sort_values('title').head(10)
+        top_movies = movies_df.sort_values('avg_rating', ascending=False).head(10)
         watched_list = get_watched(st.session_state['username'])
 
         for _, row in top_movies.iterrows():
             col1, col2 = st.columns([3, 1])
-            movie_display = f"~~{row['title']} ({row['genres']})~~" if row['title'] in watched_list else f"{row['title']} ({row['genres']})"
+            movie_display = f"~~{row['title']} ({row['genres_clean']})~~" if row['title'] in watched_list else f"{row['title']} ({row['genres_clean']})"
             col1.markdown(movie_display)
             if row['title'] not in watched_list:
                 if col2.button("Watched ✅", key=f"top_{row['title']}"):
