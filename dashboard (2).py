@@ -124,12 +124,14 @@ if st.session_state['logged_in']:
             st.success(f"Marked '{row['title']}' as watched!")
 
     # Personalized Recommendations
-    st.markdown("### 🎯 Your Recommendations")
-    recs = get_genre_recommendations(st.session_state['username'])
-    for movie in recs:
-        if st.button(f"Watched ✅ {movie}", key=f"rec_{movie}"):
-            mark_watched(st.session_state['username'], movie)
-            st.success(f"Marked '{movie}' as watched!")
+    # Personalized Recommendations
+st.markdown("### 🎯 Your Recommendations")
+recs = get_genre_recommendations(st.session_state['username'])
+for movie in recs:
+    if st.button(movie, key=f"rec_{movie}"):
+        mark_watched(st.session_state['username'], movie)
+        st.success(f"Marked '{movie}' as watched!")
+
 
     # Show watched history
     st.markdown("### 📖 Your Watched History")
