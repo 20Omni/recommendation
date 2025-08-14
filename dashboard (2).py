@@ -81,7 +81,7 @@ if st.session_state['logged_in']:
     if st.sidebar.button("Logout"):
         st.session_state['logged_in'] = False
         st.session_state['username'] = ''
-        st.experimental_rerun()
+        st.rerun()
 else:
     menu = ["Login", "Signup"]
     choice = st.sidebar.radio("Menu", menu)
