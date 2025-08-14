@@ -53,23 +53,6 @@ def get_watched(username):
     c.execute("SELECT movie_title FROM watched WHERE username=?", (username,))
     return [x[0] for x in c.fetchall()]
 
-def get_genre_recommendations(username, top_n=TOP_N):
-    watched = get_watched(username)
-    if not watched:
-        return movies_df.sort_values(by="avg_rating", ascending=False).head(top_n)["title"].tolist()
-    
-    # Get all genres from watched movies
-    watched_genres = movies_df[movies_df['title'].isin(watched)]['genres_clean'].str.split('|').explode()
-    
-    # Pick top 3–4 genres instead of just one
-    top_genres = [g for g, _ in Counter(watched_genres).most_common(4)]
-    
-    # Recommend from all top genres
-    recs = movies_df[~movies_df['title'].isin(watched)]
-    recs = recs[recs['genres_clean'].apply(lambda g: any(genre in g for genre in top_genres))]
-    recs = recs.sort_values(by="avg_rating", ascending=False).head(top_n)
-    return recs["title"].tolist()
-
 # ---------------- Streamlit UI ----------------
 st.title("🎬 Movie Recommender System")
 
@@ -103,55 +86,59 @@ if not st.session_state['logged_in']:
 else:
     tabs = st.tabs(["🌟 Top Rated", "🎯 Recommendations", "📖 Watched History"])
 
-    # ---------------- Top Rated Tab ----------------
+    # ---------- Top Rated Tab ----------
     with tabs[0]:
         top_movies = movies_df.sort_values(by="avg_rating", ascending=False).head(10)
         for _, row in top_movies.iterrows():
-            st.markdown(f"""
-            **{row['title']}**  
-            _{row['genres_clean']}_  
-            ⭐ **{row['avg_rating']:.2f}**
-            """)
-            if st.button("Watched ✅", key=f"top_{row['title']}"):
+            col1, col2 = st.columns([3, 1])
+            col1.markdown(f"**{row['title']}** ({row['genres_clean']}) — ⭐ {row['avg_rating']:.2f}")
+            if col2.button("Watched ✅", key=f"top_{row['title']}"):
                 mark_watched(st.session_state['username'], row['title'])
                 st.success(f"Marked '{row['title']}' as watched!")
-            st.markdown("---")
 
-    # ---------------- Recommendations Tab ----------------
+    # ---------- Recommendations Tab ----------
     with tabs[1]:
-        username = st.session_state['username']
+        user_id = st.session_state['username']
+        hybrid_recs = final_recs.get(user_id, [])
 
-        if username in final_recs:
-            recs = final_recs[username]
+        if not hybrid_recs:
+            st.info("No personalized recommendations found. Please watch some movies first.")
         else:
-            recs = get_genre_recommendations(username)
+            watched = get_watched(user_id)
 
-        rec_df = movies_df[movies_df['title'].isin(recs)]
-        watched_list = get_watched(username)
+            # Get top genres from watch history
+            if watched:
+                watched_genres = movies_df[movies_df['title'].isin(watched)]['genres_clean'].str.split('|').explode()
+                top_genres = [g for g, _ in Counter(watched_genres).most_common(3)]
+            else:
+                top_genres = []
 
-        for _, row in rec_df.iterrows():
-            # Explanation
-            explanation = "Recommended based on your viewing history."
-            if watched_list:
-                rec_genres = set(str(row['genres_clean']).split("|"))
-                for watched_movie in watched_list:
-                    watched_genres = set(str(movies_df.loc[movies_df['title'] == watched_movie, 'genres_clean'].values[0]).split("|"))
-                    if rec_genres & watched_genres:
-                        explanation = f"Because you watched **{watched_movie}** ({', '.join(watched_genres)}), we recommend this."
-                        break
+            rec_df = movies_df[movies_df['title'].isin(hybrid_recs)]
 
-            st.markdown(f"""
-            **{row['title']}**  
-            _{row['genres_clean']}_  
-            ⭐ **{row['avg_rating']:.2f}**  
-            _{explanation}_
-            """)
-            if st.button("Watched ✅", key=f"rec_{row['title']}"):
-                mark_watched(username, row['title'])
-                st.success(f"Marked '{row['title']}' as watched!")
-            st.markdown("---")
+            # Genre match score
+            def genre_score(genres_str):
+                return sum(1 for g in top_genres if g in genres_str)
 
-    # ---------------- Watched History Tab ----------------
+            rec_df['genre_score'] = rec_df['genres_clean'].apply(genre_score)
+
+            # Sort by match score first, then rating
+            rec_df = rec_df.sort_values(by=['genre_score', 'avg_rating'], ascending=[False, False])
+
+            for _, row in rec_df.iterrows():
+                col1, col2 = st.columns([3, 1])
+                matched_genres = [g for g in top_genres if g in row['genres_clean']]
+                if matched_genres:
+                    explanation = f"_Because you watched {', '.join(matched_genres)} movies_"
+                    col1.markdown(f"**{row['title']}** ({row['genres_clean']}) — ⭐ {row['avg_rating']:.2f}")
+                    col1.caption(explanation)
+                else:
+                    col1.markdown(f"**{row['title']}** ({row['genres_clean']}) — ⭐ {row['avg_rating']:.2f}")
+
+                if col2.button("Watched ✅", key=f"rec_{row['title']}"):
+                    mark_watched(st.session_state['username'], row['title'])
+                    st.success(f"Marked '{row['title']}' as watched!")
+
+    # ---------- Watched History Tab ----------
     with tabs[2]:
         watched_list = get_watched(st.session_state['username'])
         if watched_list:
@@ -160,11 +147,6 @@ else:
                 rating = movies_df.loc[movies_df['title'] == movie, 'avg_rating'].values
                 genres_str = genres[0] if len(genres) else "Unknown"
                 rating_val = rating[0] if len(rating) else 0
-                st.markdown(f"""
-                **{movie}**  
-                _{genres_str}_  
-                ⭐ **{rating_val:.2f}**
-                """)
-                st.markdown("---")
+                st.markdown(f"**{movie}** ({genres_str}) — ⭐ {rating_val:.2f}")
         else:
             st.info("You haven't watched anything yet.")
