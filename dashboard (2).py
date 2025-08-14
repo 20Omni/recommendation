@@ -6,7 +6,7 @@ from collections import Counter
 
 # ---------------- Paths ----------------
 HYBRID_MODEL_PATH = "hybrid_recommender.pkl"
-MOVIE_METADATA_PATH = "movie_metadata.csv"
+MOVIE_METADATA_PATH = "movie_metadata.csv"  # Has title, genres_clean, avg_rating
 DB_PATH = "users.db"
 
 TOP_N = 10
@@ -18,7 +18,6 @@ with open(HYBRID_MODEL_PATH, "rb") as f:
 final_recs = hybrid_data["final_recs"]
 weights = hybrid_data["weights"]
 
-# movie_metadata.csv now has title, genres_clean, avg_rating
 movies_df = pd.read_csv(MOVIE_METADATA_PATH)
 
 # ---------------- Database Setup ----------------
@@ -56,27 +55,53 @@ def mark_watched(username, movie_title):
     c.execute("INSERT INTO watched (username, movie_title) VALUES (?, ?)", (username, movie_title))
     conn.commit()
 
+def unwatch_movie(username, movie_title):
+    c.execute("DELETE FROM watched WHERE username=? AND movie_title=?", (username, movie_title))
+    conn.commit()
+
 def get_watched(username):
     c.execute("SELECT movie_title FROM watched WHERE username=?", (username,))
     return [x[0] for x in c.fetchall()]
 
-def get_genre_recommendations(username, top_n=TOP_N):
+def get_combined_recommendations(username, top_n=TOP_N):
     watched = get_watched(username)
-    if not watched:
-        return movies_df.sort_values('avg_rating', ascending=False).head(top_n)['title'].tolist()
-    
+
+    # Hybrid model recommendations (if available)
+    hybrid_recs = final_recs.get(username, [])
+
+    # Genre-based recommendations
     watched_genres = movies_df[movies_df['title'].isin(watched)]['genres_clean'].str.split(',').explode()
     top_genres = [g.strip() for g, _ in Counter(watched_genres).most_common(3)]
-    
-    recs = []
-    for _, row in movies_df.sort_values('avg_rating', ascending=False).iterrows():
-        if row['title'] in watched:
-            continue
-        if any(g in row['genres_clean'] for g in top_genres):
-            recs.append(row['title'])
-        if len(recs) >= top_n:
-            break
-    return recs
+    genre_recs = [
+        row['title'] for _, row in movies_df.iterrows()
+        if any(g in row['genres_clean'] for g in top_genres) and row['title'] not in watched
+    ]
+
+    # Merge + sort by avg_rating
+    combined = list(dict.fromkeys(hybrid_recs + genre_recs))  # remove duplicates
+    combined_sorted = (
+        movies_df[movies_df['title'].isin(combined)]
+        .sort_values('avg_rating', ascending=False)
+        .head(top_n)['title']
+        .tolist()
+    )
+    return combined_sorted
+
+def rating_to_stars(rating):
+    """Convert numeric rating (0-5) to star emojis"""
+    full_stars = int(round(rating))
+    return "⭐" * full_stars + "☆" * (5 - full_stars)
+
+def movie_card(title, genres, rating, watched, action_button_key, action_label, action_func):
+    """Reusable movie display card"""
+    with st.container():
+        st.markdown(f"**{title}**")
+        st.markdown(f"*Genres:* {genres}")
+        st.markdown(f"*Rating:* {rating:.2f} {rating_to_stars(rating)}")
+        if st.button(action_label, key=action_button_key):
+            action_func(title)
+            st.experimental_rerun()
+        st.markdown("---")
 
 # ---------------- Streamlit UI ----------------
 st.title("🎬 Movie Recommender System")
@@ -116,35 +141,41 @@ if st.session_state['logged_in']:
 
     # Tab 1: Top Rated Movies
     with tab1:
-        top_movies = movies_df.sort_values('avg_rating', ascending=False).head(10)
         watched_list = get_watched(st.session_state['username'])
-
+        top_movies = movies_df.sort_values('avg_rating', ascending=False).head(10)
         for _, row in top_movies.iterrows():
-            col1, col2 = st.columns([3, 1])
-            movie_display = f"~~{row['title']} ({row['genres_clean']})~~" if row['title'] in watched_list else f"{row['title']} ({row['genres_clean']})"
-            col1.markdown(movie_display)
-            if row['title'] not in watched_list:
-                if col2.button("Watched ✅", key=f"top_{row['title']}"):
-                    mark_watched(st.session_state['username'], row['title'])
-                    st.success(f"Marked '{row['title']}' as watched!")
+            if row['title'] in watched_list:
+                movie_card(row['title'], row['genres_clean'], row['avg_rating'], True,
+                           f"unwatch_{row['title']}", "❌ Unwatch", 
+                           lambda title=row['title']: unwatch_movie(st.session_state['username'], title))
+            else:
+                movie_card(row['title'], row['genres_clean'], row['avg_rating'], False,
+                           f"watch_{row['title']}", "✅ Mark Watched", 
+                           lambda title=row['title']: mark_watched(st.session_state['username'], title))
 
     # Tab 2: Recommendations
     with tab2:
-        recs = get_genre_recommendations(st.session_state['username'])
         watched_list = get_watched(st.session_state['username'])
+        recs = get_combined_recommendations(st.session_state['username'])
         for movie in recs:
-            movie_display = f"~~{movie}~~" if movie in watched_list else movie
-            col1, col2 = st.columns([3, 1])
-            col1.markdown(movie_display)
-            if movie not in watched_list:
-                if col2.button("Watched ✅", key=f"rec_{movie}"):
-                    mark_watched(st.session_state['username'], movie)
-                    st.success(f"Marked '{movie}' as watched!")
+            row = movies_df[movies_df['title'] == movie].iloc[0]
+            if movie in watched_list:
+                movie_card(movie, row['genres_clean'], row['avg_rating'], True,
+                           f"unwatch_rec_{movie}", "❌ Unwatch", 
+                           lambda title=movie: unwatch_movie(st.session_state['username'], title))
+            else:
+                movie_card(movie, row['genres_clean'], row['avg_rating'], False,
+                           f"watch_rec_{movie}", "✅ Mark Watched", 
+                           lambda title=movie: mark_watched(st.session_state['username'], title))
 
     # Tab 3: Watched History
     with tab3:
         watched_list = get_watched(st.session_state['username'])
         if watched_list:
-            st.write(watched_list)
+            for movie in watched_list:
+                row = movies_df[movies_df['title'] == movie].iloc[0]
+                movie_card(movie, row['genres_clean'], row['avg_rating'], True,
+                           f"unwatch_hist_{movie}", "❌ Unwatch", 
+                           lambda title=movie: unwatch_movie(st.session_state['username'], title))
         else:
             st.info("You haven't watched anything yet.")
