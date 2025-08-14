@@ -3,25 +3,39 @@ import pandas as pd
 import pickle
 import sqlite3
 from collections import Counter
+import requests
+from io import BytesIO
 
-# ---------------- File Paths ----------------
-HYBRID_MODEL_PATH = "hybrid_recommender.pkl"  # uploaded directly in repo
-MOVIE_METADATA_PATH = "movie_metadata.csv"    # uploaded directly in repo
+# ---------------- GitHub File URLs ----------------
+HYBRID_MODEL_URL = "https://raw.githubusercontent.com/<your-username>/<repo-name>/main/hybrid_recommender.pkl"
+MOVIE_METADATA_URL = "https://raw.githubusercontent.com/<your-username>/<repo-name>/main/movie_metadata.csv"
 DB_PATH = "users.db"
-
 TOP_N = 10
 
-# ---------------- Load Data ----------------
-with open(HYBRID_MODEL_PATH, "rb") as f:
-    hybrid_data = pickle.load(f)
-
+# ---------------- Load Files from GitHub ----------------
+# Load Hybrid Model
+response = requests.get(HYBRID_MODEL_URL)
+hybrid_data = pickle.load(BytesIO(response.content))
 final_recs = hybrid_data["final_recs"]
 weights = hybrid_data["weights"]
 
-movies_df = pd.read_csv(MOVIE_METADATA_PATH)  # should have 'title' and 'genres'
+# Load Movie Metadata
+movies_df = pd.read_csv(MOVIE_METADATA_URL)
+
+# Determine correct column names
+if 'title' not in movies_df.columns:
+    if 'movie_title' in movies_df.columns:
+        movies_df.rename(columns={'movie_title': 'title'}, inplace=True)
+    else:
+        st.error("Movie metadata CSV must have a 'title' column!")
+        st.stop()
+
+if 'genres' not in movies_df.columns:
+    st.error("Movie metadata CSV must have a 'genres' column!")
+    st.stop()
 
 # ---------------- Database Setup ----------------
-conn = sqlite3.connect(DB_PATH)
+conn = sqlite3.connect(DB_PATH, check_same_thread=False)
 c = conn.cursor()
 c.execute("""
 CREATE TABLE IF NOT EXISTS users (
