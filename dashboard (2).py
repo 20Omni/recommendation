@@ -67,18 +67,54 @@ def get_genre_recommendations(username, top_n=TOP_N):
     return recs["title"].tolist(), top_genre
 
 # ---------------- Streamlit UI ----------------
+# ---------------- Streamlit UI ----------------
 st.set_page_config(page_title="Movie Recommender", layout="wide")
-st.markdown("<h1 style='color:red; font-size: 40px;'>🎬 Movie Recommender System</h1>", unsafe_allow_html=True)
 
+# Custom CSS for styling
+st.markdown("""
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+        }
+        .movie-card {
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .movie-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
+        }
+        .movie-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff4b4b;
+        }
+        .movie-genre {
+            font-size: 14px;
+            color: #cccccc;
+        }
+        .movie-rating {
+            font-size: 14px;
+            color: gold;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+st.markdown("<h1 style='color:#ff4b4b; text-align:center;'>🎬 Movie Recommender System</h1>", unsafe_allow_html=True)
+
+# Sidebar login/logout
 if 'logged_in' not in st.session_state:
     st.session_state['logged_in'] = False
 if 'username' not in st.session_state:
     st.session_state['username'] = ''
 
-# Sidebar menu
 if st.session_state['logged_in']:
-    st.sidebar.write(f"👤 Logged in as **{st.session_state['username']}**")
-    if st.sidebar.button("Logout"):
+    st.sidebar.success(f"👤 Logged in as **{st.session_state['username']}**")
+    if st.sidebar.button("🚪 Logout"):
         st.session_state['logged_in'] = False
         st.session_state['username'] = ''
         st.rerun()
@@ -101,10 +137,10 @@ else:
             if login(username, password):
                 st.session_state['logged_in'] = True
                 st.session_state['username'] = username
-                st.success(f"Welcome {username}!")
+                st.success(f"Welcome {username}! 🎉")
                 st.rerun()
             else:
-                st.error("Invalid username or password")
+                st.error("Invalid username or password ❌")
 
 # ---------------- Main Content ----------------
 if st.session_state['logged_in']:
@@ -115,54 +151,74 @@ if st.session_state['logged_in']:
         username = st.session_state['username']
 
         try:
-            user_id = int(username)  # if username is numeric for ML model
+            user_id = int(username)
         except ValueError:
             user_id = None
 
         if user_id in final_recs:
-            st.markdown("<h2 style='color:red;'>🤖 For You</h2>", unsafe_allow_html=True)
-            st.caption("Based on your past ratings & similar users")
+            st.subheader("🤖 Personalized For You")
             recs = final_recs[user_id]
-            top_genre = None
         else:
             recs, top_genre = get_genre_recommendations(username)
             if top_genre:
-                st.markdown(f"<h2 style='color:red;'>🎭 Because you watched {top_genre} movies</h2>", unsafe_allow_html=True)
+                st.subheader(f"🎭 Because you like **{top_genre}** movies")
             else:
-                st.markdown("<h2 style='color:red;'>🎭 Recommended For You</h2>", unsafe_allow_html=True)
+                st.subheader("🎭 Recommended For You")
 
         rec_df = movies_df[movies_df['title'].isin(recs)]
-        for _, row in rec_df.iterrows():
-            col1, col2 = st.columns([4, 1])
-            col1.write(f"**{row['title']}** ({row['genres_clean']}) — ⭐ {row['avg_rating']:.2f}")
-            if col2.button("Watched ✅", key=f"rec_{row['title']}"):
-                mark_watched(st.session_state['username'], row['title'])
-                st.success(f"Marked '{row['title']}' as watched!")
-                st.experimental_rerun()
+
+        # Display movies in a grid (3 per row)
+        cols = st.columns(3)
+        for i, (_, row) in enumerate(rec_df.iterrows()):
+            with cols[i % 3]:
+                st.markdown(f"""
+                    <div class="movie-card">
+                        <div class="movie-title">{row['title']}</div>
+                        <div class="movie-genre">{row['genres_clean']}</div>
+                        <div class="movie-rating">⭐ {row['avg_rating']:.2f}</div>
+                    </div>
+                """, unsafe_allow_html=True)
+                if st.button("✅ Watched", key=f"rec_{row['title']}"):
+                    mark_watched(username, row['title'])
+                    st.experimental_rerun()
 
     # Top Rated Tab
     with tabs[1]:
-        st.markdown("<h2 style='color:red;'>🌟 Top Rated</h2>", unsafe_allow_html=True)
-        watched_movies = get_watched(st.session_state['username'])
-        top_movies = movies_df[~movies_df['title'].isin(watched_movies)].sort_values(by="avg_rating", ascending=False).head(10)
-        for _, row in top_movies.iterrows():
-            col1, col2 = st.columns([4, 1])
-            col1.write(f"**{row['title']}** ({row['genres_clean']}) — ⭐ {row['avg_rating']:.2f}")
-            if col2.button("Watched ✅", key=f"top_{row['title']}"):
-                mark_watched(st.session_state['username'], row['title'])
-                st.success(f"Marked '{row['title']}' as watched!")
-                st.experimental_rerun()
+        st.subheader("🌟 Top Rated Movies")
+        watched_movies = get_watched(username)
+        top_movies = movies_df[~movies_df['title'].isin(watched_movies)].sort_values(by="avg_rating", ascending=False).head(12)
+
+        cols = st.columns(3)
+        for i, (_, row) in enumerate(top_movies.iterrows()):
+            with cols[i % 3]:
+                st.markdown(f"""
+                    <div class="movie-card">
+                        <div class="movie-title">{row['title']}</div>
+                        <div class="movie-genre">{row['genres_clean']}</div>
+                        <div class="movie-rating">⭐ {row['avg_rating']:.2f}</div>
+                    </div>
+                """, unsafe_allow_html=True)
+                if st.button("✅ Watched", key=f"top_{row['title']}"):
+                    mark_watched(username, row['title'])
+                    st.experimental_rerun()
 
     # Watched History Tab
     with tabs[2]:
-        st.markdown("<h2 style='color:red;'>📖 Your Watched History</h2>", unsafe_allow_html=True)
-        watched_list = get_watched(st.session_state['username'])
+        st.subheader("📖 Your Watched History")
+        watched_list = get_watched(username)
         if watched_list:
             for movie in watched_list:
                 genres = movies_df.loc[movies_df['title'] == movie, 'genres_clean'].values
                 rating = movies_df.loc[movies_df['title'] == movie, 'avg_rating'].values
                 genres_str = genres[0] if len(genres) else "Unknown"
                 rating_val = rating[0] if len(rating) else 0
-                st.write(f"**{movie}** ({genres_str}) — ⭐ {rating_val:.2f}")
+                st.markdown(f"""
+                    <div class="movie-card">
+                        <div class="movie-title">{movie}</div>
+                        <div class="movie-genre">{genres_str}</div>
+                        <div class="movie-rating">⭐ {rating_val:.2f}</div>
+                    </div>
+                """, unsafe_allow_html=True)
         else:
             st.info("You haven't watched anything yet.")
+
