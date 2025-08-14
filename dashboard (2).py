@@ -5,8 +5,8 @@ import sqlite3
 from collections import Counter
 
 # ---------------- Paths ----------------
-HYBRID_MODEL_PATH = "hybrid_recommender.pkl"  # GitHub uploaded
-MOVIE_METADATA_PATH = "movie_metadata.csv"    # GitHub uploaded
+HYBRID_MODEL_PATH = "hybrid_recommender.pkl"
+MOVIE_METADATA_PATH = "movie_metadata.csv"
 DB_PATH = "users.db"
 
 TOP_N = 10
@@ -18,7 +18,7 @@ with open(HYBRID_MODEL_PATH, "rb") as f:
 final_recs = hybrid_data["final_recs"]
 weights = hybrid_data["weights"]
 
-movies_df = pd.read_csv(MOVIE_METADATA_PATH)  # must have 'title' and 'genres'
+movies_df = pd.read_csv(MOVIE_METADATA_PATH)
 
 # ---------------- Database Setup ----------------
 conn = sqlite3.connect(DB_PATH, check_same_thread=False)
@@ -64,11 +64,9 @@ def get_genre_recommendations(username, top_n=TOP_N):
     if not watched:
         return final_recs.get(username, [])[:top_n]
     
-    # Count genres from watched movies
     watched_genres = movies_df[movies_df['title'].isin(watched)]['genres'].str.split('|').explode()
     top_genres = [g for g, _ in Counter(watched_genres).most_common(3)]
     
-    # Recommend movies matching top genres not yet watched
     recs = []
     for _, row in movies_df.iterrows():
         if row['title'] in watched:
@@ -91,49 +89,65 @@ if 'username' not in st.session_state:
 menu = ["Login", "Signup"]
 choice = st.sidebar.selectbox("Menu", menu)
 
-if choice == "Signup":
-    st.subheader("Create New Account")
-    new_user = st.text_input("Username")
-    new_pass = st.text_input("Password", type='password')
-    if st.button("Sign Up"):
-        signup(new_user, new_pass)
+# Login / Signup Logic
+if not st.session_state['logged_in']:
+    if choice == "Signup":
+        st.subheader("Create New Account")
+        new_user = st.text_input("Username")
+        new_pass = st.text_input("Password", type='password')
+        if st.button("Sign Up"):
+            signup(new_user, new_pass)
 
-elif choice == "Login":
-    st.subheader("Login")
-    username = st.text_input("Username")
-    password = st.text_input("Password", type='password')
-    if st.button("Login"):
-        if login(username, password):
-            st.session_state['logged_in'] = True
-            st.session_state['username'] = username
-            st.success(f"Welcome {username}!")
-        else:
-            st.error("Invalid username or password")
+    elif choice == "Login":
+        st.subheader("Login")
+        username = st.text_input("Username")
+        password = st.text_input("Password", type='password')
+        if st.button("Login"):
+            if login(username, password):
+                st.session_state['logged_in'] = True
+                st.session_state['username'] = username
+                st.success(f"Welcome {username}!")
+            else:
+                st.error("Invalid username or password")
 
 # ---------------- Main Dashboard ----------------
 if st.session_state['logged_in']:
     st.subheader(f"Hello, {st.session_state['username']}!")
 
-    # Show Top Rated Movies with checkbox to mark watched
-    st.markdown("### 🌟 Top Rated Movies")
-    for _, row in movies_df.sort_values('title').head(10).iterrows():
-        col1, col2 = st.columns([3,1])
-        col1.write(f"{row['title']} ({row['genres']})")
-        if col2.button("Watched ✅", key=f"top_{row['title']}"):
-            mark_watched(st.session_state['username'], row['title'])
-            st.success(f"Marked '{row['title']}' as watched!")
+    # Create Tabs
+    tab1, tab2, tab3 = st.tabs(["🌟 Top Rated Movies", "🎯 Your Recommendations", "📖 Watched History"])
 
-    # Personalized Recommendations
-    # Personalized Recommendations
-st.markdown("### 🎯 Your Recommendations")
-recs = get_genre_recommendations(st.session_state['username'])
-for movie in recs:
-    if st.button(movie, key=f"rec_{movie}"):
-        mark_watched(st.session_state['username'], movie)
-        st.success(f"Marked '{movie}' as watched!")
+    # Tab 1: Top Rated Movies
+    with tab1:
+        top_movies = movies_df.sort_values('title').head(10)
+        watched_list = get_watched(st.session_state['username'])
 
+        for _, row in top_movies.iterrows():
+            col1, col2 = st.columns([3, 1])
+            movie_display = f"~~{row['title']} ({row['genres']})~~" if row['title'] in watched_list else f"{row['title']} ({row['genres']})"
+            col1.markdown(movie_display)
+            if row['title'] not in watched_list:
+                if col2.button("Watched ✅", key=f"top_{row['title']}"):
+                    mark_watched(st.session_state['username'], row['title'])
+                    st.success(f"Marked '{row['title']}' as watched!")
 
-    # Show watched history
-    st.markdown("### 📖 Your Watched History")
-    watched_list = get_watched(st.session_state['username'])
-    st.write(watched_list if watched_list else "You haven't watched anything yet.")
+    # Tab 2: Recommendations
+    with tab2:
+        recs = get_genre_recommendations(st.session_state['username'])
+        watched_list = get_watched(st.session_state['username'])
+        for movie in recs:
+            movie_display = f"~~{movie}~~" if movie in watched_list else movie
+            col1, col2 = st.columns([3, 1])
+            col1.markdown(movie_display)
+            if movie not in watched_list:
+                if col2.button("Watched ✅", key=f"rec_{movie}"):
+                    mark_watched(st.session_state['username'], movie)
+                    st.success(f"Marked '{movie}' as watched!")
+
+    # Tab 3: Watched History
+    with tab3:
+        watched_list = get_watched(st.session_state['username'])
+        if watched_list:
+            st.write(watched_list)
+        else:
+            st.info("You haven't watched anything yet.")
