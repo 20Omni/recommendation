@@ -62,21 +62,53 @@ def get_genre_recommendations(username, top_n=TOP_N):
     top_genres = [g for g, _ in Counter(watched_genres).most_common(4)]
 
     recs = movies_df[~movies_df['title'].isin(watched)]
-    recs = recs[recs['genres_clean'].apply(lambda g: any(genre in g for genre in top_genres))]
+    recs = recs[recs['genres_clean'].apply(lambda g: any(genre in str(g) for genre in top_genres))]
     recs = recs.sort_values(by="avg_rating", ascending=False).head(top_n)
     return recs["title"].tolist(), top_genre
 
-# ---------------- Streamlit UI ----------------
+# --- NEW: find a watched movie as the reason for each recommendation ---
+def build_reason_map(username, rec_titles):
+    """
+    For each recommended title, pick the watched movie with the highest genre Jaccard overlap.
+    Returns dict: {rec_title: "Because you watched <watched_title>"} (or 'Recommended for you' fallback)
+    """
+    watched = get_watched(username)
+    if not watched:
+        return {t: "Recommended for you" for t in rec_titles}
+
+    # Precompute genres as sets
+    genre_map = movies_df.set_index("title")["genres_clean"].to_dict()
+    def to_set(g):  # handles NaN safely
+        if pd.isna(g):
+            return set()
+        return set(str(g).split("|"))
+
+    watched_sets = {w: to_set(genre_map.get(w)) for w in watched}
+    reason_map = {}
+
+    for t in rec_titles:
+        rec_set = to_set(genre_map.get(t))
+        best_w = None
+        best_score = -1.0
+        for w, w_set in watched_sets.items():
+            union = rec_set | w_set
+            inter = rec_set & w_set
+            score = (len(inter) / len(union)) if union else 0.0
+            if score > best_score:
+                best_score = score
+                best_w = w
+        if best_w:
+            reason_map[t] = f"Because you watched {best_w}"
+        else:
+            reason_map[t] = "Recommended for you"
+    return reason_map
+
 # ---------------- Streamlit UI ----------------
 st.set_page_config(page_title="Movie Recommender", layout="wide")
 
-# Custom CSS for styling
+# Subtle dark theme styling
 st.markdown("""
     <style>
-        body {
-            background-color: #121212;
-            color: white;
-        }
         .movie-card {
             background-color: #1e1e1e;
             border-radius: 12px;
@@ -84,41 +116,28 @@ st.markdown("""
             margin-bottom: 10px;
             text-align: center;
             transition: transform 0.2s;
+            border: 1px solid rgba(255,255,255,0.06);
         }
         .movie-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
         }
-        .movie-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #ff4b4b;
-        }
-        .movie-genre {
-            font-size: 14px;
-            color: #cccccc;
-        }
-        .movie-rating {
-            font-size: 14px;
-            color: gold;
-        }
-        .rec-reason {
-            font-size: 12px;
-            color: #aaaaaa;
-            font-style: italic;
-            margin-top: 5px;
-        }
+        .movie-title { font-size: 18px; font-weight: 700; color: #ff4b4b; }
+        .movie-genre { font-size: 13px; color: #cfcfcf; margin-top: 4px; }
+        .movie-rating { font-size: 14px; color: gold; margin-top: 4px; }
+        .rec-reason { font-size: 12px; color: #9aa0a6; font-style: italic; margin-top: 6px; }
     </style>
 """, unsafe_allow_html=True)
 
 st.markdown("<h1 style='color:#ff4b4b; text-align:center;'>🎬 Movie Recommender System</h1>", unsafe_allow_html=True)
 
-# Sidebar login/logout
+# Session state
 if 'logged_in' not in st.session_state:
     st.session_state['logged_in'] = False
 if 'username' not in st.session_state:
     st.session_state['username'] = ''
 
+# Sidebar
 if st.session_state['logged_in']:
     st.sidebar.success(f"👤 Logged in as **{st.session_state['username']}**")
     if st.sidebar.button("🚪 Logout"):
@@ -151,11 +170,12 @@ else:
 
 # ---------------- Main Content ----------------
 if st.session_state['logged_in']:
-    # Tab order changed: Top Rated -> Recommendations -> History
-    tabs = st.tabs(["🌟 Top Rated", "🎯 Recommendations", "📖 Watched History"])
     username = st.session_state['username']
 
-    # Top Rated Tab (FIRST)
+    # Tab order: Top Rated -> Recommendations -> History
+    tabs = st.tabs(["🌟 Top Rated", "🎯 Recommendations", "📖 Watched History"])
+
+    # Top Rated (FIRST)
     with tabs[0]:
         st.subheader("🌟 Top Rated Movies")
         watched_movies = get_watched(username)
@@ -173,45 +193,47 @@ if st.session_state['logged_in']:
                 """, unsafe_allow_html=True)
                 if st.button("✅ Watched", key=f"top_{row['title']}"):
                     mark_watched(username, row['title'])
-                    st.experimental_rerun()
+                    st.rerun()
 
-    # Recommendations Tab (SECOND)
+    # Recommendations (SECOND) with per-movie "Because you watched <movie>"
     with tabs[1]:
+        # Get base recommendations
         try:
-            user_id = int(username)
+            user_id = int(username)  # numeric usernames map to model user ids
         except ValueError:
             user_id = None
 
         if user_id in final_recs:
             recs = final_recs[user_id]
-            reason_map = {title: "Recommended based on your preferences" for title in recs}
         else:
-            recs, top_genre = get_genre_recommendations(username)
-            reason_map = {}
-            for movie in recs:
-                if top_genre:
-                    reason_map[movie] = f"Because you watched {top_genre} movies"
-                else:
-                    reason_map[movie] = "Recommended for you"
+            recs, _ = get_genre_recommendations(username)
+
+        # Remove anything already watched (avoids weird "because you watched <same movie>")
+        watched_movies = set(get_watched(username))
+        recs = [t for t in recs if t not in watched_movies]
+
+        # Build per-movie reasons using best genre match from watched titles
+        reason_map = build_reason_map(username, recs)
 
         rec_df = movies_df[movies_df['title'].isin(recs)]
 
         cols = st.columns(3)
         for i, (_, row) in enumerate(rec_df.iterrows()):
             with cols[i % 3]:
+                reason = reason_map.get(row['title'], "Recommended for you")
                 st.markdown(f"""
                     <div class="movie-card">
                         <div class="movie-title">{row['title']}</div>
                         <div class="movie-genre">{row['genres_clean']}</div>
                         <div class="movie-rating">⭐ {row['avg_rating']:.2f}</div>
-                        <div class="rec-reason">{reason_map[row['title']]}</div>
+                        <div class="rec-reason">{reason}</div>
                     </div>
                 """, unsafe_allow_html=True)
                 if st.button("✅ Watched", key=f"rec_{row['title']}"):
                     mark_watched(username, row['title'])
-                    st.experimental_rerun()
+                    st.rerun()
 
-    # Watched History Tab (THIRD)
+    # Watched History (THIRD)
     with tabs[2]:
         st.subheader("📖 Your Watched History")
         watched_list = get_watched(username)
@@ -220,7 +242,7 @@ if st.session_state['logged_in']:
                 genres = movies_df.loc[movies_df['title'] == movie, 'genres_clean'].values
                 rating = movies_df.loc[movies_df['title'] == movie, 'avg_rating'].values
                 genres_str = genres[0] if len(genres) else "Unknown"
-                rating_val = rating[0] if len(rating) else 0
+                rating_val = float(rating[0]) if len(rating) else 0.0
                 st.markdown(f"""
                     <div class="movie-card">
                         <div class="movie-title">{movie}</div>
