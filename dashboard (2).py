@@ -5,8 +5,8 @@ import sqlite3
 from collections import Counter
 
 # ---------------- Paths ----------------
-HYBRID_MODEL_PATH = "hybrid_recommender.pkl"  # directly from GitHub repo or local
-MOVIE_METADATA_PATH = "movie_metadata.csv"   # directly from GitHub repo or local
+HYBRID_MODEL_PATH = "hybrid_recommender.pkl"  # GitHub uploaded
+MOVIE_METADATA_PATH = "movie_metadata.csv"    # GitHub uploaded
 DB_PATH = "users.db"
 
 TOP_N = 10
@@ -18,12 +18,11 @@ with open(HYBRID_MODEL_PATH, "rb") as f:
 final_recs = hybrid_data["final_recs"]
 weights = hybrid_data["weights"]
 
-movies_df = pd.read_csv(MOVIE_METADATA_PATH)  # must have 'title' and 'genres_clean'
+movies_df = pd.read_csv(MOVIE_METADATA_PATH)  # must have 'title' and 'genres'
 
 # ---------------- Database Setup ----------------
 conn = sqlite3.connect(DB_PATH, check_same_thread=False)
 c = conn.cursor()
-
 c.execute("""
 CREATE TABLE IF NOT EXISTS users (
     username TEXT PRIMARY KEY,
@@ -64,17 +63,17 @@ def get_genre_recommendations(username, top_n=TOP_N):
     watched = get_watched(username)
     if not watched:
         return final_recs.get(username, [])[:top_n]
-
+    
     # Count genres from watched movies
-    watched_genres = movies_df[movies_df['title'].isin(watched)]['genres_clean'].str.split('|').explode()
+    watched_genres = movies_df[movies_df['title'].isin(watched)]['genres'].str.split('|').explode()
     top_genres = [g for g, _ in Counter(watched_genres).most_common(3)]
-
+    
     # Recommend movies matching top genres not yet watched
     recs = []
     for _, row in movies_df.iterrows():
         if row['title'] in watched:
             continue
-        if any(g in row['genres_clean'].split('|') for g in top_genres):
+        if any(g in row['genres'].split('|') for g in top_genres):
             recs.append(row['title'])
         if len(recs) >= top_n:
             break
@@ -115,27 +114,24 @@ elif choice == "Login":
 if st.session_state['logged_in']:
     st.subheader(f"Hello, {st.session_state['username']}!")
 
-    # ---------------- Top Movies ----------------
-    st.markdown("### 🌟 Top Movies")
-    top_movies = movies_df.sort_values('title').head(10)
-    for _, row in top_movies.iterrows():
+    # Show Top Rated Movies with checkbox to mark watched
+    st.markdown("### 🌟 Top Rated Movies")
+    for _, row in movies_df.sort_values('title').head(10).iterrows():
         col1, col2 = st.columns([3,1])
-        col1.write(f"{row['title']} ({row['genres_clean']})")
-        if col2.button(f"Watched ✅", key=f"top_{row['title']}"):
+        col1.write(f"{row['title']} ({row['genres']})")
+        if col2.button("Watched ✅", key=f"top_{row['title']}"):
             mark_watched(st.session_state['username'], row['title'])
             st.success(f"Marked '{row['title']}' as watched!")
 
-    # ---------------- Personalized Recommendations ----------------
+    # Personalized Recommendations
     st.markdown("### 🎯 Your Recommendations")
     recs = get_genre_recommendations(st.session_state['username'])
     for movie in recs:
-        col1, col2 = st.columns([3,1])
-        col1.write(movie)
-        if col2.button(f"Watched ✅", key=f"rec_{movie}"):
+        if st.button(f"Watched ✅ {movie}", key=f"rec_{movie}"):
             mark_watched(st.session_state['username'], movie)
             st.success(f"Marked '{movie}' as watched!")
 
-    # ---------------- Watched History ----------------
+    # Show watched history
     st.markdown("### 📖 Your Watched History")
     watched_list = get_watched(st.session_state['username'])
     st.write(watched_list if watched_list else "You haven't watched anything yet.")
