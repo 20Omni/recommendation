@@ -81,6 +81,7 @@ st.markdown("""
             background-color: #1e1e1e;
             border-radius: 12px;
             padding: 15px;
+            margin-bottom: 10px;
             text-align: center;
             transition: transform 0.2s;
         }
@@ -100,6 +101,12 @@ st.markdown("""
         .movie-rating {
             font-size: 14px;
             color: gold;
+        }
+        .rec-reason {
+            font-size: 12px;
+            color: #aaaaaa;
+            font-style: italic;
+            margin-top: 5px;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -144,46 +151,12 @@ else:
 
 # ---------------- Main Content ----------------
 if st.session_state['logged_in']:
-    tabs = st.tabs(["🎯 Recommendations", "🌟 Top Rated", "📖 Watched History"])
+    # Tab order changed: Top Rated -> Recommendations -> History
+    tabs = st.tabs(["🌟 Top Rated", "🎯 Recommendations", "📖 Watched History"])
+    username = st.session_state['username']
 
-    # Recommendations Tab
+    # Top Rated Tab (FIRST)
     with tabs[0]:
-        username = st.session_state['username']
-
-        try:
-            user_id = int(username)
-        except ValueError:
-            user_id = None
-
-        if user_id in final_recs:
-            st.subheader("🤖 Personalized For You")
-            recs = final_recs[user_id]
-        else:
-            recs, top_genre = get_genre_recommendations(username)
-            if top_genre:
-                st.subheader(f"🎭 Because you like **{top_genre}** movies")
-            else:
-                st.subheader("🎭 Recommended For You")
-
-        rec_df = movies_df[movies_df['title'].isin(recs)]
-
-        # Display movies in a grid (3 per row)
-        cols = st.columns(3)
-        for i, (_, row) in enumerate(rec_df.iterrows()):
-            with cols[i % 3]:
-                st.markdown(f"""
-                    <div class="movie-card">
-                        <div class="movie-title">{row['title']}</div>
-                        <div class="movie-genre">{row['genres_clean']}</div>
-                        <div class="movie-rating">⭐ {row['avg_rating']:.2f}</div>
-                    </div>
-                """, unsafe_allow_html=True)
-                if st.button("✅ Watched", key=f"rec_{row['title']}"):
-                    mark_watched(username, row['title'])
-                    st.experimental_rerun()
-
-    # Top Rated Tab
-    with tabs[1]:
         st.subheader("🌟 Top Rated Movies")
         watched_movies = get_watched(username)
         top_movies = movies_df[~movies_df['title'].isin(watched_movies)].sort_values(by="avg_rating", ascending=False).head(12)
@@ -202,7 +175,43 @@ if st.session_state['logged_in']:
                     mark_watched(username, row['title'])
                     st.experimental_rerun()
 
-    # Watched History Tab
+    # Recommendations Tab (SECOND)
+    with tabs[1]:
+        try:
+            user_id = int(username)
+        except ValueError:
+            user_id = None
+
+        if user_id in final_recs:
+            recs = final_recs[user_id]
+            reason_map = {title: "Recommended based on your preferences" for title in recs}
+        else:
+            recs, top_genre = get_genre_recommendations(username)
+            reason_map = {}
+            for movie in recs:
+                if top_genre:
+                    reason_map[movie] = f"Because you watched {top_genre} movies"
+                else:
+                    reason_map[movie] = "Recommended for you"
+
+        rec_df = movies_df[movies_df['title'].isin(recs)]
+
+        cols = st.columns(3)
+        for i, (_, row) in enumerate(rec_df.iterrows()):
+            with cols[i % 3]:
+                st.markdown(f"""
+                    <div class="movie-card">
+                        <div class="movie-title">{row['title']}</div>
+                        <div class="movie-genre">{row['genres_clean']}</div>
+                        <div class="movie-rating">⭐ {row['avg_rating']:.2f}</div>
+                        <div class="rec-reason">{reason_map[row['title']]}</div>
+                    </div>
+                """, unsafe_allow_html=True)
+                if st.button("✅ Watched", key=f"rec_{row['title']}"):
+                    mark_watched(username, row['title'])
+                    st.experimental_rerun()
+
+    # Watched History Tab (THIRD)
     with tabs[2]:
         st.subheader("📖 Your Watched History")
         watched_list = get_watched(username)
@@ -221,4 +230,3 @@ if st.session_state['logged_in']:
                 """, unsafe_allow_html=True)
         else:
             st.info("You haven't watched anything yet.")
-
