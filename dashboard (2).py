@@ -5,16 +5,20 @@ import hashlib
 # ==========================
 # Data Preparation
 # ==========================
-@st.cache_data
-def load_data():
-    ratings_df = pd.read_csv("ratings.csv")
-    movies_df = pd.read_csv("movies.csv")
-    df = ratings_df.merge(movies_df, on="movie_id")
-    avg_ratings = df.groupby(["title", "genres_clean"], as_index=False)["rating"].mean()
-    avg_ratings.rename(columns={"rating": "avg_rating"}, inplace=True)
-    return avg_ratings
+HYBRID_MODEL_PATH = "hybrid_recommender.pkl"
+MOVIE_METADATA_PATH = "movie_metadata.csv"  # Has title, genres_clean, avg_rating
+DB_PATH = "users.db"
 
-movie_data = load_data()
+TOP_N = 10
+
+# ---------------- Load Data ----------------
+with open(HYBRID_MODEL_PATH, "rb") as f:
+    hybrid_data = pickle.load(f)
+
+final_recs = hybrid_data["final_recs"]
+weights = hybrid_data["weights"]
+
+movies_df = pd.read_csv(MOVIE_METADATA_PATH)
 
 # ==========================
 # User Management
