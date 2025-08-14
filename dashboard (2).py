@@ -33,9 +33,6 @@ conn.commit()
 
 # ---------------- Helper Functions ----------------
 def signup(username, password):
-    if not username or not password:
-        st.error("Please enter both username and password.")
-        return
     try:
         c.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
         conn.commit()
@@ -44,8 +41,6 @@ def signup(username, password):
         st.error("Username already exists.")
 
 def login(username, password):
-    if not username or not password:
-        return False
     c.execute("SELECT * FROM users WHERE username=? AND password=?", (username, password))
     return c.fetchone() is not None
 
@@ -63,72 +58,77 @@ def get_genre_recommendations(username, top_n=TOP_N):
         return movies_df.sort_values(by="avg_rating", ascending=False).head(top_n)["title"].tolist()
 
     watched_genres = movies_df[movies_df['title'].isin(watched)]['genres_clean'].str.split('|').explode()
-    top_genres = [g for g, _ in Counter(watched_genres).most_common(4)]  # top 4 genres
+    top_genres = [g for g, _ in Counter(watched_genres).most_common(4)]
 
     recs = movies_df[~movies_df['title'].isin(watched)]
     recs = recs[recs['genres_clean'].apply(lambda g: any(genre in g for genre in top_genres))]
     recs = recs.sort_values(by="avg_rating", ascending=False).head(top_n)
     return recs["title"].tolist()
 
-# ---------------- Session State Setup ----------------
+# ---------------- Streamlit UI ----------------
+st.set_page_config(page_title="Movie Recommender", layout="wide")
+st.title("🎬 Movie Recommender System")
+
 if 'logged_in' not in st.session_state:
     st.session_state['logged_in'] = False
 if 'username' not in st.session_state:
     st.session_state['username'] = ''
-if 'page' not in st.session_state:
-    st.session_state['page'] = "Login"
 
-st.title("🎬 Movie Recommender System")
-
-# ---------------- Login/Signup Navigation ----------------
-if not st.session_state['logged_in']:
+# Sidebar menu
+if st.session_state['logged_in']:
+    st.sidebar.write(f"👋 Logged in as: **{st.session_state['username']}**")
+    if st.sidebar.button("🚪 Logout"):
+        st.session_state['logged_in'] = False
+        st.session_state['username'] = ''
+        st.rerun()
+else:
     menu = ["Login", "Signup"]
-    choice = st.sidebar.radio("Menu", menu, index=menu.index(st.session_state['page']))
-    st.session_state['page'] = choice
+    choice = st.sidebar.selectbox("Menu", menu)
 
-    if st.session_state['page'] == "Signup":
+    if choice == "Signup":
         st.subheader("Create New Account")
-        new_user = st.text_input("Username", key="signup_user")
-        new_pass = st.text_input("Password", type='password', key="signup_pass")
+        new_user = st.text_input("Username")
+        new_pass = st.text_input("Password", type='password')
         if st.button("Sign Up"):
             signup(new_user, new_pass)
 
-    elif st.session_state['page'] == "Login":
+    elif choice == "Login":
         st.subheader("Login")
-        username = st.text_input("Username", key="login_user")
-        password = st.text_input("Password", type='password', key="login_pass")
+        username = st.text_input("Username")
+        password = st.text_input("Password", type='password')
         if st.button("Login"):
             if login(username, password):
                 st.session_state['logged_in'] = True
                 st.session_state['username'] = username
                 st.success(f"Welcome {username}!")
-                st.rerun() 
+                st.rerun()
             else:
                 st.error("Invalid username or password")
 
-# ---------------- Main App ----------------
-else:
+# Logged in view
+if st.session_state['logged_in']:
     tabs = st.tabs(["🌟 Top Rated", "🎯 Recommendations", "📖 Watched History"])
 
     # Top Rated Tab
     with tabs[0]:
         top_movies = movies_df.sort_values(by="avg_rating", ascending=False).head(10)
         for _, row in top_movies.iterrows():
-            col1, col2 = st.columns([3, 1])
-            col1.write(f"**{row['title']}** ({row['genres_clean']}) — ⭐ {row['avg_rating']:.2f}")
-            if col2.button("Watched ✅", key=f"top_{row['title']}"):
-                mark_watched(st.session_state['username'], row['title'])
-                st.success(f"Marked '{row['title']}' as watched!")
+            with st.container():
+                st.markdown(f"**{row['title']}** ({row['genres_clean']}) — ⭐ {row['avg_rating']:.2f}")
+                if st.button("Watched ✅", key=f"top_{row['title']}"):
+                    mark_watched(st.session_state['username'], row['title'])
+                    st.success(f"Marked '{row['title']}' as watched!")
+                st.markdown("---")
 
     # Recommendations Tab
     with tabs[1]:
         username = st.session_state['username']
+
         try:
-            user_id = int(username)  # If username is numeric and in ML model
+            user_id = int(username)
         except ValueError:
             user_id = None
 
-        # Silent ML or Genre fallback
         if user_id in final_recs:
             recs = final_recs[user_id]
         else:
@@ -136,11 +136,12 @@ else:
 
         rec_df = movies_df[movies_df['title'].isin(recs)]
         for _, row in rec_df.iterrows():
-            col1, col2 = st.columns([3, 1])
-            col1.write(f"**{row['title']}** ({row['genres_clean']}) — ⭐ {row['avg_rating']:.2f}")
-            if col2.button("Watched ✅", key=f"rec_{row['title']}"):
-                mark_watched(st.session_state['username'], row['title'])
-                st.success(f"Marked '{row['title']}' as watched!")
+            with st.container():
+                st.markdown(f"**{row['title']}** ({row['genres_clean']}) — ⭐ {row['avg_rating']:.2f}")
+                if st.button("Watched ✅", key=f"rec_{row['title']}"):
+                    mark_watched(st.session_state['username'], row['title'])
+                    st.success(f"Marked '{row['title']}' as watched!")
+                st.markdown("---")
 
     # Watched History Tab
     with tabs[2]:
